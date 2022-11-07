@@ -33,7 +33,12 @@ Pour vérifier sur quelle branche on est / si on est synchronisé avec le reposi
 git status
 ```
 ## Marche à suivre pour ajouter une nouvelle fonctionnalité (cas le plus simple sans conflit) :
-D'abord créer sa nouvelle branche :
+D'abord se mettre sur develop et récupérer les derniers commits :
+```
+git checkout develop
+git pull
+```
+Puis créer sa nouvelle branche :
 ```
 git branch nomdelafonctionnalite
 git checkout nomdelafonctionnalite
