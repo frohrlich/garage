@@ -44,6 +44,8 @@ Ensuite commit et push ses changements. A ce stade demander à quelqu'un de vér
 Ensuite merge avec develop (on ne touche pas à main pour le moment) :
 ```
 git checkout develop
+git fetch
+git pull
 git merge nomdelafonctionnalite
 git branch -d nomdelafonctionnalite
 ```
