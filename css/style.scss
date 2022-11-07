@@ -185,6 +185,11 @@ a:focus {
     color: $primary2;
   }
 
+  img {
+    height: 80px;
+    width: auto;
+  }
+
   &:hover {
     color: inherit;
   }

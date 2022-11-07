@@ -1,6 +1,14 @@
-@media (max-width: 1300px) {}
+@media (max-width: 1300px) {
+}
 
-@media (max-width: 1120px) {}
+@media (max-width: 1120px) {
+}
+
+@media (max-width: 1024px) {
+  .custom_nav-container .contact_nav a span {
+    font-size: 0.8em;
+  }
+}
 
 @media (max-width: 992px) {
   .slider_section {
@@ -28,8 +36,6 @@
   .about_section .img-box {
     margin-bottom: 45px;
   }
-
-
 }
 
 @media (max-width: 767px) {
@@ -54,22 +60,22 @@
     align-items: center;
     text-align: center;
   }
-
-
 }
 
 @media (max-width: 576px) {
   .header_section .header_top .contact_nav a span {
     display: none;
   }
-
 }
 
-@media (max-width: 480px) {}
+@media (max-width: 480px) {
+}
 
-@media (max-width: 420px) {}
+@media (max-width: 420px) {
+}
 
-@media (max-width: 376px) {}
+@media (max-width: 376px) {
+}
 
 @media (min-width: 1200px) {
   .container {
