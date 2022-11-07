@@ -14,7 +14,7 @@
     <meta name="description" content="" />
     <meta name="author" content="" />
     <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon" />
-    <title>Zarage</title>
+    <title>Contact - Garage Pistons & Boulons</title>
 
     <!-- bootstrap core css -->
     <!-- <link rel="stylesheet" type="text/css" href="css/bootstrap.css" /> -->
@@ -36,74 +36,13 @@
 
   <body>
     <div class="hero_area">
-      <!-- header section strats -->
-      <header class="header_section ip_header">
-        <div class="container">
-          <nav class="navbar navbar-expand-lg custom_nav-container px-0">
-            <a class="navbar-brand" href="index.html">
-              <span> Zarage </span>
-            </a>
-            <div class="contact_nav" id="">
-              <a class="nav-link" href="">
-                <i class="fa fa-map-marker" aria-hidden="true"></i>
-                <span>Location</span>
-              </a>
-              <a class="nav-link" href="">
-                <i class="fa fa-phone" aria-hidden="true"></i>
-                <span>Call : + 01 1234567890</span>
-              </a>
-              <a class="nav-link" href="">
-                <i class="fa fa-envelope" aria-hidden="true"></i>
-                <span>demo@gmail.com</span>
-              </a>
-            </div>
-          </nav>
-        </div>
-      </header>
-      <!-- end header section -->
-      <div class="custom_nav2">
-        <div class="container">
-          <nav class="navbar navbar-expand-lg custom_nav-container">
-            <button
-              class="navbar-toggler"
-              type="button"
-              data-toggle="collapse"
-              data-target="#navbarSupportedContent"
-              aria-controls="navbarSupportedContent"
-              aria-expanded="false"
-              aria-label="Toggle navigation"
-            >
-              <span class="navbar-toggler-icon"></span>
-            </button>
+      <!-- header section -->
+      <?php include 'header.php' ?>
 
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <div class="d-flex flex-column flex-lg-row align-items-center">
-                <ul class="navbar-nav">
-                  <li class="nav-item">
-                    <a class="nav-link" href="index.html">Home</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="about.html">About </a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="service.html">Services </a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="team.html">Team</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="contact.html">Contact Us</a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </nav>
-        </div>
-      </div>
-    </div>
+      <!-- Navigation bar -->
+      <?php include 'navbar.php' ?>
 
     <!-- contact section -->
-
     <section class="contact_section">
       <div class="container">
         <div class="row">
@@ -199,15 +138,7 @@
     <!-- end info section -->
 
     <!-- footer section -->
-    <footer class="footer_section">
-      <div class="container">
-        <p>
-          &copy; <span id="displayYear"></span> All Rights Reserved By
-          <a href="https://html.design/">Free Html Templates</a>
-        </p>
-      </div>
-    </footer>
-    <!-- footer section -->
+    <?php include 'footer.php' ?>
 
     <!-- jQery -->
     <script src="node_modules\jquery\dist\jquery.min.js"></script>

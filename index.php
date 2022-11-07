@@ -36,80 +36,14 @@
 
   <body>
     <div class="hero_area">
-      <!-- header section strats -->
-      <header class="header_section">
-        <div class="container">
-          <nav class="navbar navbar-expand-lg custom_nav-container px-0">
-            <a class="navbar-brand" href="index.html">
-              <img src="images/logo.png" alt="Accueil" />
-            </a>
-            <div class="contact_nav" id="">
-              <a class="nav-link" href="contact.html#map">
-                <i class="fa fa-map-marker" aria-hidden="true"></i>
-                <span
-                  >1 Quai des Mégisseries <br />
-                  87200 Saint-Junien</span
-                >
-              </a>
-              <a class="nav-link" href="tel:+33555021023">
-                <i class="fa fa-phone" aria-hidden="true"></i>
-                <span>+33 5 55 02 10 23</span>
-              </a>
-              <a class="nav-link" href="mailto:contact@pistonsetboulons.com">
-                <i class="fa fa-envelope" aria-hidden="true"></i>
-                <span>contact@pistonsetboulons.com</span>
-              </a>
-            </div>
-          </nav>
-        </div>
-      </header>
-      <!-- end header section -->
+    <!-- header section -->
+    <?php include 'header_white.php' ?>
       <!-- slider section -->
       <section class="slider_section position-relative">
-        <div class="custom_nav2">
-          <div class="container">
-            <nav class="navbar navbar-expand-lg custom_nav-container">
-              <button
-                class="navbar-toggler"
-                type="button"
-                data-toggle="collapse"
-                data-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent"
-                aria-expanded="false"
-                aria-label="Toggle navigation"
-              >
-                <span class="navbar-toggler-icon"></span>
-              </button>
 
-              <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <div class="d-flex flex-column flex-lg-row align-items-center">
-                  <ul class="navbar-nav">
-                    <li class="nav-item">
-                      <a class="nav-link" href="index.html">Accueil</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="about.html">Nos services </a>
-                    </li>
-                    <!-- <li class="nav-item">
-                      <a class="nav-link" href="service.html">Services </a>
-                    </li> -->
-                    <!-- <li class="nav-item">
-                      <a class="nav-link" href="team.html">Team</a>
-                    </li> -->
-                    <li class="nav-item">
-                      <a class="nav-link" href="contact.html">Nous contacter</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="connexion.html"
-                        >Espace collaborateurs</a
-                      >
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </nav>
-          </div>
-        </div>
+      <!-- Navigation bar -->
+      <?php include 'navbar.php' ?>
+
         <div class="slider_container">
           <div
             id="carouselExampleIndicators"
@@ -252,7 +186,7 @@
                 ratione numquam fugit ullam eos illo adipisci dicta dignissimos
                 cumque quasi!
               </p>
-              <a href="about.html" class=""> Read More </a>
+              <a href="about.php" class=""> Read More </a>
             </div>
           </div>
         </div>
@@ -584,20 +518,7 @@
     <!-- end info section -->
 
     <!-- footer section -->
-    <footer class="footer_section">
-      <ul class="navbar-nav d-flex flex-row justify-content-center">
-        <li class="nav-item mx-2 mx-md-3">
-          <a class="nav-link" href="map.html">Plan du site</a>
-        </li>
-        <li class="nav-item mx-2 mx-md-3">
-          <a class="nav-link" href="contact.html">Contact</a>
-        </li>
-        <li class="nav-item mx-2 mx-md-3">
-          <a class="nav-link" href="legal.html">Mentions légales</a>
-        </li>
-      </ul>
-    </footer>
-    <!-- footer section -->
+    <?php include 'footer.php' ?>
 
     <!-- jQery -->
     <script src="node_modules\jquery\dist\jquery.min.js"></script>
