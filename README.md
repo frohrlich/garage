@@ -53,4 +53,6 @@ git fetch
 git pull
 git merge nomdelafonctionnalite
 git branch -d nomdelafonctionnalite
+git push
+git push origin --delete nomdelafonctionnalite
 ```
