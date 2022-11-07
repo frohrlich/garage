@@ -190,6 +190,13 @@ a:focus {
     width: auto;
   }
 
+  @include media-breakpoint-down(sm) {
+    img {
+      height: 60px;
+      width: auto;
+    }
+  }
+
   &:hover {
     color: inherit;
   }
