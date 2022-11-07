@@ -40,7 +40,7 @@ git checkout nomdelafonctionnalite
 git push --set-upstream origin nomdelafonctionnalite
 ```
 Ensuite coder dessus !
-Ensuite commit ses changements. A ce stade demander à quelqu'un de vérifier que tout est ok.
+Ensuite commit et push ses changements. A ce stade demander à quelqu'un de vérifier que tout est ok.
 Ensuite merge avec develop (on ne touche pas à main pour le moment) :
 ```
 git checkout develop
