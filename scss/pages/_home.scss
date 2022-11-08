@@ -1,0 +1,44 @@
+.service_section {
+  background: $primary1;
+  color: $white;
+
+  .box {
+    margin: 10px;
+    text-align: center;
+    // padding: 25px;
+    transition: all 0.3s;
+    margin-top: 45px;
+    border-radius: 5px;
+    overflow: hidden;
+
+    .img-box {
+      img {
+        width: 100%;
+      }
+    }
+
+    .detail-box {
+      padding: 25px;
+      background: $white;
+      color: $black;
+
+      h5 {
+        font-weight: 600;
+      }
+
+      a {
+        color: $primary2;
+      }
+    }
+  }
+
+  .btn-box {
+    display: flex;
+    justify-content: center;
+    margin-top: 45px;
+
+    a {
+      @include hero_btn($primary2, $white, 10px, 45px, 5px);
+    }
+  }
+}

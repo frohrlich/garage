@@ -1,0 +1,40 @@
+.about_section {
+  .row {
+    align-items: center;
+  }
+
+  .img-box {
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  .detail-box {
+    p {
+      margin-top: 15px;
+    }
+
+    a {
+      @include hero_btn($primary2, $white, 10px, 45px, 5px);
+      margin-top: 15px;
+    }
+  }
+
+  ul {
+    padding-left: 0;
+    list-style-type: none;
+
+    li {
+      margin-bottom: 10px;
+    }
+
+    i {
+      color: $primary2;
+      margin-right: 5px;
+    }
+  }
+}
