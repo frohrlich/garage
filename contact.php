@@ -16,8 +16,9 @@
     <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon" />
     <title>Contact - Garage Pistons & Boulons</title>
 
-    <!-- bootstrap core css -->
-    <!-- <link rel="stylesheet" type="text/css" href="css/bootstrap.css" /> -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.2/dist/leaflet.css"
+     integrity="sha256-sA+zWATbFveLLNqWO2gtiw3HL/lh1giY/Inf1BJ0z14="
+     crossorigin=""/>
 
     <!--owl slider stylesheet -->
     <link
@@ -32,6 +33,7 @@
     <link href="css/style.min.css" rel="stylesheet" />
     <!-- responsive style -->
     <link href="css/responsive.css" rel="stylesheet" />
+    
   </head>
 
   <body>
@@ -95,47 +97,12 @@
     <section class="map_section">
       <div class="map_container">
         <div class="map">
-          <div id="googleMap"></div>
+          <div id="map"></div>
         </div>
       </div>
     </section>
 
     <!-- end map section -->
-
-    <!-- info section -->
-
-    <section class="info_section">
-      <div class="info_container">
-        <div class="container">
-          <div class="info_contact">
-            <a href="#" class="link-box">
-              <i class="fa fa-map-marker" aria-hidden="true"></i>
-              <span> Location </span>
-            </a>
-            <a href="#" class="link-box">
-              <i class="fa fa-phone" aria-hidden="true"></i>
-              <span> Call +01 1234567890 </span>
-            </a>
-            <a href="#" class="link-box">
-              <i class="fa fa-envelope" aria-hidden="true"></i>
-              <span> demo@gmail.com </span>
-            </a>
-          </div>
-          <div class="social_container">
-            <div class="heading_container heading_center">
-              <h2>Follow Us</h2>
-              <p class="col-md-6 col-lg-5 mx-auto px-0">
-                Aliquam, aut. Quam adipisci error nulla repellendus nihil
-                asperiores, deserunt sed veritatis. Dolores magnam aperiam
-                omnis! Architecto odit consectetur maxime consequatur ipsum.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- end info section -->
 
     <!-- footer section -->
     <?php include 'footer.php' ?>
@@ -150,8 +117,11 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
     <!-- custom js -->
     <script src="js/custom.js"></script>
-    <!-- Google Map -->
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh39n5U-4IoWpsVGUHWdqB6puEkhRLdmI&callback=myMap"></script>
-    <!-- End Google Map -->
+    <script src="https://unpkg.com/leaflet@1.9.2/dist/leaflet.js"
+     integrity="sha256-o9N1jGDZrf5tS+Ft4gbIK7mYMipq9lqpVJ91xHSyKhg="
+     crossorigin=""></script>
+    <!-- OPM -->
+    <script src="js/map.js"></script>
+    <!-- OPM -->
   </body>
 </html>
