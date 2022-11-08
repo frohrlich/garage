@@ -37,12 +37,13 @@
   <body>
     <div class="hero_area">
     <!-- header section -->
-    <?php include 'header_white.php' ?>
+    <?php include 'header.php' ?>
+
+    <!-- Navigation bar -->
+    <?php include 'navbar.php' ?>
+
       <!-- slider section -->
       <section class="slider_section position-relative">
-
-      <!-- Navigation bar -->
-      <?php include 'navbar.php' ?>
 
         <div class="slider_container">
           <div
