@@ -44,14 +44,37 @@
       <!-- Navigation bar -->
       <?php include 'navbar.php' ?>
 
+      <h1>Contact</h1>
+
+    <!-- info section -->
+    <section class="pt-3 pl-2">
+      <h2>Adresse :</h2>
+      <p><a href="#map">1 Quai des Mégisseries, 87200 Saint-Junien</a>
+      </p>
+      <h3>Horaires :</h3>
+      <p>Du lundi au vendredi : 8h30-19h</p>
+      <p>Le samedi : 8h30-12h30</p>
+      <p>Fermé le dimanche</p>
+
+      <h2>Téléphone :</h2>
+      <p>
+      <a href="tel:+33555021023">+33 5 55 02 10 23</a>
+      </p>
+
+      <h2>Email :</h2>
+      <p>
+      <a href="mailto:contact@pistonsetboulons.com">contact@pistonsetboulons.com</a>
+      </p>
+    </section>
+
     <!-- contact section -->
-    <section class="contact_section">
+    <section class="contact_section py-3">
       <div class="container">
         <div class="row">
           <div class="col-md-5">
             <div class="form_container">
               <div class="heading_container">
-                <h1>Contact Us</h1>
+              <h2>Nous contacter :</h2>
               </div>
               <form action="">
                 <div>
@@ -76,21 +99,19 @@
                   />
                 </div>
                 <div class="d-flex">
-                  <button>SEND</button>
+                  <button>Envoyer</button>
                 </div>
               </form>
             </div>
           </div>
           <div class="col-md-7">
             <div class="img-box">
-              <img src="images/contact-img.jpg" alt="" />
+              <img src="images/illus_contact.jpg" alt="" />
             </div>
           </div>
         </div>
       </div>
     </section>
-
-    <!-- end contact section -->
 
     <!-- map section -->
 
