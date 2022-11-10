@@ -1,11 +1,11 @@
-var map = L.map("map").setView([51.505, -0.09], 13);
+var map = L.map("map").setView([45.88309, 0.89213], 17.11);
 
 L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
   attribution:
     '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
 }).addTo(map);
 
-L.marker([51.5, -0.09])
+L.marker([45.88309, 0.89213])
   .addTo(map)
-  .bindPopup("A pretty CSS3 popup.<br> Easily customizable.")
+  .bindPopup("Garage Pistons & Boulons")
   .openPopup();

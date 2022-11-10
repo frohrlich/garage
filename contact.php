@@ -44,89 +44,85 @@
       <!-- Navigation bar -->
       <?php include 'navbar.php' ?>
 
-      <h1>Contact</h1>
-
-    <!-- info section -->
-    <section class="pt-3 pl-2">
-      <h2>Adresse :</h2>
-      <p><a href="#map">1 Quai des Mégisseries, 87200 Saint-Junien</a>
-      </p>
-      <h3>Horaires :</h3>
-      <p>Du lundi au vendredi : 8h30-19h</p>
-      <p>Le samedi : 8h30-12h30</p>
-      <p>Fermé le dimanche</p>
-
-      <h2>Téléphone :</h2>
-      <p>
-      <a href="tel:+33555021023">+33 5 55 02 10 23</a>
-      </p>
-
-      <h2>Email :</h2>
-      <p>
-      <a href="mailto:contact@pistonsetboulons.com">contact@pistonsetboulons.com</a>
-      </p>
-    </section>
-
-    <!-- contact section -->
-    <section class="contact_section py-3">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-5">
-            <div class="form_container">
-              <div class="heading_container">
-              <h2>Nous contacter :</h2>
+      <!-- contact section -->
+      <section class="contact_section py-3">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6 col-lg-5">
+              <div class="form_container">
+                <div class="heading_container">
+                <h1>Nous contacter :</h1>
+                </div>
+                <form action="">
+                  <div>
+                    <label for="name" class="label">Nom :</label>
+                    <input type="text" id="name" name="name" />
+                  </div>
+                  <div>
+                    <label for="email" class="label">Email :</label>
+                    <input type="email" id="email" name="email" />
+                  </div>
+                  <div>
+                    <label for="phone" class="label">Numéro de téléphone :</label>
+                    <input type="tel" id="phone" name="phone" />
+                  </div>
+                  <div>
+                    <label for="message" class="label">Message :</label>
+                    <input
+                      type="text"
+                      class="message-box"
+                      id="message"
+                      name="message"
+                    />
+                  </div>
+                  <div class="d-flex">
+                    <button>Envoyer</button>
+                  </div>
+                </form>
               </div>
-              <form action="">
-                <div>
-                  <label for="name" class="label">Nom :</label>
-                  <input type="text" id="name" name="name" />
-                </div>
-                <div>
-                  <label for="email" class="label">Email :</label>
-                  <input type="email" id="email" name="email" />
-                </div>
-                <div>
-                  <label for="phone" class="label">Numéro de téléphone :</label>
-                  <input type="tel" id="phone" name="phone" />
-                </div>
-                <div>
-                  <label for="message" class="label">Message :</label>
-                  <input
-                    type="text"
-                    class="message-box"
-                    id="message"
-                    name="message"
-                  />
-                </div>
-                <div class="d-flex">
-                  <button>Envoyer</button>
-                </div>
-              </form>
             </div>
-          </div>
-          <div class="col-md-7">
-            <div class="img-box">
-              <img src="images/illus_contact.jpg" alt="" />
+            <div class="col-md-6 col-lg-7 d-none d-md-block">
+              <div class="img-box ">
+                <img src="images/illus_contact.jpg" alt="" />
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- map section -->
+      <!-- info section -->
+      <section class="container pt-3 pl-2 text-center">
+        <h2>Adresse :</h2>
+        <p><a href="#map">1 Quai des Mégisseries, 87200 Saint-Junien</a>
+        </p>
+        <h3>Horaires :</h3>
+        <p>Du lundi au vendredi : 8h30-19h</p>
+        <p>Le samedi : 8h30-12h30</p>
+        <p>Fermé le dimanche et les jours fériés</p>
 
-    <section class="map_section">
-      <div class="map_container">
-        <div class="map">
-          <div id="map"></div>
+        <h2>Téléphone :</h2>
+        <p>
+        <a href="tel:+33555021023">+33 5 55 02 10 23</a>
+        </p>
+
+        <h2>Email :</h2>
+        <p>
+        <a href="mailto:contact@pistonsetboulons.com">contact@pistonsetboulons.com</a>
+        </p>
+      </section>
+
+      <!-- map section -->
+      <section class="map_section">
+        <div class="map_container">
+          <div class="map">
+            <div id="map"></div>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- end map section -->
-
-    <!-- footer section -->
-    <?php include 'footer.php' ?>
+      <!-- footer section -->
+      <?php include 'footer.php' ?>
+    </div>
 
     <!-- jQery -->
     <script src="node_modules\jquery\dist\jquery.min.js"></script>

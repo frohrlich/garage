@@ -3,9 +3,13 @@
 
   .row {
     align-items: stretch;
+    > [class*="col-"] {
+      max-height: 725px;
+    }
   }
 
   .form_container {
+    height: 100%;
     padding: 25px;
     background: $primary1;
     color: $white;
@@ -41,11 +45,13 @@
     @include hero_btn($primary2, $white, 10px, 65px, 3px);
     color: #fff;
     margin-top: 10px;
+    @include media-breakpoint-up(xl) {
+      margin-top: 50px;
+    }
   }
 
   .img-box {
     height: 100%;
-
     img {
       width: 100%;
       height: 100%;
