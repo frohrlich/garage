@@ -1,0 +1,56 @@
+.banner_section {
+  background: $white;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+
+  .banner_container {
+    margin-top: 35px;
+    margin-bottom: 15px;
+  }
+
+  .detail-box {
+    h1 {
+      font-size: 2rem;
+      font-weight: bold;
+      color: $textCol;
+      text-transform: uppercase;
+    }
+
+    p {
+      color: $textCol;
+
+      span {
+        font-weight: bold;
+      }
+    }
+
+    .btn-box {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 35px;
+      margin: 35px -5px 0 -5px;
+
+      a {
+        width: 165px;
+        text-align: center;
+        margin: 5px;
+      }
+
+      .btn-1 {
+        @include hero_btn($primary2, $white, 7px, 0, 5px);
+      }
+    }
+  }
+
+  .img-box {
+    height: 100%;
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      border-radius: 5px;
+    }
+  }
+}
