@@ -1,0 +1,46 @@
+.login_section {
+  position: relative;
+  margin-bottom: 20px;
+
+  .form_container {
+    height: 100%;
+    padding: 25px;
+    background: $primary1;
+    color: $white;
+    border-radius: 5px;
+  }
+
+  form {
+    margin-top: 20px;
+  }
+
+  input {
+    width: 100%;
+    border: none;
+    height: 50px;
+    margin-bottom: 25px;
+    padding-left: 15px;
+    background-color: $white;
+    outline: none;
+    color: $black;
+    border: 1px solid #a5a5a5;
+
+    // &::placeholder {
+    //   color: #1c1b1b;
+    // }
+
+    &.message-box {
+      height: 120px;
+    }
+  }
+
+  button {
+    @include main-font();
+    @include hero_btn($primary2, $white, 10px, 65px, 3px);
+    color: #fff;
+    margin-top: 10px;
+    @include media-breakpoint-up(xl) {
+      margin-top: 50px;
+    }
+  }
+}
