@@ -1,4 +1,4 @@
-<footer class="footer_section ip_footer ">
+<footer class="footer_section">
   <ul class="navbar-nav d-flex flex-row justify-content-center">
     <li class="nav-item mx-2 mx-md-3">
       <a class="nav-link" href="map.php">Plan du site</a>
