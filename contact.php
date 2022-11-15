@@ -1,3 +1,41 @@
+<?php
+
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
+require_once 'php/inc.functions.php';
+require_once 'php/email.php';
+
+$msg_form = ""; // Message lors de la soumission du formulaire
+
+//~ Lors de la soumission du formulaire
+if ($_POST && count($_POST)) {
+  if (isMessagePostValid($_POST)) {
+    $name = htmlspecialchars($_POST['name']);
+    $email = htmlspecialchars($_POST['email']);
+    $phone = htmlspecialchars($_POST['phone']);
+    $message = htmlspecialchars($_POST['message']);
+
+    $data = [
+      'name' => $name,
+      'email' => $email,
+      'phone' => $phone,
+      'message' => $message,
+    ];
+
+    sendMail($data);
+
+    //~ Message succès
+    $msg_form = "<span class='text-success'>Message envoyé !</span>";
+  } else {
+    //~ Message echec
+    $msg_form =
+      "<span class='text-danger'>Erreur : vérifiez votre saisie.</span>";
+  }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
   <head>
@@ -39,10 +77,10 @@
   <body>
     <div class="hero_area">
       <!-- header section -->
-      <?php include 'header.php' ?>
+      <?php include 'header.php'; ?>
 
       <!-- Navigation bar -->
-      <?php include 'navbar.php' ?>
+      <?php include 'navbar.php'; ?>
 
       <!-- contact section -->
       <section class="contact_section py-3">
@@ -53,18 +91,18 @@
                 <div class="heading_container">
                 <h1>Nous contacter :</h1>
                 </div>
-                <form action="">
+                <form method="POST" action="#mess_form" id="mess_form">
                   <div>
                     <label for="name" class="label">Nom :</label>
-                    <input type="text" id="name" name="name" />
+                    <input type="text" id="name" name="name" required />
                   </div>
                   <div>
                     <label for="email" class="label">Email :</label>
-                    <input type="email" id="email" name="email" />
+                    <input type="email" id="email" name="email" required />
                   </div>
                   <div>
                     <label for="phone" class="label">Numéro de téléphone :</label>
-                    <input type="tel" id="phone" name="phone" />
+                    <input type="tel" id="phone" name="phone" required />
                   </div>
                   <div>
                     <label for="message" class="label">Message :</label>
@@ -73,10 +111,12 @@
                       class="message-box"
                       id="message"
                       name="message"
+                      required 
                     />
                   </div>
-                  <div class="d-flex">
-                    <button>Envoyer</button>
+                  <?php echo $msg_form; ?>
+                  <div class="d-flex m-0">
+                    <button class="m-0 mt-1">Envoyer</button>
                   </div>
                 </form>
               </div>
@@ -121,7 +161,7 @@
       </section>
 
       <!-- footer section -->
-      <?php include 'footer.php' ?>
+      <?php include 'footer.php'; ?>
     </div>
 
     <!-- jQery -->
@@ -137,8 +177,7 @@
     <script src="https://unpkg.com/leaflet@1.9.2/dist/leaflet.js"
      integrity="sha256-o9N1jGDZrf5tS+Ft4gbIK7mYMipq9lqpVJ91xHSyKhg="
      crossorigin=""></script>
-    <!-- OPM -->
+    <!-- Open Street Map -->
     <script src="js/map.js"></script>
-    <!-- OPM -->
   </body>
 </html>
