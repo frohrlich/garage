@@ -37,96 +37,137 @@
   <body>
     <div class="hero_area">
       <!-- header section -->
-      <?php include 'header.php' ?>
+      <?php include 'header.php'; ?>
 
       <!-- Navigation bar -->
-      <?php include 'navbar.php' ?>
+      <?php include 'navbar.php'; ?>
 
     <!-- about section -->
 
-    <section class="about_section layout_padding">
+    <section class="about_section layout_padding mb-5 mb-md-0">
+      <div class="container">
+        <div class="row flex-column-reverse flex-lg-row">
+          <div class="col-lg-6 mb-md-5 mb-lg-0 d-none d-md-block">
+            <div class="img-box">
+              <img src="images/roumain.jpg" class="box_img" alt="about img" />
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="detail-box pr-md-2">
+              <div class="heading_container d-flex">
+                <h1 class="align-self-center">Qui sommes nous</h1>
+              </div>
+              <p class="detail_p_mt">
+              Bienvenue chez Pistons & Boulons, votre garage automobile à Saint-Junien,
+               spécialiste des interventions sur voitures diesel et essence à injection toutes marques. 
+               Nous avons recours à toute notre expertise au service de vos véhicules pour la réparation et l'entretien.
+                Profitez-en, nous proposons également de nombreux accessoires et pièces détachées.
+              </p>
+              <p>
+              Nous sommes agréés par Dacia pour la réparation de vos véhicules. 
+              Suite à l'augmentation du prix du carburant nous vous proposons l'installation d'un boitier bioéthanol 
+              qui est beaucoup moins coûteux et totalement sans risque pour vos véhicules.
+              </p>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+</section>
+
+    <h2 class="presta text-center mt-5 mt-md-0">Nos prestations</h2>
+
+      <!-- prestation  1-->
+      <section class="about_section layout_padding">
       <div class="container">
         <div class="row">
+          
           <div class="col-lg-6">
+            <div class="detail-box pr-md-2">
+              <div class="heading_container">
+                <h3 class="">Accessoires et pièces détachées</h3>
+              </div>
+              <p class="detail_p_mt">
+              En plus des services de réparation et d’entretien automobile,
+               notre garage propose à la vente un grand choix d'accessoires et de pièces détachées 
+               automobiles pour tous types de véhicules.
+                En véritables spécialistes, nous sélectionnons nos produits avec 
+                le plus grand soin chez des grossistes de confiance qui nous permettent de vous proposer
+                 des tarifs toujours très compétitifs.
+                </p>
+              
+              
+            </div>
+          </div>
+          <div class="col-lg-6 d-none d-md-block">
             <div class="img-box">
-              <img src="images/about-img.jpg" class="box_img" alt="about img" />
+              <img src="images/pieces.jpg" class="box_img" alt="about img" />
+            </div>
+          </div>
+        </div>
+      </div>
+</section>
+<!-- prestation2 -->
+<section class="about_section layout_padding">
+      <div class="container">
+        <div class="row flex-column-reverse flex-lg-row">
+          <div class="col-lg-6 d-none d-md-block">
+            <div class="img-box">
+              <img src="images/dacia.jpg" class="box_img" alt="about img" />
             </div>
           </div>
           <div class="col-lg-6">
             <div class="detail-box pr-md-2">
               <div class="heading_container">
-                <h1 class="">About Us</h1>
+                <h3 class="">Vous souhaitez faire réparer votre véhicule par un garage agréé ?</h3>
               </div>
               <p class="detail_p_mt">
-                Facere corporis quis non quas assumenda repudiandae rem, at
-                fugit rerum fugiat deserunt sequi necessitatibus accusantium
-                doloribus veniam quo consequatur cumque illum nostrum
-                consectetur nobis impedit deleniti.
-              </p>
-              <p>
-                Nisi quod sequi minima? Saepe cupiditate, voluptates temporibus
-                vel magni id laborum odio quis dicta quaerat tempora nemo. Atque
-                ratione numquam fugit ullam eos illo adipisci dicta dignissimos
-                cumque quasi!
-              </p>
-              <a href="about.html" class=""> Read More </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- about section ends -->
-
-    <!-- map section -->
-
-    <section class="map_section">
-      <div class="map_container">
-        <div class="map">
-          <div id="googleMap"></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- end map section -->
-
-    <!-- info section -->
-
-    <section class="info_section">
-      <div class="info_container">
-        <div class="container">
-          <div class="info_contact">
-            <a href="#" class="link-box">
-              <i class="fa fa-map-marker" aria-hidden="true"></i>
-              <span> Location </span>
-            </a>
-            <a href="#" class="link-box">
-              <i class="fa fa-phone" aria-hidden="true"></i>
-              <span> Call +01 1234567890 </span>
-            </a>
-            <a href="#" class="link-box">
-              <i class="fa fa-envelope" aria-hidden="true"></i>
-              <span> demo@gmail.com </span>
-            </a>
-          </div>
-          <div class="social_container">
-            <div class="heading_container heading_center">
-              <h2>Follow Us</h2>
-              <p class="col-md-6 col-lg-5 mx-auto px-0">
-                Aliquam, aut. Quam adipisci error nulla repellendus nihil
-                asperiores, deserunt sed veritatis. Dolores magnam aperiam
-                omnis! Architecto odit consectetur maxime consequatur ipsum.
+              C’est à Saint-Junien que notre garage Pistons & Boulons vous accueille pour l’entretien
+               et la réparation de votre véhicule. En tant que garage agréé Dacia, notre atelier de réparation
+                et nos équipes formées aux dernières technologies automobiles nous permettent de répondre
+                 à vos besoins, quels qu’ils soient.
+                Nous effectuons toutes les réparations automobiles et sommes à vos côtés pour vous accompagner
+                 dans l’entretien de votre véhicule. Nous intervenons sur tous types de véhicules, et ce, quels 
+                 que soient la gamme et le modèle. 
               </p>
             </div>
           </div>
         </div>
       </div>
-    </section>
-
-    <!-- end info section -->
-
+</section>
+<!-- presta3 -->
+</section>
+      <!-- prestation  1-->
+      <section class="about_section layout_padding mb-5 mb-md-0">
+      <div class="container">
+        <div class="row">
+          
+          <div class="col-lg-6">
+            <div class="detail-box pr-md-2">
+              <div class="heading_container">
+                <h3 class="">Convertissez votre véhicule au superéthanol</h3>
+              </div>
+              <p class="detail_p_mt">
+              Notre système de conversion au superéthanol (E85) est conçu et assemblé en France par BIOMOTORS 
+              en respectant des normes strictes.
+              Un réseau d'installateurs agréés, formés et respectant une charte de qualité est à votre service. 
+              Chacun dispose des équipements de diagnostic électronique permettant de relever 
+              les données constructeur propres à votre véhicule.
+              Le système de conversion une fois installé sera alors paramétré sur mesure et entièrement
+               automatique en cas de changement de carburant (100% E85, 100% sans-plomb ou un mélange des deux).
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-6 d-none d-md-block">
+            <div class="img-box">
+              <img src="images/ethanol.jpg" class="box_img" alt="about img" />
+            </div>
+          </div>
+        </div>
+      </div>
+</section>
     <!-- footer section -->
-    <?php include 'footer.php' ?>
+    <?php include 'footer.php'; ?>
 
     <!-- jQery -->
     <script src="node_modules\jquery\dist\jquery.min.js"></script>
@@ -138,8 +179,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
     <!-- custom js -->
     <script src="js/custom.js"></script>
-    <!-- Google Map -->
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh39n5U-4IoWpsVGUHWdqB6puEkhRLdmI&callback=myMap"></script>
-    <!-- End Google Map -->
+   
   </body>
 </html>

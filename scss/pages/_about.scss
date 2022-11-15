@@ -1,15 +1,18 @@
 .about_section {
   .row {
-    align-items: center;
+    align-items: stretch;
+    > [class*="col-"] {
+      max-height: 350px;
+    }
   }
 
   .img-box {
-    position: relative;
-    overflow: hidden;
     height: 100%;
-
     img {
       width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 5px;
     }
   }
 
@@ -35,6 +38,9 @@
     i {
       color: $primary2;
       margin-right: 5px;
+    }
+    .presta {
+      text-align: center;
     }
   }
 }
