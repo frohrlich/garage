@@ -43,10 +43,10 @@
           <div class="heading_container heading_center">
             <h1 class="text-center">Se connecter</h1>
           </div>
-          <form id="connexionForm" method="POST">
+          <form id="RegForm" method="POST">
             <div>
-              <label for="contactformEmail">Email :</label>
-              <input type="email" id="contactformEmail" name="email" required aria-required="true" />
+              <label for="Email">Email :</label>
+              <input type="email" id="Email" name="email" required aria-required="true" />
             </div>
             <div>
               <label for="Mot de passe" class="label">Mot de passe :</label>
