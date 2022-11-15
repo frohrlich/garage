@@ -155,7 +155,7 @@
   </section>
 
   <!-- footer section -->
-  <?php include 'footer.php' ?>
+  <?php include 'footer_white.php' ?>
 
   <!-- jQery -->
   <script src="node_modules\jquery\dist\jquery.min.js"></script>

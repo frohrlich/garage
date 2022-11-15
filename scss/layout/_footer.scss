@@ -1,5 +1,4 @@
 .footer_section {
-  position: relative;
   background-color: $white;
   text-align: center;
 
@@ -11,5 +10,9 @@
     a {
       color: inherit;
     }
+  }
+
+  &.ip_footer {
+    background: $primary1;
   }
 }

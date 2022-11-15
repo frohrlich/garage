@@ -1,5 +1,5 @@
 // On importe des fonctions depuis des modules
-import { validateEmpty } from './modules/formvalidation.js';
+import { validateEmpty } from './module/forms.js';
 
 // On pointe sur le formulaire de contact
 const connectForm = document.getElementById('connectForm');

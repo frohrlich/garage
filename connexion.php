@@ -26,9 +26,11 @@
   <!-- responsive style -->
   <link href="css/responsive.css" rel="stylesheet" />
 
+  <script src="./js/scripts.js" type="module" defer></script>
+
 </head>
 
-<body>
+<body class="">
   <div class="hero_area">
     <!-- header section -->
     <?php include 'header.php' ?>
@@ -37,20 +39,20 @@
     <?php include 'navbar.php' ?>
 
     <!-- contact section -->
-    <section class="login_section py-3">
+    <section class="login_section py-3 min-vh-100">
       <div class="container d-flex justify-content-center">
         <div class="form_container">
           <div class="heading_container heading_center">
             <h1 class="text-center">Se connecter</h1>
           </div>
-          <form action="#" id="connectForm" method="POST">
+          <form action="#" id="connectForm" method="">
             <div>
               <label for="Email">Email :</label>
-              <input type="email" id="Email" name="email" required aria-required="true" />
+              <input type="email" id="Email" name="email" required />
             </div>
             <div>
               <label for="Mot de passe" class="label">Mot de passe :</label>
-              <input type="password" id="Mot de passe" name="Mot de passe" required aria-required="true" />
+              <input type="password" id="Mot de passe" name="Mot de passe" required />
             </div>
             <div class="d-flex justify-content-center">
               <button type="submit">Connexion</button>
@@ -64,15 +66,15 @@
     <?php include 'footer.php' ?>
   </div>
 
-  <!-- <script src="js/scripts.js" type="module"></script> -->
+
   <!-- jQery -->
   <script src="node_modules\jquery\dist\jquery.min.js"></script>
   <!-- popper js -->
   <script src="node_modules\popper.js\dist\umd\popper.min.js"></script>
   <!-- bootstrap js -->
   <script src="node_modules\bootstrap\dist\js\bootstrap.min.js"></script>
-  <!-- owl slider -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
+
 </body>
 
 </html>
