@@ -43,7 +43,7 @@
           <div class="heading_container heading_center">
             <h1 class="text-center">Se connecter</h1>
           </div>
-          <form id="RegForm" method="POST">
+          <form action="#" id="connectForm" method="POST">
             <div>
               <label for="Email">Email :</label>
               <input type="email" id="Email" name="email" required aria-required="true" />
@@ -64,7 +64,7 @@
     <?php include 'footer.php' ?>
   </div>
 
-  <script src="js/scripts.js" type="module"></script>
+  <!-- <script src="js/scripts.js" type="module"></script> -->
   <!-- jQery -->
   <script src="node_modules\jquery\dist\jquery.min.js"></script>
   <!-- popper js -->
@@ -73,9 +73,6 @@
   <script src="node_modules\bootstrap\dist\js\bootstrap.min.js"></script>
   <!-- owl slider -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-  <!-- custom js -->
-  <script src="js/custom.js"></script>
-  <script src="https://unpkg.com/leaflet@1.9.2/dist/leaflet.js" integrity="sha256-o9N1jGDZrf5tS+Ft4gbIK7mYMipq9lqpVJ91xHSyKhg=" crossorigin=""></script>
 </body>
 
 </html>

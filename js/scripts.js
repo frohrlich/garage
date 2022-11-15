@@ -1,7 +1,16 @@
 // On importe des fonctions depuis des modules
-import { validateEmpty } from './modules/forms.js';
+import { validateEmpty } from './modules/formvalidation.js';
 
 // On pointe sur le formulaire de contact
-const connexionForm = document.getElementById('connexionForm');
-// On valide le formulaire de contact
-validateEmpty(connexionForm);
+const connectForm = document.getElementById('connectForm');
+
+connectForm.addEventListener('submit', (event) => {
+  event.preventDefault();
+
+  const connectEmail = document.getElementById('Email');
+  const connectMdp = document.getElementById('Mot de passe');
+
+  // On valide le formulaire de contact
+  validateEmpty(connectEmail);
+  validateEmpty(connectMdp);
+});
