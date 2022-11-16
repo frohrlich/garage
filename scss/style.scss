@@ -1,6 +1,7 @@
-@import 'abstracts/variables', 'abstracts/mixins';
-@import 'vendors/bootstrap', 'vendors/googlefonts';
-@import 'base/typography';
-@import 'layout/default', 'layout/header', 'layout/footer', 'layout/banner';
-@import 'components/buttons';
-@import 'pages/about', 'pages/home', 'pages/contact', 'pages/connexion';
+@import "abstracts/variables", "abstracts/mixins";
+@import "vendors/bootstrap", "vendors/googlefonts";
+@import "base/typography";
+@import "layout/default", "layout/header", "layout/footer", "layout/banner";
+@import "components/buttons";
+@import "pages/about", "pages/home", "pages/contact", "pages/connexion",
+  "pages/crud";
