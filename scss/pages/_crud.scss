@@ -30,13 +30,62 @@
     }
   }
 
+  select {
+    margin-bottom: 25px;
+  }
+
+  .list {
+    .row {
+      margin-bottom: 25px;
+    }
+
+    .col {
+      @include media-breakpoint-down(sm) {
+        padding: 0;
+        margin: 0;
+      }
+    }
+
+    .list_text {
+      font-weight: bold;
+      margin-right: 4px;
+    }
+  }
+
   button {
     @include main-font();
     @include hero_btn($primary2, $white, 10px, 65px, 3px);
     color: #fff;
     margin-top: 10px;
-    @include media-breakpoint-up(xl) {
-      margin-top: 50px;
+  }
+
+  .btn-add {
+    @include hero_btn($success, $white, 10px, 65px, 3px);
+  }
+
+  .btn-mod {
+    @include hero_btn($light, $dark, 10px, 65px, 3px);
+    @include media-breakpoint-down(md) {
+      padding-left: 40px;
+      padding-right: 40px;
+      margin: 0;
+    }
+    @include media-breakpoint-down(sm) {
+      padding: 5px;
+      margin: 0;
+    }
+  }
+
+  .btn-del {
+    @include hero_btn($danger, $white, 10px, 65px, 3px);
+    @include media-breakpoint-down(md) {
+      padding-left: 40px;
+      padding-right: 40px;
+      margin: 0;
+    }
+    @include media-breakpoint-down(sm) {
+      padding: 5px;
+      margin: 0;
     }
   }
 }

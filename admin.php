@@ -12,7 +12,7 @@
   <meta name="description" content="" />
   <meta name="author" content="" />
   <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon" />
-  <title>Contact - Garage Pistons & Boulons</title>
+  <title>Espace administrateur - Garage Pistons & Boulons</title>
 
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.2/dist/leaflet.css"
     integrity="sha256-sA+zWATbFveLLNqWO2gtiw3HL/lh1giY/Inf1BJ0z14=" crossorigin="" />
@@ -40,32 +40,162 @@
     <!-- Navigation bar -->
     <?php include 'navbar.php'; ?>
 
-    <!-- contact section -->
-    <section class="crud_section py-3 min-vh-100">
-      <div class="container d-flex justify-content-center">
+    <section class="crud_section py-3">
+      <div class="heading_container heading_center m-3">
+        <h1 class="text-center">Espace administrateur</h1>
+      </div>
+      <!-- Adding section -->
+      <div class="container d-flex justify-content-center mb-4">
         <div class="form_container">
           <div class="heading_container heading_center">
-            <h1 class="text-center">Se connecter</h1>
+            <h2 class="text-center">Ajouter un collaborateur</h2>
           </div>
-          <form action="#" id="connectForm" method="">
+          <form action="#" id="addForm" method="">
             <div>
-              <label for="Email">Email :</label>
-              <input type="email" id="Email" name="email" required />
+              <label for="firstname">Prénom :</label>
+              <input type="text" id="firstname" name="firstname" required />
             </div>
             <div>
-              <label for="Mot de passe" class="label">Mot de passe :</label>
-              <input type="password" id="Mot de passe" name="Mot de passe" required />
+              <label for="lastname">Nom :</label>
+              <input type="text" id="lastname" name="lastname" required />
             </div>
+            <div>
+              <label for="email">Adresse email :</label>
+              <input type="email" id="email" name="email" required />
+            </div>
+            <div>
+              <label for="password" class="label">Mot de passe :</label>
+              <input type="password" id="password" name="password" required />
+            </div>
+            <div>
+              <label for="password_verif" class="label">Vérifiez le mot de passe :</label>
+              <input type="password" id="password_verif" name="password_verif" required />
+            </div>
+            <div>
+              <label for="birthdate">Date de naissance :</label>
+              <input type="date" id="birthdate" name="birthdate" />
+            </div>
+            <div>
+              <label for="entry_date">Date d'entrée dans l'entreprise :</label>
+              <input type="date" id="entry_date" name="entry_date" />
+            </div>
+            <div>
+              <label for="secu">Numéro de sécurité sociale :</label>
+              <input type="text" id="secu" name="secu" />
+            </div>
+            <div>
+              <label for="contract_type">Type de contrat :</label>
+              <br>
+              <select name="contract_type" id="contract_type">
+                <option value="">--Choisissez une option--</option>
+                <option value="CDI">CDI</option>
+                <option value="CDD">CDD</option>
+                <option value="Alternance">Alternance</option>
+                <option value="Autre">Autre</option>
+              </select>
+            </div>
+            <div>
+              <label for="work_time">Durée de travail hebdomadaire :</label>
+              <input type="number" id="work_time" name="work_time" />
+            </div>
+
             <div class="d-flex justify-content-center">
-              <button type="submit">Connexion</button>
+              <button class="btn-add" type="submit">Ajouter</button>
             </div>
           </form>
         </div>
       </div>
+
+      <!-- List/modify/delete section -->
+      <div class="container d-flex justify-content-center">
+        <div class="form_container">
+          <div class="heading_container heading_center mb-4">
+            <h2 class="text-center">Collaborateurs enregistrés</h2>
+          </div>
+          <div class="container list">
+            <div class="row h-100">
+              <div class="col my-auto list_text">
+                Mathilde Example
+              </div>
+              <div class="col d-flex">
+                <button class="btn-mod my-auto" type="button">Modifier</button>
+              </div>
+              <div class="col d-flex">
+                <button class="btn-del my-auto" type="button">Supprimer</button>
+              </div>
+            </div>
+
+            <div class="row h-100">
+              <div class="col my-auto list_text text-info">
+                Hubert Luc-Mongrain
+              </div>
+              <div class="col d-flex">
+                <button class="btn-mod my-auto" type="button">Modifier</button>
+              </div>
+              <div class="col d-flex">
+                <button class="btn-del my-auto" type="button">Supprimer</button>
+              </div>
+            </div>
+
+            <form action="#" id="modForm" method="">
+              <div>
+                <label for="firstname">Prénom :</label>
+                <input type="text" id="firstname" name="firstname" />
+              </div>
+              <div>
+                <label for="lastname">Nom :</label>
+                <input type="text" id="lastname" name="lastname" />
+              </div>
+              <div>
+                <label for="email">Adresse email :</label>
+                <input type="email" id="email" name="email" />
+              </div>
+              <div>
+                <label for="password" class="label">Mot de passe :</label>
+                <input type="password" id="password" name="password" />
+              </div>
+              <div>
+                <label for="password_verif" class="label">Vérifiez le mot de passe :</label>
+                <input type="password" id="password_verif" name="password_verif" />
+              </div>
+              <div>
+                <label for="birthdate">Date de naissance :</label>
+                <input type="date" id="birthdate" name="birthdate" />
+              </div>
+              <div>
+                <label for="entry_date">Date d'entrée dans l'entreprise :</label>
+                <input type="date" id="entry_date" name="entry_date" />
+              </div>
+              <div>
+                <label for="secu">Numéro de sécurité sociale :</label>
+                <input type="text" id="secu" name="secu" />
+              </div>
+              <div>
+                <label for="contract_type">Type de contrat :</label>
+                <br>
+                <select name="contract_type" id="contract_type">
+                  <option value="">--Choisissez une option--</option>
+                  <option value="CDI">CDI</option>
+                  <option value="CDD">CDD</option>
+                  <option value="Alternance">Alternance</option>
+                  <option value="Autre">Autre</option>
+                </select>
+              </div>
+              <div>
+                <label for="work_time">Durée de travail hebdomadaire :</label>
+                <input type="number" id="work_time" name="work_time" />
+              </div>
+
+              <div class="d-flex justify-content-center">
+                <button class="btn-add" type="submit">Modifier</button>
+              </div>
+            </form>
+          </div>
+        </div>
     </section>
 
     <!-- footer section -->
-    <?php include 'footer.php'; ?>
+    <?php include 'footer_white.php'; ?>
   </div>
 
 
