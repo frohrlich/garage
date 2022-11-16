@@ -1,3 +1,8 @@
+<?php
+require_once './src/php/helpers/auth.php';
+
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -45,14 +50,16 @@
           <div class="heading_container heading_center">
             <h1 class="text-center">Se connecter</h1>
           </div>
-          <form action="#" id="connectForm" method="">
+          <form action="src/php/forms/loginform.php" id="connectForm" method="post">
             <div>
               <label for="Email">Email :</label>
               <input type="email" id="Email" name="email" required />
+              <p class="error">Adresse e-mail invalide</p>
             </div>
             <div>
               <label for="Mot de passe" class="label">Mot de passe :</label>
               <input type="password" id="Mot de passe" name="Mot de passe" required />
+              <p class="error">Mot de passe invalide</p>
             </div>
             <div class="d-flex justify-content-center">
               <button type="submit">Connexion</button>
