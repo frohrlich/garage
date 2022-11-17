@@ -48,13 +48,16 @@ require_once './src/php/classes/Bdd.php';
     <?php include 'navbar.php' ?>
 
     <!-- contact section -->
+    <!-- <?php
+          $bdd = new Bdd();
+          ?> -->
     <section class="login_section py-3 min-vh-100">
       <div class="container d-flex justify-content-center">
         <div class="form_container">
           <div class="heading_container heading_center">
             <h1 class="text-center">Se connecter</h1>
           </div>
-          <form action="#" id="connectForm" method="">
+          <form action="" id="connectForm" method="">
             <div>
               <label for="Email">Email :</label>
               <input type="email" id="Email" name="email" required />

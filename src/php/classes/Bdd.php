@@ -1,7 +1,5 @@
 <?php
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
+require_once './config/env.php';
 
 class Bdd
 {
@@ -12,14 +10,12 @@ class Bdd
         return $this->connection;
     }
 
-    public function __construct($envPath)
+    public function __construct()
     {
-        require_once $envPath;
-
-        $dsn = 'mysql:host=localhost; dbname=garage; charset=UTF8';
+        $dsn = 'mysql:host=' . getenv('DB_HOST') . ';dbname=' . getenv('DB_NAME') . ';charset=UTF8';
 
         try {
-            $this->connection = new PDO($dsn, 'root', 'root');
+            $this->connection = new PDO($dsn, getenv('DB_USER'), getenv('DB_PASSWORD'));
         } catch (PDOException $exception) {
             var_dump($exception);
             exit;
