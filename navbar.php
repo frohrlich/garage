@@ -26,6 +26,9 @@
             <li class="nav-item">
               <a class="nav-link active" href="connexion.php">Espace collaborateurs</a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="./src/php/forms/deconnexion.php" onclick="return window.confirm('Confirmation déconnexion')">Déconnexion</a>
+            </li>
           </ul>
         </div>
       </div>

@@ -1,8 +1,3 @@
-<?php
-require_once './src/php/helpers/auth.php';
-
-?>
-
 <!DOCTYPE html>
 <html lang="fr">
 
