@@ -52,9 +52,10 @@
     }
   }
 
-  button {
+  button,
+  .btn-primary {
     @include main-font();
-    @include hero_btn($primary2, $white, 10px, 65px, 3px);
+    @include hero_btn($primary2, $white, 10px, 20px, 3px);
     color: #fff;
     margin-top: 10px;
   }

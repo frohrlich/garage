@@ -28,7 +28,7 @@
   <!-- responsive style -->
   <link href="css/responsive.css" rel="stylesheet" />
 
-  <script src="./js/scripts.js" type="module" defer></script>
+  <script src="./js/admin.js" type="module" defer></script>
 
 </head>
 
@@ -40,8 +40,8 @@
     <!-- Navigation bar -->
     <?php include 'navbar.php'; ?>
 
-    <section class="crud_section py-3">
-      <div class="heading_container heading_center m-3">
+    <section class="crud_section py-3 min-vh-100">
+      <div class="heading_container heading_center d-flex m-3">
         <h1 class="text-center">Espace administrateur</h1>
       </div>
       <!-- Adding section -->
@@ -49,8 +49,13 @@
         <div class="form_container">
           <div class="heading_container heading_center">
             <h2 class="text-center">Ajouter un collaborateur</h2>
+            <!-- Collapse button -->
+            <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#addForm"
+              aria-expanded="false" aria-controls="collapseExample">
+              Afficher/Cacher
+            </button>
           </div>
-          <form action="#" id="addForm" method="">
+          <form class="collapse" action="#" id="addForm" method="">
             <div>
               <label for="firstname">Prénom :</label>
               <input type="text" id="firstname" name="firstname" required />
@@ -73,15 +78,15 @@
             </div>
             <div>
               <label for="birthdate">Date de naissance :</label>
-              <input type="date" id="birthdate" name="birthdate" />
+              <input type="date" id="birthdate" name="birthdate" required />
             </div>
             <div>
               <label for="entry_date">Date d'entrée dans l'entreprise :</label>
-              <input type="date" id="entry_date" name="entry_date" />
+              <input type="date" id="entry_date" name="entry_date" required />
             </div>
             <div>
               <label for="secu">Numéro de sécurité sociale :</label>
-              <input type="text" id="secu" name="secu" />
+              <input type="text" id="secu" name="secu" required />
             </div>
             <div>
               <label for="contract_type">Type de contrat :</label>
@@ -96,7 +101,7 @@
             </div>
             <div>
               <label for="work_time">Durée de travail hebdomadaire :</label>
-              <input type="number" id="work_time" name="work_time" />
+              <input type="number" id="work_time" name="work_time" required />
             </div>
 
             <div class="d-flex justify-content-center">
@@ -114,6 +119,7 @@
           </div>
           <div class="container list">
             <div class="row h-100">
+
               <div class="col my-auto list_text">
                 Mathilde Example
               </div>
@@ -126,7 +132,7 @@
             </div>
 
             <div class="row h-100">
-              <div class="col my-auto list_text text-info">
+              <div class="col my-auto list_text">
                 Hubert Luc-Mongrain
               </div>
               <div class="col d-flex">
@@ -137,38 +143,62 @@
               </div>
             </div>
 
-            <form action="#" id="modForm" method="">
+            <div class="row h-100">
+              <div class="col my-auto list_text">
+                Clarisse Boustifaille
+              </div>
+              <div class="col d-flex">
+                <button class="btn-mod my-auto" type="button">Modifier</button>
+              </div>
+              <div class="col d-flex">
+                <button class="btn-del my-auto" type="button">Supprimer</button>
+              </div>
+            </div>
+
+            <div class="row h-100">
+              <div class="col my-auto list_text" id="item-4">
+                Hugues le Hugues
+              </div>
+              <div class="col d-flex">
+                <button class="btn-mod my-auto" type="button">Modifier</button>
+              </div>
+              <div class="col d-flex">
+                <button class="btn-del my-auto" type="button">Supprimer</button>
+              </div>
+            </div>
+
+            <form action="#" class="d-none" id="modForm" method="">
               <div>
                 <label for="firstname">Prénom :</label>
-                <input type="text" id="firstname" name="firstname" />
+                <input type="text" id="firstname" name="firstname" required />
               </div>
               <div>
                 <label for="lastname">Nom :</label>
-                <input type="text" id="lastname" name="lastname" />
+                <input type="text" id="lastname" name="lastname" required />
               </div>
               <div>
                 <label for="email">Adresse email :</label>
-                <input type="email" id="email" name="email" />
+                <input type="email" id="email" name="email" required />
               </div>
               <div>
                 <label for="password" class="label">Mot de passe :</label>
-                <input type="password" id="password" name="password" />
+                <input type="password" id="password" name="password" required />
               </div>
               <div>
                 <label for="password_verif" class="label">Vérifiez le mot de passe :</label>
-                <input type="password" id="password_verif" name="password_verif" />
+                <input type="password" id="password_verif" name="password_verif" required />
               </div>
               <div>
                 <label for="birthdate">Date de naissance :</label>
-                <input type="date" id="birthdate" name="birthdate" />
+                <input type="date" id="birthdate" name="birthdate" required />
               </div>
               <div>
                 <label for="entry_date">Date d'entrée dans l'entreprise :</label>
-                <input type="date" id="entry_date" name="entry_date" />
+                <input type="date" id="entry_date" name="entry_date" required />
               </div>
               <div>
                 <label for="secu">Numéro de sécurité sociale :</label>
-                <input type="text" id="secu" name="secu" />
+                <input type="text" id="secu" name="secu" required />
               </div>
               <div>
                 <label for="contract_type">Type de contrat :</label>
@@ -183,13 +213,18 @@
               </div>
               <div>
                 <label for="work_time">Durée de travail hebdomadaire :</label>
-                <input type="number" id="work_time" name="work_time" />
+                <input type="number" id="work_time" name="work_time" required />
               </div>
 
               <div class="d-flex justify-content-center">
-                <button class="btn-add" type="submit">Modifier</button>
+                <button class="btn-add" type="submit">Enregistrer</button>
               </div>
             </form>
+          </div>
+          <div class="text-center w-75 w-md-25  m-auto">
+            <a class="btn btn-primary" href="#logo">
+              Revenir en haut
+            </a>
           </div>
         </div>
     </section>
