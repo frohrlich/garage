@@ -1,5 +1,5 @@
 <?php
-require_once '../classes/Bdd.php';
+require_once './src/php/classes/Bdd.php';
 
 class Authentication extends Bdd
 {

@@ -1,5 +1,5 @@
 <?php
-require_once '../classes/Authentication.php';
+require_once './src/php/classes/Authentication.php';
 
 $formData = $_POST;
 

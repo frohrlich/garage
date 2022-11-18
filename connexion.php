@@ -1,3 +1,14 @@
+<?php
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
+require_once './src/php/helpers/auth.php';
+
+if (getAuthenticatedUserId()) {
+  Header('Location: ./');
+}
+?>
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -39,13 +50,16 @@
     <?php include 'navbar.php' ?>
 
     <!-- contact section -->
+    <!-- <?php
+          $bdd = new Bdd();
+          ?> -->
     <section class="login_section py-3 min-vh-100">
       <div class="container d-flex justify-content-center">
         <div class="form_container">
           <div class="heading_container heading_center">
             <h1 class="text-center">Se connecter</h1>
           </div>
-          <form action="src/php/forms/loginform.php" id="connectForm" method="post">
+          <form action="./src/php/forms/loginform.php" id="connectForm" method="post">
             <div>
               <label for="Email">Email :</label>
               <input type="email" id="Email" name="email" required />

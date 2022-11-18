@@ -1,5 +1,6 @@
 <?php
-require_once '../../../config/env.php';
+require_once './config/env.php';
+
 class Bdd
 {
     private $connection;
