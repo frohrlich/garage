@@ -90,7 +90,6 @@
 
     </div>
 
-
     <!-- footer section -->
     <?php include 'footer.php'; ?>
 
