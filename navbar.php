@@ -1,15 +1,7 @@
 <div class="custom_nav2">
   <div class="container">
     <nav class="navbar navbar-expand-lg custom_nav-container">
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-toggle="collapse"
-        data-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
 
@@ -32,9 +24,10 @@
               <a class="nav-link" href="contact.php">Nous contacter</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="connexion.php"
-                >Espace collaborateurs</a
-              >
+              <a class="nav-link" href="connexion.php">Espace collaborateurs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="">Déconnection</a>
             </li>
           </ul>
         </div>
