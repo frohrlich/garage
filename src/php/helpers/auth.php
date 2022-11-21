@@ -18,6 +18,12 @@ function getAuthenticatedUserEmail()
     }
 }
 
+// Validation du format de l'email
+function validateEmail($value)
+{
+    return preg_match("/^[\w\-\.]+@([\w\-]+\.)+[\w\-]{2,4}$/", $value);
+}
+
 function getAuthenticatedUserRole()
 {
     if (isset($_SESSION['user'])) {

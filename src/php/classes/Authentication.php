@@ -28,10 +28,10 @@ class Authentication extends Bdd
                 'email' => $res['email'],
                 'role' => $res['role'],
             ];
-            echo 'session débuté';
+            // echo 'session débuté';
             // Header('Location: ../../../');
         } else {
-            echo 'session pas débuté';
+            // echo 'session pas débuté';
             // Header('Location: ../../../connexion.php?error=true');
         }
     }
@@ -39,6 +39,7 @@ class Authentication extends Bdd
     public function logout()
     {
         unset($_SESSION['user']);
-        // Header('Location: ../../../');
+        echo 'déconnecté';
+        Header('Location: ../../../');
     }
 }
