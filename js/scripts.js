@@ -8,9 +8,10 @@ connectForm.addEventListener('submit', (event) => {
   event.preventDefault();
 
   const connectEmail = document.getElementById('Email');
-  const connectMdp = document.getElementById('Mot de passe');
+  const connectMdp = document.getElementById('Password');
 
   // On valide le formulaire de contact
-  validateEmpty(connectEmail);
-  validateEmpty(connectMdp);
+  if (!validateEmpty(connectEmail) && !validateEmpty(connectMdp)) {
+    connectForm.submit();
+  }
 });

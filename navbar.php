@@ -24,10 +24,10 @@
               <a class="nav-link" href="contact.php">Nous contacter</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="connexion.php">Espace collaborateurs</a>
+              <a class="nav-link active" href="connexion.php">Espace collaborateurs</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="">Déconnection</a>
+              <a class="nav-link active" href="./src/php/forms/deconnexion.php" onclick="return window.confirm('Confirmation déconnexion')">Déconnexion</a>
             </li>
           </ul>
         </div>

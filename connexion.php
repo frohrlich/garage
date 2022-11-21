@@ -1,10 +1,11 @@
 <?php
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
 
-require_once './src/php/classes/Bdd.php';
+require_once('./src/php/include.php');
 
+if (getAuthenticatedUserId()) {
+  echo 'getAuthenticatedUserId';
+  // Header('Location: ' . TL_BASE . '/index.php');
+}
 ?>
 
 <!DOCTYPE html>
@@ -28,7 +29,7 @@ require_once './src/php/classes/Bdd.php';
   <!--owl slider stylesheet -->
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
   <!-- font awesome style -->
-  <link href="css/font-awesome.min.css" rel="stylesheet" />
+  <link href="<?php echo TL_BASE; ?>/css/font-awesome.min.css" rel="stylesheet" />
 
   <!-- Custom styles for this template -->
   <link href="css/style.min.css" rel="stylesheet" />
@@ -57,14 +58,14 @@ require_once './src/php/classes/Bdd.php';
           <div class="heading_container heading_center">
             <h1 class="text-center">Se connecter</h1>
           </div>
-          <form action="" id="connectForm" method="">
+          <form action="<?php echo TL_BASE; ?>/src/php/forms/loginform.php" id="connectForm" method="post">
             <div>
               <label for="Email">Email :</label>
               <input type="email" id="Email" name="email" required />
             </div>
             <div>
-              <label for="Mot de passe" class="label">Mot de passe :</label>
-              <input type="password" id="Mot de passe" name="Mot de passe" required />
+              <label for="Password" class="label">Mot de passe :</label>
+              <input type="password" id="Password" name="password" required />
             </div>
             <div class="d-flex justify-content-center">
               <button type="submit">Connexion</button>
