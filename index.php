@@ -18,7 +18,8 @@
   <!-- <link rel="stylesheet" type="text/css" href="css/bootstrap.css" /> -->
 
   <!--owl slider stylesheet -->
-  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+  <link rel="stylesheet" type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
   <!-- font awesome style -->
   <link href="css/font-awesome.min.css" rel="stylesheet" />
 
@@ -30,10 +31,10 @@
 
 <body>
   <!-- header section -->
-  <?php include 'header.php' ?>
+  <?php include 'header.php'; ?>
 
   <!-- Navigation bar -->
-  <?php include 'navbar.php' ?>
+  <?php include 'navbar.php'; ?>
 
   <!-- Banner section -->
   <section class="banner_section ">
@@ -101,7 +102,7 @@
                 Notre garage est avant tout un centre technique pour la réparation et l’entretien de votre Dacia.
               </p>
               <div>
-                <a href="about.php">
+                <a href="about.php#dacia">
                   En savoir plus
                   <i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i>
                 </a>
@@ -120,7 +121,7 @@
                 Vitre, rétroviseur, <br> nous disposons de nombreuses pièces détachées.
               </p>
               <div>
-                <a href="about.php">
+                <a href="about.php#pieces">
                   En savoir plus
                   <i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i>
                 </a>
@@ -139,7 +140,7 @@
                 Pour toutes vos voitures essence, nous vous aiderons à passer au bioéthanol.
               </p>
               <div>
-                <a href="about.php">
+                <a href="about.php#ethanol">
                   En savoir plus
                   <i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i>
                 </a>
@@ -155,7 +156,7 @@
   </section>
 
   <!-- footer section -->
-  <?php include 'footer_white.php' ?>
+  <?php include 'footer_white.php'; ?>
 
   <!-- jQery -->
   <script src="node_modules\jquery\dist\jquery.min.js"></script>

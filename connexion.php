@@ -7,6 +7,7 @@ if (getAuthenticatedUserId()) {
   // Header('Location: ' . TL_BASE . '/index.php');
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -48,6 +49,9 @@ if (getAuthenticatedUserId()) {
     <?php include 'navbar.php' ?>
 
     <!-- contact section -->
+    <!-- <?php
+          $bdd = new Bdd();
+          ?> -->
     <section class="login_section py-3 min-vh-100">
       <div class="container d-flex justify-content-center">
         <div class="form_container">

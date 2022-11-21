@@ -1,16 +1,14 @@
 <header class="header_section">
   <div class="container">
     <nav class="navbar navbar-expand-lg custom_nav-container px-0">
-      <a class="navbar-brand" href="index.php">
+      <a class="navbar-brand" href="index.php" id="logo">
         <img src="images/logo.png" alt="Accueil" />
       </a>
       <div class="contact_nav" id="">
         <a class="nav-link" href="contact.php#map">
           <i class="fa fa-map-marker" aria-hidden="true"></i>
-          <span
-            >1 Quai des Mégisseries <br />
-            87200 Saint-Junien</span
-          >
+          <span>1 Quai des Mégisseries <br />
+            87200 Saint-Junien</span>
         </a>
         <a class="nav-link" href="tel:+33555021023">
           <i class="fa fa-phone" aria-hidden="true"></i>
