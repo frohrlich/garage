@@ -1,3 +1,12 @@
+<?php
+
+require_once './src/php/include.php';
+
+if (!getAuthenticatedUserId()) {
+  Header('Location: ' . TL_BASE . '/connexion.php');
+}
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -14,12 +23,10 @@
   <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon" />
   <title>Espace administrateur - Garage Pistons & Boulons</title>
 
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.2/dist/leaflet.css"
-    integrity="sha256-sA+zWATbFveLLNqWO2gtiw3HL/lh1giY/Inf1BJ0z14=" crossorigin="" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.2/dist/leaflet.css" integrity="sha256-sA+zWATbFveLLNqWO2gtiw3HL/lh1giY/Inf1BJ0z14=" crossorigin="" />
 
   <!--owl slider stylesheet -->
-  <link rel="stylesheet" type="text/css"
-    href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
   <!-- font awesome style -->
   <link href="css/font-awesome.min.css" rel="stylesheet" />
 
@@ -38,7 +45,7 @@
     <?php include 'header.php'; ?>
 
     <!-- Navigation bar -->
-    <?php include 'navbar.php'; ?>
+    <?php include 'navbar_back.php'; ?>
 
     <section class="crud_section py-3 min-vh-100">
       <div class="heading_container heading_center d-flex m-3">
@@ -50,8 +57,7 @@
           <div class="heading_container heading_center">
             <h2 class="text-center">Ajouter un collaborateur</h2>
             <!-- Collapse button -->
-            <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#addForm"
-              aria-expanded="false" aria-controls="collapseExample">
+            <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#addForm" aria-expanded="false" aria-controls="collapseExample">
               Afficher/Cacher
             </button>
           </div>

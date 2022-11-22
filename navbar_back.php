@@ -17,23 +17,25 @@ require_once './src/php/include.php';
               <a class="nav-link" href="index.php">Accueil</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="about.php">Nos services </a>
+              <a class="nav-link active" href="moncompte.php">Mon compte</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="contact.php">Nous contacter</a>
+              <a class="nav-link active" href="#">Clients</a>
             </li>
-            <?php if (getAuthenticatedUserId()) : ?>
+            <li class="nav-item">
+              <a class="nav-link active" href="#">Prestations</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="#">Générateur PDF</a>
+            </li>
+            <?php if (isAdmin()) : ?>
               <li class="nav-item">
-                <a class="nav-link active" href="moncompte.php">Espace collaborateurs</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link active" href="<?php echo TL_BASE; ?>/src/php/forms/deconnexion.php" onclick="return window.confirm('Voulez-vous vous déconnecter ?')">Déconnexion</a>
-              </li>
-            <?php else : ?>
-              <li class="nav-item">
-                <a class="nav-link active" href="connexion.php">Espace collaborateurs</a>
+                <a class="nav-link active" href="admin.php">Espace admin</a>
               </li>
             <?php endif ?>
+            <li class="nav-item">
+              <a class="nav-link active" href="<?php echo TL_BASE; ?>/src/php/forms/deconnexion.php" onclick="return window.confirm('Confirmation déconnexion')">Déconnexion</a>
+            </li>
           </ul>
         </div>
       </div>
