@@ -1,3 +1,8 @@
+<?php
+
+require_once './src/php/include.php';
+
+?>
 <div class="custom_nav2">
   <div class="container">
     <nav class="navbar navbar-expand-lg custom_nav-container">
@@ -14,21 +19,31 @@
             <li class="nav-item">
               <a class="nav-link" href="about.php">Nos services </a>
             </li>
-            <!-- <li class="nav-item">
-              <a class="nav-link" href="service.php">Services </a>
-            </li> -->
-            <!-- <li class="nav-item">
-              <a class="nav-link" href="team.php">Team</a>
-            </li> -->
             <li class="nav-item">
               <a class="nav-link" href="contact.php">Nous contacter</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link active" href="connexion.php">Espace collaborateurs</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active" href="./src/php/forms/deconnexion.php" onclick="return window.confirm('Confirmation déconnexion')">Déconnexion</a>
-            </li>
+            <?php if (getAuthenticatedUserId()) : ?>
+              <li class="nav-item">
+                <a class="nav-link active" href="#">Espace collaborateurs</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="#">Espace client</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="#">Espace prestation</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="<?php echo TL_BASE; ?>/src/php/forms/deconnexion.php" onclick="return window.confirm('Confirmation déconnexion')">Déconnexion</a>
+              </li>
+            <?php else if (isAdmin()) : ?>
+              <li class="nav-item">
+                <a class="nav-link active" href="#">Espace administateur</a>
+              </li>
+            <?php else : ?>
+              <li class="nav-item">
+                <a class="nav-link active" href="connexion.php">Connexion collaborateurs</a>
+              </li>
+            <?php endif ?>
           </ul>
         </div>
       </div>
