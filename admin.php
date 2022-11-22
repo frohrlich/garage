@@ -55,53 +55,63 @@
               Afficher/Cacher
             </button>
           </div>
-          <form class="collapse" action="#" id="addForm" method="">
+          <form class="collapse show" action="" id="addForm" method="POST">
             <div>
-              <label for="firstname">Prénom :</label>
-              <input type="text" id="firstname" name="firstname" required />
+              <label for="add_firstname">Prénom :</label>
+              <input type="text" id="add_firstname" name="add_firstname" required />
+              <span class="text-danger err-msg"></span><br>
             </div>
             <div>
-              <label for="lastname">Nom :</label>
-              <input type="text" id="lastname" name="lastname" required />
+              <label for="add_lastname">Nom :</label>
+              <input type="text" id="add_lastname" name="add_lastname" required />
+              <span class="text-danger err-msg"></span><br>
             </div>
             <div>
-              <label for="email">Adresse email :</label>
-              <input type="email" id="email" name="email" required />
+              <label for="add_email">Adresse email :</label>
+              <input type="email" id="add_email" name="add_email" required />
+              <span class="text-danger err-msg"></span><br>
             </div>
             <div>
-              <label for="password" class="label">Mot de passe :</label>
-              <input type="password" id="password" name="password" required />
+              <label for="add_password" class="label">Mot de passe :</label>
+              <input type="password" id="add_password" name="add_password" required />
+              <span class="text-danger err-msg"></span><br>
             </div>
             <div>
-              <label for="password_verif" class="label">Vérifiez le mot de passe :</label>
-              <input type="password" id="password_verif" name="password_verif" required />
+              <label for="add_password_verif" class="label">Vérifiez le mot de passe :</label>
+              <input type="password" id="add_password_verif" name="add_password_verif" required />
+              <span class="text-danger err-msg"></span><br>
             </div>
             <div>
-              <label for="birthdate">Date de naissance :</label>
-              <input type="date" id="birthdate" name="birthdate" required />
+              <label for="add_birthdate">Date de naissance :</label>
+              <input type="date" id="add_birthdate" name="add_birthdate" required />
+              <span class="text-danger err-msg"></span><br>
             </div>
             <div>
-              <label for="entry_date">Date d'entrée dans l'entreprise :</label>
-              <input type="date" id="entry_date" name="entry_date" required />
+              <label for="add_entry_date">Date d'entrée dans l'entreprise :</label>
+              <input type="date" id="add_entry_date" name="add_entry_date" required />
+              <span class="text-danger err-msg"></span><br>
             </div>
             <div>
-              <label for="secu">Numéro de sécurité sociale :</label>
-              <input type="text" id="secu" name="secu" required />
+              <label for="add_secu">Numéro de sécurité sociale :</label>
+              <input type="text" id="add_secu" name="add_secu" required />
+              <span class="text-danger err-msg"></span><br>
             </div>
             <div>
-              <label for="contract_type">Type de contrat :</label>
+              <label for="add_contract_type">Type de contrat :</label>
               <br>
-              <select name="contract_type" id="contract_type">
+              <select name="add_contract_type" id="add_contract_type">
                 <option value="">--Choisissez une option--</option>
                 <option value="CDI">CDI</option>
                 <option value="CDD">CDD</option>
                 <option value="Alternance">Alternance</option>
                 <option value="Autre">Autre</option>
               </select>
+              <span class="text-danger err-msg"></span><br>
             </div>
             <div>
-              <label for="work_time">Durée de travail hebdomadaire :</label>
-              <input type="number" id="work_time" name="work_time" required />
+              <label for="add_work_time">Durée de travail hebdomadaire (en heures) :</label>
+              <input type="number" id="add_work_time" name="add_work_time" required />
+              <span class="text-danger err-msg"></span><br>
             </div>
 
             <div class="d-flex justify-content-center">
@@ -119,7 +129,6 @@
           </div>
           <div class="container list">
             <div class="row h-100">
-
               <div class="col my-auto list_text">
                 Mathilde Example
               </div>
@@ -167,53 +176,63 @@
               </div>
             </div>
 
-            <form action="#" class="d-none" id="modForm" method="">
+            <form action="#" class="d-none mb-5" id="modForm" method="">
               <div>
-                <label for="firstname">Prénom :</label>
-                <input type="text" id="firstname" name="firstname" required />
+                <label for="mod_firstname">Prénom :</label>
+                <input type="text" id="mod_firstname" name="mod_firstname" required />
+                <span class="text-danger err-msg"></span><br>
               </div>
               <div>
-                <label for="lastname">Nom :</label>
-                <input type="text" id="lastname" name="lastname" required />
+                <label for="mod_lastname">Nom :</label>
+                <input type="text" id="mod_lastname" name="mod_lastname" required />
+                <span class="text-danger err-msg"></span><br>
               </div>
               <div>
-                <label for="email">Adresse email :</label>
-                <input type="email" id="email" name="email" required />
+                <label for="mod_email">Adresse email :</label>
+                <input type="email" id="mod_email" name="mod_email" required />
+                <span class="text-danger err-msg"></span><br>
               </div>
               <div>
-                <label for="password" class="label">Mot de passe :</label>
-                <input type="password" id="password" name="password" required />
+                <label for="mod_password" class="label">Mot de passe :</label>
+                <input type="password" id="mod_password" name="mod_password" required />
+                <span class="text-danger err-msg"></span><br>
               </div>
               <div>
-                <label for="password_verif" class="label">Vérifiez le mot de passe :</label>
-                <input type="password" id="password_verif" name="password_verif" required />
+                <label for="mod_password_verif" class="label">Vérifiez le mot de passe :</label>
+                <input type="password" id="mod_password_verif" name="mod_password_verif" required />
+                <span class="text-danger err-msg"></span><br>
               </div>
               <div>
-                <label for="birthdate">Date de naissance :</label>
-                <input type="date" id="birthdate" name="birthdate" required />
+                <label for="mod_birthdate">Date de naissance :</label>
+                <input type="date" id="mod_birthdate" name="mod_birthdate" required />
+                <span class="text-danger err-msg"></span><br>
               </div>
               <div>
-                <label for="entry_date">Date d'entrée dans l'entreprise :</label>
-                <input type="date" id="entry_date" name="entry_date" required />
+                <label for="mod_entry_date">Date d'entrée dans l'entreprise :</label>
+                <input type="date" id="mod_entry_date" name="mod_entry_date" required />
+                <span class="text-danger err-msg"></span><br>
               </div>
               <div>
-                <label for="secu">Numéro de sécurité sociale :</label>
-                <input type="text" id="secu" name="secu" required />
+                <label for="mod_secu">Numéro de sécurité sociale :</label>
+                <input type="text" id="mod_secu" name="mod_secu" required />
+                <span class="text-danger err-msg"></span><br>
               </div>
               <div>
-                <label for="contract_type">Type de contrat :</label>
+                <label for="mod_contract_type">Type de contrat :</label>
                 <br>
-                <select name="contract_type" id="contract_type">
+                <select name="mod_contract_type" id="mod_contract_type">
                   <option value="">--Choisissez une option--</option>
                   <option value="CDI">CDI</option>
                   <option value="CDD">CDD</option>
                   <option value="Alternance">Alternance</option>
                   <option value="Autre">Autre</option>
                 </select>
+                <span class="text-danger err-msg"></span><br>
               </div>
               <div>
-                <label for="work_time">Durée de travail hebdomadaire :</label>
-                <input type="number" id="work_time" name="work_time" required />
+                <label for="mod_work_time">Durée de travail hebdomadaire :</label>
+                <input type="number" id="mod_work_time" name="mod_work_time" required />
+                <span class="text-danger err-msg"></span><br>
               </div>
 
               <div class="d-flex justify-content-center">
@@ -221,7 +240,7 @@
               </div>
             </form>
           </div>
-          <div class="text-center w-75 w-md-25  m-auto">
+          <div class="text-center w-75 w-md-25 m-auto">
             <a class="btn btn-primary" href="#logo">
               Revenir en haut
             </a>

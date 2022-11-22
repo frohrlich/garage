@@ -3,4 +3,4 @@
 /css/style.min.css.map
 /vendor/
 /.vscode/
-/env.php/
+/config/env.php

@@ -18,6 +18,7 @@ function isMessagePostValid($_mess = [])
     !empty($_mess['phone']) &&
     !empty($_mess['message']) &&
     isPhoneValid($_mess['phone']) &&
+    isMessageValid($_mess['message']) &&
     filter_var($_mess['email'], FILTER_VALIDATE_EMAIL)
   ) {
     return true;
@@ -32,7 +33,19 @@ function isMessagePostValid($_mess = [])
 */
 function isPhoneValid($phone)
 {
-  if (preg_match("#^0[1-9]([-. ]?[0-9]{2}){4}$#", $phone)) {
+  if (preg_match("#^[\s()+-]*([0-9][\s()+-]*){6,20}$#", $phone)) {
+    return true;
+  }
+  return false;
+}
+
+/*
+		Fonction isMessageValid
+		Permet de vérifier la validité d'un message
+*/
+function isMessageValid($mess)
+{
+  if (preg_match("#^(?=.{50,1000}$).*#", $mess)) {
     return true;
   }
   return false;
@@ -51,4 +64,3 @@ function addMessageAlert($msg = "")
   $_SESSION['msg'] = $msg;
 }
 ?>
-

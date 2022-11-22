@@ -1,6 +1,6 @@
 <?php
 
-require_once('./src/php/include.php');
+require_once './src/php/include.php';
 
 if (getAuthenticatedUserId()) {
   echo 'getAuthenticatedUserId';
@@ -24,10 +24,12 @@ if (getAuthenticatedUserId()) {
   <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon" />
   <title>Contact - Garage Pistons & Boulons</title>
 
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.2/dist/leaflet.css" integrity="sha256-sA+zWATbFveLLNqWO2gtiw3HL/lh1giY/Inf1BJ0z14=" crossorigin="" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.2/dist/leaflet.css"
+    integrity="sha256-sA+zWATbFveLLNqWO2gtiw3HL/lh1giY/Inf1BJ0z14=" crossorigin="" />
 
   <!--owl slider stylesheet -->
-  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+  <link rel="stylesheet" type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
   <!-- font awesome style -->
   <link href="<?php echo TL_BASE; ?>/css/font-awesome.min.css" rel="stylesheet" />
 
@@ -36,22 +38,20 @@ if (getAuthenticatedUserId()) {
   <!-- responsive style -->
   <link href="css/responsive.css" rel="stylesheet" />
 
-  <script src="./js/scripts.js" type="module" defer></script>
+  <script src="./js/connexion.js" type="module" defer></script>
 
 </head>
 
-<body class="">
+<body>
   <div class="hero_area">
     <!-- header section -->
-    <?php include 'header.php' ?>
+    <?php include 'header.php'; ?>
 
     <!-- Navigation bar -->
-    <?php include 'navbar.php' ?>
+    <?php include 'navbar.php'; ?>
 
     <!-- contact section -->
-    <!-- <?php
-          $bdd = new Bdd();
-          ?> -->
+    <!-- <?php $bdd = new Bdd(); ?> -->
     <section class="login_section py-3 min-vh-100">
       <div class="container d-flex justify-content-center">
         <div class="form_container">
@@ -60,12 +60,14 @@ if (getAuthenticatedUserId()) {
           </div>
           <form action="<?php echo TL_BASE; ?>/src/php/forms/loginform.php" id="connectForm" method="post">
             <div>
-              <label for="Email">Email :</label>
-              <input type="email" id="Email" name="email" required />
+              <label for="email">Email :</label>
+              <input type="email" id="email" name="email" required />
+              <span class="text-danger err-msg"></span><br>
             </div>
             <div>
-              <label for="Password" class="label">Mot de passe :</label>
-              <input type="password" id="Password" name="password" required />
+              <label for="password">Mot de passe :</label>
+              <input type="password" id="password" name="password" required />
+              <span class="text-danger err-msg"></span><br>
             </div>
             <div class="d-flex justify-content-center">
               <button type="submit">Connexion</button>
@@ -76,9 +78,8 @@ if (getAuthenticatedUserId()) {
     </section>
 
     <!-- footer section -->
-    <?php include 'footer.php' ?>
+    <?php include 'footer.php'; ?>
   </div>
-
 
   <!-- jQery -->
   <script src="node_modules\jquery\dist\jquery.min.js"></script>
@@ -86,7 +87,6 @@ if (getAuthenticatedUserId()) {
   <script src="node_modules\popper.js\dist\umd\popper.min.js"></script>
   <!-- bootstrap js -->
   <script src="node_modules\bootstrap\dist\js\bootstrap.min.js"></script>
-
 
 </body>
 
