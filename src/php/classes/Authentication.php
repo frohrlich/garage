@@ -28,11 +28,9 @@ class Authentication extends Bdd
                 'email' => $res['email'],
                 'role' => $res['role'],
             ];
-            // echo 'session débuté';
-            // Header('Location: ../../../');
+            Header('Location: ../../../');
         } else {
-            // echo 'session pas débuté';
-            // Header('Location: ../../../connexion.php?error=true');
+            Header('Location: ../../../connexion.php?error=true');
         }
     }
 

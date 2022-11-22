@@ -3,8 +3,7 @@
 require_once './src/php/include.php';
 
 if (getAuthenticatedUserId()) {
-  echo 'getAuthenticatedUserId';
-  // Header('Location: ' . TL_BASE . '/index.php');
+  Header('Location: ' . TL_BASE . '/index.php');
 }
 ?>
 
@@ -24,12 +23,10 @@ if (getAuthenticatedUserId()) {
   <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon" />
   <title>Contact - Garage Pistons & Boulons</title>
 
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.2/dist/leaflet.css"
-    integrity="sha256-sA+zWATbFveLLNqWO2gtiw3HL/lh1giY/Inf1BJ0z14=" crossorigin="" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.2/dist/leaflet.css" integrity="sha256-sA+zWATbFveLLNqWO2gtiw3HL/lh1giY/Inf1BJ0z14=" crossorigin="" />
 
   <!--owl slider stylesheet -->
-  <link rel="stylesheet" type="text/css"
-    href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
   <!-- font awesome style -->
   <link href="<?php echo TL_BASE; ?>/css/font-awesome.min.css" rel="stylesheet" />
 
@@ -51,7 +48,6 @@ if (getAuthenticatedUserId()) {
     <?php include 'navbar.php'; ?>
 
     <!-- contact section -->
-    <!-- <?php $bdd = new Bdd(); ?> -->
     <section class="login_section py-3 min-vh-100">
       <div class="container d-flex justify-content-center">
         <div class="form_container">
@@ -69,6 +65,11 @@ if (getAuthenticatedUserId()) {
               <input type="password" id="password" name="password" required />
               <span class="text-danger err-msg"></span><br>
             </div>
+            <?php if (isset($_GET['error']) && $_GET['error'] == true) : ?>
+              <span class='text-danger'>
+                Identifiants incorrects
+              </span>
+            <?php endif ?>
             <div class="d-flex justify-content-center">
               <button type="submit">Connexion</button>
             </div>
