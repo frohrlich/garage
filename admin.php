@@ -23,10 +23,12 @@ if (!getAuthenticatedUserId()) {
   <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon" />
   <title>Espace administrateur - Garage Pistons & Boulons</title>
 
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.2/dist/leaflet.css" integrity="sha256-sA+zWATbFveLLNqWO2gtiw3HL/lh1giY/Inf1BJ0z14=" crossorigin="" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.2/dist/leaflet.css"
+    integrity="sha256-sA+zWATbFveLLNqWO2gtiw3HL/lh1giY/Inf1BJ0z14=" crossorigin="" />
 
   <!--owl slider stylesheet -->
-  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+  <link rel="stylesheet" type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
   <!-- font awesome style -->
   <link href="css/font-awesome.min.css" rel="stylesheet" />
 
@@ -35,7 +37,7 @@ if (!getAuthenticatedUserId()) {
   <!-- responsive style -->
   <link href="css/responsive.css" rel="stylesheet" />
 
-  <script src="./js/admin.js" type="module" defer></script>
+  <!-- <script src="./js/admin.js" type="module" defer></script> -->
 
 </head>
 
@@ -57,49 +59,50 @@ if (!getAuthenticatedUserId()) {
           <div class="heading_container heading_center">
             <h2 class="text-center">Ajouter un collaborateur</h2>
             <!-- Collapse button -->
-            <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#addForm" aria-expanded="false" aria-controls="collapseExample">
+            <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#addForm"
+              aria-expanded="false" aria-controls="collapseExample">
               Afficher/Cacher
             </button>
           </div>
-          <form class="collapse show" action="" id="addForm" method="POST">
+          <form class="collapse show" action="src/php/forms/adduser.php" id="addForm" method="POST">
             <div>
               <label for="add_firstname">Prénom :</label>
-              <input type="text" id="add_firstname" name="add_firstname" required />
+              <input type="text" id="add_firstname" name="add_firstname" />
               <span class="text-danger err-msg"></span><br>
             </div>
             <div>
               <label for="add_lastname">Nom :</label>
-              <input type="text" id="add_lastname" name="add_lastname" required />
+              <input type="text" id="add_lastname" name="add_lastname" />
               <span class="text-danger err-msg"></span><br>
             </div>
             <div>
               <label for="add_email">Adresse email :</label>
-              <input type="email" id="add_email" name="add_email" required />
+              <input type="text" id="add_email" name="add_email" />
               <span class="text-danger err-msg"></span><br>
             </div>
             <div>
               <label for="add_password" class="label">Mot de passe :</label>
-              <input type="password" id="add_password" name="add_password" required />
+              <input type="password" id="add_password" name="add_password" />
               <span class="text-danger err-msg"></span><br>
             </div>
             <div>
               <label for="add_password_verif" class="label">Vérifiez le mot de passe :</label>
-              <input type="password" id="add_password_verif" name="add_password_verif" required />
+              <input type="password" id="add_password_verif" name="add_password_verif" />
               <span class="text-danger err-msg"></span><br>
             </div>
             <div>
               <label for="add_birthdate">Date de naissance :</label>
-              <input type="date" id="add_birthdate" name="add_birthdate" required />
+              <input type="text" id="add_birthdate" name="add_birthdate" />
               <span class="text-danger err-msg"></span><br>
             </div>
             <div>
               <label for="add_entry_date">Date d'entrée dans l'entreprise :</label>
-              <input type="date" id="add_entry_date" name="add_entry_date" required />
+              <input type="text" id="add_entry_date" name="add_entry_date" />
               <span class="text-danger err-msg"></span><br>
             </div>
             <div>
               <label for="add_secu">Numéro de sécurité sociale :</label>
-              <input type="text" id="add_secu" name="add_secu" required />
+              <input type="text" id="add_secu" name="add_secu" />
               <span class="text-danger err-msg"></span><br>
             </div>
             <div>
@@ -112,14 +115,16 @@ if (!getAuthenticatedUserId()) {
                 <option value="Alternance">Alternance</option>
                 <option value="Autre">Autre</option>
               </select>
-              <span class="text-danger err-msg"></span><br>
             </div>
             <div>
               <label for="add_work_time">Durée de travail hebdomadaire (en heures) :</label>
-              <input type="number" id="add_work_time" name="add_work_time" required />
+              <input type="text" id="add_work_time" name="add_work_time" />
               <span class="text-danger err-msg"></span><br>
             </div>
-
+            <?php if (isset($_GET['errors'])): ?>
+            <span class="text-danger"><?php echo $_GET['errors']; ?></span>
+            <?php endif; ?>
+            <span class="text-danger err-msg"></span><br>
             <div class="d-flex justify-content-center">
               <button class="btn-add" type="submit">Ajouter</button>
             </div>

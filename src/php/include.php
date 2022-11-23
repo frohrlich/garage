@@ -19,5 +19,5 @@ require_once TL_ROOT . './php/classes/Bdd.php';
 require_once TL_ROOT . './php/classes/Authentication.php';
 require_once TL_ROOT . './php/helpers/auth.php';
 require_once TL_ROOT . './php/helpers/email.php';
-require_once TL_ROOT . './php/helpers/inc.functions.php';
-require_once TL_ROOT . './php/vendor/autoload.php';
+require_once TL_ROOT . './php/helpers/formvalidation.php';
+require_once TL_ROOT . '../../vendor/autoload.php';

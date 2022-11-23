@@ -13,7 +13,7 @@ foreach ($formData as $field => $value) {
   switch ($field) {
     case 'email':
       if (!empty($value)) {
-        if (!validateEmail($value)) {
+        if (!isEmailValid($value)) {
           $errors[$field] = 'Merci d\'entrer une adresse mail valide';
         } else {
           $formData[$field] = filter_var($value, FILTER_SANITIZE_EMAIL);
