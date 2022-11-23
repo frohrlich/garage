@@ -1,5 +1,4 @@
 <?php
-require_once '../include.php';
 
 class User extends Bdd
 {
@@ -138,9 +137,9 @@ class User extends Bdd
   public function create()
   {
     if (!$this->checkEmailExists()) {
-      $sql = 'INSERT INTO user (firstname, lastname, email, password, birthDate, 
-                                entryDate, secuNumber, contractType, workTimeWeek, 
-                                role, lastLogin) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)';
+      $sql = 'INSERT INTO user (prenom, nom, email, password, birthdate, 
+                                date_entry, social_sec, contract_type, worktime_week, 
+                                role, last_login) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)';
       try {
         $statement = $this->getConnection()->prepare($sql);
         $statement->execute([

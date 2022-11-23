@@ -2,7 +2,7 @@
 
 require_once './src/php/include.php';
 
-if (!getAuthenticatedUserId()) {
+if (!isAdmin()) {
   Header('Location: ' . TL_BASE . '/connexion.php');
 }
 ?>
@@ -37,7 +37,7 @@ if (!getAuthenticatedUserId()) {
   <!-- responsive style -->
   <link href="css/responsive.css" rel="stylesheet" />
 
-  <!-- <script src="./js/admin.js" type="module" defer></script> -->
+  <script src="./js/admin.js" type="module" defer></script>
 
 </head>
 
@@ -67,42 +67,42 @@ if (!getAuthenticatedUserId()) {
           <form class="collapse show" action="src/php/forms/adduser.php" id="addForm" method="POST">
             <div>
               <label for="add_firstname">Prénom :</label>
-              <input type="text" id="add_firstname" name="add_firstname" />
+              <input type="text" id="add_firstname" name="add_firstname" required />
               <span class="text-danger err-msg"></span><br>
             </div>
             <div>
               <label for="add_lastname">Nom :</label>
-              <input type="text" id="add_lastname" name="add_lastname" />
+              <input type="text" id="add_lastname" name="add_lastname" required />
               <span class="text-danger err-msg"></span><br>
             </div>
             <div>
               <label for="add_email">Adresse email :</label>
-              <input type="text" id="add_email" name="add_email" />
+              <input type="email" id="add_email" name="add_email" required />
               <span class="text-danger err-msg"></span><br>
             </div>
             <div>
               <label for="add_password" class="label">Mot de passe :</label>
-              <input type="password" id="add_password" name="add_password" />
+              <input type="password" id="add_password" name="add_password" required />
               <span class="text-danger err-msg"></span><br>
             </div>
             <div>
               <label for="add_password_verif" class="label">Vérifiez le mot de passe :</label>
-              <input type="password" id="add_password_verif" name="add_password_verif" />
+              <input type="password" id="add_password_verif" name="add_password_verif" required />
               <span class="text-danger err-msg"></span><br>
             </div>
             <div>
               <label for="add_birthdate">Date de naissance :</label>
-              <input type="text" id="add_birthdate" name="add_birthdate" />
+              <input type="date" id="add_birthdate" name="add_birthdate" required />
               <span class="text-danger err-msg"></span><br>
             </div>
             <div>
               <label for="add_entry_date">Date d'entrée dans l'entreprise :</label>
-              <input type="text" id="add_entry_date" name="add_entry_date" />
+              <input type="date" id="add_entry_date" name="add_entry_date" required />
               <span class="text-danger err-msg"></span><br>
             </div>
             <div>
               <label for="add_secu">Numéro de sécurité sociale :</label>
-              <input type="text" id="add_secu" name="add_secu" />
+              <input type="text" id="add_secu" name="add_secu" required />
               <span class="text-danger err-msg"></span><br>
             </div>
             <div>
@@ -118,11 +118,13 @@ if (!getAuthenticatedUserId()) {
             </div>
             <div>
               <label for="add_work_time">Durée de travail hebdomadaire (en heures) :</label>
-              <input type="text" id="add_work_time" name="add_work_time" />
+              <input type="number" id="add_work_time" name="add_work_time" required />
               <span class="text-danger err-msg"></span><br>
             </div>
             <?php if (isset($_GET['errors'])): ?>
             <span class="text-danger"><?php echo $_GET['errors']; ?></span>
+            <?php elseif (isset($_GET['result'])): ?>
+            <span class="text-success"><?php echo $_GET['result']; ?></span>
             <?php endif; ?>
             <span class="text-danger err-msg"></span><br>
             <div class="d-flex justify-content-center">

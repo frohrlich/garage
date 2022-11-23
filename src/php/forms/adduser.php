@@ -122,30 +122,21 @@ if (!empty($errors)) {
 } else {
   // Ajout d'un utilisateur en base de données
   $user = new User();
-  $user->setFirstname($formData['firstname']);
-  $user->setLastname($formData['lastname']);
-  $user->setEmail($formData['email']);
-  $user->setPassword($formData['password']);
+  $user->setFirstname($formData['add_firstname']);
+  $user->setLastname($formData['add_lastname']);
+  $user->setEmail($formData['add_email']);
+  $user->setPassword($formData['add_password']);
+  $user->setBirthDate($formData['add_birthdate']);
+  $user->setEntryDate($formData['add_entry_date']);
+  $user->setSecuNumber($formData['add_secu']);
+  $user->setContractType($formData['add_contract_type']);
+  $user->setWorkTimeWeek($formData['add_work_time']);
+  $user->setRole('ROLE_USER');
+  $user->setLastLogin(date("Y-m-d H-i-s"));
   $return = $user->create();
   if (!is_array($return)) {
-    // Connexion automatique
-    $auth = new Authentication();
-    if (
-      $auth->login([
-        'email' => $formData['email'],
-        'password' => $formData['password'],
-      ])
-    ) {
-      Header('Location: ../mon-compte.php');
-    }
+    Header('Location: ../../../admin.php?result=' . "Utilisateur ajouté !");
   } else {
-    unset($formData['password']);
-    unset($formData['passwordconfirm']);
-    Header(
-      'Location: ../inscription.php?errors=' .
-        json_encode($return) .
-        '&formdata=' .
-        json_encode($formData)
-    );
+    Header('Location: ../../../admin.php?errors=' . $return['email']);
   }
 }
