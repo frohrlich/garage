@@ -25,8 +25,14 @@ class Authentication extends Bdd
         'role' => $user['role'],
       ];
       return true;
+      if (isAdmin()) {
+        Header('Location: ../../../admin.php');
+      } else {
+        Header('Location: ../../../moncompte.php');
+      }
     } else {
       return false;
+      Header('Location: ../../../connexion.php');
     }
   }
 
