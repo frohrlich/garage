@@ -2,46 +2,38 @@
 
 class Authentication extends Bdd
 {
-    public function __construct()
-    {
-        parent::__construct();
+  public function __construct()
+  {
+    parent::__construct();
+  }
+
+  public function login($userData)
+  {
+    $sql = "SELECT id, email, password, role FROM user WHERE email = ?";
+    try {
+      $stmt = $this->getConnection()->prepare($sql);
+      $stmt->execute([$userData['email']]);
+      $user = $stmt->fetch(PDO::FETCH_ASSOC);
+    } catch (PDOException $exception) {
+      var_dump($exception);
+      exit();
     }
-
-    public function login($userData)
-    {
-        $sql = "SELECT id, email, role FROM user WHERE email = :email AND password = :password";
-        try {
-            $stmt = $this->getConnection()->prepare($sql);
-            $stmt->bindParam('email', $userData['email']);
-            $stmt->bindParam('password', $userData['password']);
-            $stmt->execute();
-
-            $res = $stmt->fetch(PDO::FETCH_ASSOC);
-        } catch (PDOException $exception) {
-            var_dump($exception);
-            exit;
-        }
-
-        if ($res) {
-            $_SESSION['user'] = [
-                'id' => $res['id'],
-                'email' => $res['email'],
-                'role' => $res['role'],
-            ];
-            if (isAdmin()) {
-                Header('Location: ../../../admin.php');
-            } else {
-                Header('Location: ../../../moncompte.php');
-            }
-        } else {
-            Header('Location: ../../../connexion.php?error=true');
-        }
+    if ($user && password_verify($userData['password'], $user['password'])) {
+      $_SESSION['user'] = [
+        'id' => $user['id'],
+        'email' => $user['email'],
+        'role' => $user['role'],
+      ];
+      return true;
+    } else {
+      return false;
     }
+  }
 
-    public function logout()
-    {
-        unset($_SESSION['user']);
-        echo 'déconnecté';
-        Header('Location: ../../../');
-    }
+  public function logout()
+  {
+    unset($_SESSION['user']);
+    echo 'Déconnecté';
+    Header('Location: ../../../');
+  }
 }

@@ -13,7 +13,7 @@ foreach ($formData as $field => $value) {
   switch ($field) {
     case 'email':
       if (!empty($value)) {
-        if (!validateEmail($value)) {
+        if (!isEmailValid($value)) {
           $errors[$field] = 'Merci d\'entrer une adresse mail valide';
         } else {
           $formData[$field] = filter_var($value, FILTER_SANITIZE_EMAIL);
@@ -34,16 +34,16 @@ foreach ($formData as $field => $value) {
 }
 if (!empty($errors)) {
   // Redirection vers le formulaire
-  // Header('Location: ../../../');
+  Header('Location: ../../../admin.php?errors=' . array_values($errors)[0]);
 } else {
   // Authentification de l'utilisateur
   $auth = new Authentication();
   $getAuth = $auth->login($formData);
-  if (!is_array($getAuth)) {
-    // Header('Location: ../mon-compte.php');
+  if ($getAuth) {
+    // Succès : redirection vers la page de compte
+    Header('Location: ../../../moncompte.php');
   } else {
-    // Redirection vers le formulaire
-    unset($formData['password']);
-    // Header('Location: ../connexion.php?errors=' . json_encode($getAuth) . '&formdata=' . json_encode($formData));
+    // Sinon redirection vers le formulaire
+    Header('Location: ../../../connexion.php?errors=Identifiants incorrects');
   }
 }

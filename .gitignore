@@ -1,6 +1,6 @@
 node_modules
 css/style.min.css
 css/style.min.css.map
-src/php/vendor
+vendor
 .vscode
 config/env.php

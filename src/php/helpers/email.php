@@ -23,8 +23,8 @@ function sendMail($data = [])
     $mail->Password = 'e5ce11f7aa992f'; //SMTP password
 
     //Recipients
-    $mail->setFrom('from@example.com', 'Mailer');
-    $mail->addAddress('joe@example.net', 'Joe User'); //Add a recipient
+    $mail->setFrom('client@pistonsetboulons.com');
+    $mail->addAddress('contact@pistonsetboulons.com'); //Add a recipient
 
     //Content
     $mail->isHTML(true); //Set email format to HTML
