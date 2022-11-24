@@ -39,8 +39,11 @@ if (!empty($errors)) {
   // Authentification de l'utilisateur
   $auth = new Authentication();
   $getAuth = $auth->login($formData);
-  if ($getAuth) {
-    // Succès : redirection vers la page de compte
+  if ($getAuth && isAdmin()) {
+    // Succès (et admin)
+    Header('Location: ../../../admin.php');
+  } elseif ($getAuth) {
+    // Succès
     Header('Location: ../../../moncompte.php');
   } else {
     // Sinon redirection vers le formulaire
