@@ -3,7 +3,7 @@
 
   .row {
     align-items: stretch;
-    > [class*="col-"] {
+    > [class*='col-'] {
       max-height: 725px;
     }
   }
