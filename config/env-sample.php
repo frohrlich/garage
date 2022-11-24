@@ -5,6 +5,6 @@ putenv('DB_USER=your_db_user');
 putenv('DB_PASSWORD=your_db_password');
 
 $config = array(
-    'mode' => 'dev|prod',
+    'mode' => 'dev',
     'base' => 'http://localhost/',
 );
