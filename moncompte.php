@@ -35,7 +35,7 @@ if (!getAuthenticatedUserId()) {
     <!-- responsive style -->
     <link href="css/responsive.css" rel="stylesheet" />
 
-    <script src="./js/admin.js" type="module" defer></script>
+    <script src="./js/moncompte.js" type="module" defer></script>
 
 </head>
 
