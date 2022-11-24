@@ -58,16 +58,7 @@ if (!getAuthenticatedUserId()) {
                         <h2 class="text-center">Modifier mes informations</h2>
                     </div>
                     <div class="container list">
-                        <div class="row h-100">
-                            <div class="col my-auto list_text">
-                                Mathilde Example
-                            </div>
-                            <div class="col d-flex">
-                                <button class="btn-mod my-auto" type="button">Modifier</button>
-                            </div>
-                        </div>
-
-                        <form action="#" class="d-none mb-5" id="modForm" method="">
+                        <form action="#" class="mb-5" id="modForm" method="">
                             <div>
                                 <label for="mod_firstname">Prénom :</label>
                                 <input type="text" id="mod_firstname" name="mod_firstname" required />
