@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.5
+-- version 5.1.2
 -- https://www.phpmyadmin.net/
 --
--- Hôte : localhost:3306
--- Généré le : mer. 23 nov. 2022 à 13:31
--- Version du serveur :  5.7.24
--- Version de PHP : 7.4.1
+-- Host: localhost:3306
+-- Generation Time: Nov 24, 2022 at 11:15 AM
+-- Server version: 5.7.24
+-- PHP Version: 8.0.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -19,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de données : `garage`
+-- Database: `garage`
 --
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `acte`
+-- Table structure for table `acte`
 --
 
 CREATE TABLE `acte` (
@@ -39,7 +38,7 @@ CREATE TABLE `acte` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `client`
+-- Table structure for table `client`
 --
 
 CREATE TABLE `client` (
@@ -54,7 +53,7 @@ CREATE TABLE `client` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `prestation`
+-- Table structure for table `prestation`
 --
 
 CREATE TABLE `prestation` (
@@ -67,17 +66,17 @@ CREATE TABLE `prestation` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `user`
+-- Table structure for table `user`
 --
 
 CREATE TABLE `user` (
   `id` int(11) NOT NULL,
-  `prenom` varchar(255) NOT NULL,
-  `nom` varchar(255) NOT NULL,
+  `prenom` varchar(255) DEFAULT NULL,
+  `nom` varchar(255) DEFAULT NULL,
   `email` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
   `birthdate` varchar(255) DEFAULT NULL,
-  `social_sec` int(15) DEFAULT NULL,
+  `social_sec` bigint(15) DEFAULT NULL,
   `date_entry` date DEFAULT NULL,
   `contract_type` varchar(255) DEFAULT NULL,
   `role` varchar(255) NOT NULL,
@@ -86,19 +85,19 @@ CREATE TABLE `user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Déchargement des données de la table `user`
+-- Dumping data for table `user`
 --
 
 INSERT INTO `user` (`id`, `prenom`, `nom`, `email`, `password`, `birthdate`, `social_sec`, `date_entry`, `contract_type`, `role`, `worktime_week`, `last_login`) VALUES
-(1, 'Baptiste', 'Saint Pierre', 'admin@pistonsetboulons.com', 'admin', NULL, NULL, NULL, NULL, 'ROLE_ADMIN', NULL, NULL),
-(2, 'Floriane', 'Mathonnat', 'floriane.mathonnat@orange.fr', 'flo', '24/11/1995', 123456789, '2022-11-15', NULL, 'ROLE_USER', NULL, NULL);
+(6, NULL, NULL, 'admin@pistonsetboulons.com', '$2y$10$DVBY/yGk3QOaqhg73ngXnuamKxErr5JvcYVOPF12GDP0rfKYMGL66', NULL, NULL, NULL, NULL, 'ROLE_ADMIN', NULL, NULL),
+(7, 'Félix', 'Rohrlich', 'frohrlich@wanadoo.fr', '$2y$10$nsaUH4fCAaRxECSf.174nuNskF7pfOGiJLpkEUwqsFfctcK4RxAY.', '2022-11-10', 1234567890123, '2022-11-08', 'Autre', 'ROLE_USER', '5', '2022-11-23 20:17:17');
 
 --
--- Index pour les tables déchargées
+-- Indexes for dumped tables
 --
 
 --
--- Index pour la table `acte`
+-- Indexes for table `acte`
 --
 ALTER TABLE `acte`
   ADD PRIMARY KEY (`id`),
@@ -107,57 +106,57 @@ ALTER TABLE `acte`
   ADD KEY `user_id` (`user_id`);
 
 --
--- Index pour la table `client`
+-- Indexes for table `client`
 --
 ALTER TABLE `client`
   ADD PRIMARY KEY (`id`);
 
 --
--- Index pour la table `prestation`
+-- Indexes for table `prestation`
 --
 ALTER TABLE `prestation`
   ADD PRIMARY KEY (`id`);
 
 --
--- Index pour la table `user`
+-- Indexes for table `user`
 --
 ALTER TABLE `user`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT pour les tables déchargées
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT pour la table `acte`
+-- AUTO_INCREMENT for table `acte`
 --
 ALTER TABLE `acte`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT pour la table `client`
+-- AUTO_INCREMENT for table `client`
 --
 ALTER TABLE `client`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT pour la table `prestation`
+-- AUTO_INCREMENT for table `prestation`
 --
 ALTER TABLE `prestation`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT pour la table `user`
+-- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
--- Contraintes pour les tables déchargées
+-- Constraints for dumped tables
 --
 
 --
--- Contraintes pour la table `acte`
+-- Constraints for table `acte`
 --
 ALTER TABLE `acte`
   ADD CONSTRAINT `acte_ibfk_1` FOREIGN KEY (`client_id`) REFERENCES `client` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
