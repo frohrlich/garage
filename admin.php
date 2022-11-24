@@ -141,53 +141,8 @@ if (!isAdmin()) {
             <h2 class="text-center">Collaborateurs enregistrés</h2>
           </div>
           <div class="container list">
-            <div class="row h-100">
-              <div class="col my-auto list_text">
-                Mathilde Example
-              </div>
-              <div class="col d-flex">
-                <button class="btn-mod my-auto" type="button">Modifier</button>
-              </div>
-              <div class="col d-flex">
-                <button class="btn-del my-auto" type="button">Supprimer</button>
-              </div>
-            </div>
 
-            <div class="row h-100">
-              <div class="col my-auto list_text">
-                Hubert Luc-Mongrain
-              </div>
-              <div class="col d-flex">
-                <button class="btn-mod my-auto" type="button">Modifier</button>
-              </div>
-              <div class="col d-flex">
-                <button class="btn-del my-auto" type="button">Supprimer</button>
-              </div>
-            </div>
-
-            <div class="row h-100">
-              <div class="col my-auto list_text">
-                Clarisse Boustifaille
-              </div>
-              <div class="col d-flex">
-                <button class="btn-mod my-auto" type="button">Modifier</button>
-              </div>
-              <div class="col d-flex">
-                <button class="btn-del my-auto" type="button">Supprimer</button>
-              </div>
-            </div>
-
-            <div class="row h-100">
-              <div class="col my-auto list_text" id="item-4">
-                Hugues le Hugues
-              </div>
-              <div class="col d-flex">
-                <button class="btn-mod my-auto" type="button">Modifier</button>
-              </div>
-              <div class="col d-flex">
-                <button class="btn-del my-auto" type="button">Supprimer</button>
-              </div>
-            </div>
+            <?php include 'src/php/forms/listuser.php'; ?>
 
             <form action="#" class="d-none mb-5" id="modForm" method="">
               <div>
