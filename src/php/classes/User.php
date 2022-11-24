@@ -184,9 +184,9 @@ class User extends Bdd
 
   public function find($id)
   {
-    $sql = 'SELECT id, firstname, lastname, email, password, birthDate, 
-                   entryDate, secuNumber, contractType, workTimeWeek, 
-                   role, lastLogin FROM user WHERE id = ?';
+    $sql = 'SELECT id, prenom, nom, email, password, birthdate, 
+                   date_entry, social_sec, contract_type, worktime_week, 
+                   role, last_login FROM user WHERE id = ?';
 
     try {
       $statement = $this->getConnection()->prepare($sql);
@@ -199,17 +199,17 @@ class User extends Bdd
 
     if ($user) {
       $this->id = $user['id'];
-      $this->setFirstname($user['firstname']);
-      $this->setLastname($user['lastname']);
+      $this->setFirstname($user['prenom']);
+      $this->setLastname($user['nom']);
       $this->setEmail($user['email']);
       $this->setPassword($user['password']);
-      $this->setBirthDate($user['birthDate']);
-      $this->setEntryDate($user['entryDate']);
-      $this->setSecuNumber($user['secuNumber']);
-      $this->setContractType($user['contractType']);
-      $this->setWorkTimeWeek($user['workTimeWeek']);
+      $this->setBirthDate($user['birthdate']);
+      $this->setEntryDate($user['date_entry']);
+      $this->setSecuNumber($user['social_sec']);
+      $this->setContractType($user['contract_type']);
+      $this->setWorkTimeWeek($user['worktime_week']);
       $this->setRole($user['role']);
-      $this->setLastLogin($user['lastLogin']);
+      $this->setLastLogin($user['last_login']);
     }
   }
 }

@@ -17,7 +17,20 @@ document.addEventListener("DOMContentLoaded", function () {
   for (let element of deleteButtons) {
     element.addEventListener("click", function () {
       if (confirm("Voulez-vous vraiment supprimer cet utilisateur ?")) {
-        alert("Utilisateur supprimé !");
+        let itemID =
+          element.parentElement.previousElementSibling.previousElementSibling
+            .id; // on récupère l'id de l'item
+
+        // AJAX : delete the element in BDD with php
+        $.ajax({
+          method: "POST",
+          url: "src/php/forms/deleteuser.php",
+          data: { id: itemID },
+        }).done(function () {
+          // Then hide element in page
+          element.parentElement.parentElement.classList.add("d-none");
+          alert("Utilisateur supprimé !");
+        });
       }
     });
   }
