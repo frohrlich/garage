@@ -171,7 +171,7 @@ export const isMessageValid = (elt) => {
 export const isPostalCodeValid = (elt) => {
   eraseErrors();
 
-  var Reg = new RegExp(/^(?:0[1-9]|[1-8]\d|9[0-8])\d{3}$/i);
+  var Reg = /^(?:0[1-9]|[1-8]\d|9[0-8])\d{3}$/;
 
   if (elt.value.match(Reg)) {
     return true;
