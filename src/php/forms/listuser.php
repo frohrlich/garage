@@ -23,7 +23,7 @@ if ($users) {
     if ($usersArray[$i]->getRole() == 'ROLE_USER') {
       echo "
       <div class='row h-100'>
-        <div class='col my-auto list_text' id='item-" .
+        <div class='col my-auto list_text' id='" .
         $usersArray[$i]->getId() .
         "'>" .
         $usersArray[$i]->getFirstname() .

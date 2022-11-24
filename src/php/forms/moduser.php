@@ -10,7 +10,7 @@ $errors = [];
 // Validation et nettoyage des champs
 foreach ($formData as $field => $value) {
   switch ($field) {
-    case 'add_firstname':
+    case 'mod_firstname':
       if (!empty($value)) {
         if (!isNameValid($value)) {
           $errors[$field] = 'Veuillez entrer un prénom valide.';
@@ -21,7 +21,7 @@ foreach ($formData as $field => $value) {
         $errors[$field] = 'Veuillez entrer un prénom.';
       }
       break;
-    case 'add_lastname':
+    case 'mod_lastname':
       if (!empty($value)) {
         if (!isNameValid($value)) {
           $errors[$field] = 'Veuillez entrer un nom valide.';
@@ -32,7 +32,7 @@ foreach ($formData as $field => $value) {
         $errors[$field] = 'Veuillez entrer un nom.';
       }
       break;
-    case 'add_email':
+    case 'mod_email':
       if (!empty($value)) {
         if (!isEmailValid($value)) {
           $errors[$field] = 'Veuillez entrer une adresse email valide.';
@@ -43,7 +43,7 @@ foreach ($formData as $field => $value) {
         $errors[$field] = 'Veuillez entrer un email.';
       }
       break;
-    case 'add_password':
+    case 'mod_password':
       if (!empty($value)) {
         if (!isPasswordValid($value)) {
           $errors[$field] =
@@ -55,16 +55,16 @@ foreach ($formData as $field => $value) {
         $errors[$field] = 'Veuillez entrer un mot de passe.';
       }
       break;
-    case 'add_password_verif':
+    case 'mod_password_verif':
       if (!empty($value)) {
-        if (!isSamePassword($formData['add_password'], $value)) {
+        if (!isSamePassword($formData['mod_password'], $value)) {
           $errors[$field] = 'Les mots de passe doivent être identiques.';
         }
       } else {
         $errors[$field] = 'Veuillez confirmer le mot de passe.';
       }
       break;
-    case 'add_birthdate':
+    case 'mod_birthdate':
       if (!empty($value)) {
         if (!isDateValid($value)) {
           $errors[$field] = 'Veuillez entrer une date valide (AAAA-MM-DD)';
@@ -73,7 +73,7 @@ foreach ($formData as $field => $value) {
         $errors[$field] = 'Veuillez entrer une date de naissance.';
       }
       break;
-    case 'add_entry_date':
+    case 'mod_entry_date':
       if (!empty($value)) {
         if (!isDateValid($value)) {
           $errors[$field] = 'Veuillez entrer une date valide (YYYY-MM-DD)';
@@ -83,7 +83,7 @@ foreach ($formData as $field => $value) {
           'Veuillez entrer une date d\'entrée dans l\'entreprise.';
       }
       break;
-    case 'add_secu':
+    case 'mod_secu':
       if (!empty($value)) {
         if (!isSecuValid($value)) {
           $errors[$field] =
@@ -93,7 +93,7 @@ foreach ($formData as $field => $value) {
         $errors[$field] = 'Veuillez entrer un numéro de sécurité sociale.';
       }
       break;
-    case 'add_contract_type':
+    case 'mod_contract_type':
       if (!empty($value)) {
         if (!isContractTypeValid($value)) {
           $errors[$field] = 'Veuillez entrer un type de contrat valide.';
@@ -102,7 +102,7 @@ foreach ($formData as $field => $value) {
         $errors[$field] = 'Veuillez entrer un type de contrat.';
       }
       break;
-    case 'add_work_time':
+    case 'mod_work_time':
       if (!empty($value)) {
         if (!isWorkTimeValid($value)) {
           $errors[$field] = 'Veuillez entrer un temps de travail valide.';
@@ -122,20 +122,20 @@ if (!empty($errors)) {
 } else {
   // Ajout d'un utilisateur en base de données
   $user = new User();
-  $user->setFirstname($formData['add_firstname']);
-  $user->setLastname($formData['add_lastname']);
-  $user->setEmail($formData['add_email']);
-  $user->setPassword($formData['add_password']);
-  $user->setBirthDate($formData['add_birthdate']);
-  $user->setEntryDate($formData['add_entry_date']);
-  $user->setSecuNumber($formData['add_secu']);
-  $user->setContractType($formData['add_contract_type']);
-  $user->setWorkTimeWeek($formData['add_work_time']);
+  $user->setFirstname($formData['mod_firstname']);
+  $user->setLastname($formData['mod_lastname']);
+  $user->setEmail($formData['mod_email']);
+  $user->setPassword($formData['mod_password']);
+  $user->setBirthDate($formData['mod_birthdate']);
+  $user->setEntryDate($formData['mod_entry_date']);
+  $user->setSecuNumber($formData['mod_secu']);
+  $user->setContractType($formData['mod_contract_type']);
+  $user->setWorkTimeWeek($formData['mod_work_time']);
   $user->setRole('ROLE_USER');
   $user->setLastLogin(date("Y-m-d H-i-s"));
   $return = $user->create();
   if (!is_array($return)) {
-    Header('Location: ../../../admin.php?result=' . "Utilisateur ajouté !");
+    Header('Location: ../../../admin.php?result=' . "Utilisateur modifié !");
   } else {
     Header('Location: ../../../admin.php?errors=' . $return['email']);
   }

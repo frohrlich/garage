@@ -37,6 +37,7 @@ if (!isAdmin()) {
   <!-- responsive style -->
   <link href="css/responsive.css" rel="stylesheet" />
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" defer></script>
   <script src="./js/admin.js" type="module" defer></script>
 
 </head>
@@ -53,6 +54,13 @@ if (!isAdmin()) {
       <div class="heading_container heading_center d-flex m-3">
         <h1 class="text-center">Espace administrateur</h1>
       </div>
+      <?php if (isset($_GET['errors'])): ?>
+      <p class="text-danger text-center mb-4"><?php echo $_GET['errors']; ?></p>
+      <?php elseif (isset($_GET['result'])): ?>
+      <p class="text-success text-center mb-4"><?php echo $_GET[
+        'result'
+      ]; ?></p>
+      <?php endif; ?>
       <!-- Adding section -->
       <div class="container d-flex justify-content-center mb-4">
         <div class="form_container">
@@ -121,11 +129,6 @@ if (!isAdmin()) {
               <input type="number" id="add_work_time" name="add_work_time" required />
               <span class="text-danger err-msg"></span><br>
             </div>
-            <?php if (isset($_GET['errors'])): ?>
-            <span class="text-danger"><?php echo $_GET['errors']; ?></span>
-            <?php elseif (isset($_GET['result'])): ?>
-            <span class="text-success"><?php echo $_GET['result']; ?></span>
-            <?php endif; ?>
             <span class="text-danger err-msg"></span><br>
             <div class="d-flex justify-content-center">
               <button class="btn-add" type="submit">Ajouter</button>
@@ -144,7 +147,7 @@ if (!isAdmin()) {
 
             <?php include 'src/php/forms/listuser.php'; ?>
 
-            <form action="#" class="d-none mb-5" id="modForm" method="">
+            <form class="d-none mb-5" action="src/php/forms/moduser.php" id="modForm" method="POST">
               <div>
                 <label for="mod_firstname">Prénom :</label>
                 <input type="text" id="mod_firstname" name="mod_firstname" required />
@@ -202,7 +205,7 @@ if (!isAdmin()) {
                 <input type="number" id="mod_work_time" name="mod_work_time" required />
                 <span class="text-danger err-msg"></span><br>
               </div>
-
+              <span class="text-danger err-msg"></span><br>
               <div class="d-flex justify-content-center">
                 <button class="btn-add" type="submit">Enregistrer</button>
               </div>
