@@ -141,7 +141,7 @@ export const isContractTypeValid = (elt) => {
 export const isWorkTimeValid = (elt) => {
   eraseErrors();
 
-  var letters = /^\+?(0|[1-9]\d*)$/;
+  var letters = /(\d+\.\d{1,2})/;
 
   if (elt.value.match(letters)) {
     return true;
@@ -193,6 +193,50 @@ export const isVehicleValid = (elt) => {
   } else {
     elt.nextElementSibling.innerHTML =
       'Le type de véhicule doit faire entre 2 et 255 caractères.<br>';
+    elt.focus();
+    return false;
+  }
+};
+
+export const isPrestaValid = (elt) => {
+  eraseErrors();
+
+  var letters = /^(?=.{5,255}$).*/;
+
+  if (elt.value.match(letters)) {
+    return true;
+  } else {
+    elt.nextElementSibling.innerHTML =
+      'Le nom de la prestation doit faire entre 5 et 255 caractères.<br>';
+    elt.focus();
+    return false;
+  }
+};
+
+export const isReaTimeValid = (elt) => {
+  eraseErrors();
+
+  var letters = /(\d+\.\d{1,2})/;
+
+  if (elt.value.match(letters)) {
+    return true;
+  } else {
+    elt.nextElementSibling.innerHTML =
+      'Veuillez entrer un temps de réalisation valide.<br>';
+    elt.focus();
+    return false;
+  }
+};
+
+export const isCostValid = (elt) => {
+  eraseErrors();
+
+  var letters = /(\d+\.\d{1,2})/;
+
+  if (elt.value.match(letters)) {
+    return true;
+  } else {
+    elt.nextElementSibling.innerHTML = 'Veuillez entrer un montant valide.<br>';
     elt.focus();
     return false;
   }
