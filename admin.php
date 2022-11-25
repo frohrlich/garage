@@ -123,13 +123,13 @@ if (!isAdmin()) {
                 <option value="Alternance">Alternance</option>
                 <option value="Autre">Autre</option>
               </select>
-            </div>
-            <div>
-              <label for="add_work_time">Durée de travail hebdomadaire (en heures, 30min = 0,5) :</label>
-              <input type="number" id="add_work_time" name="add_work_time" step="0.01" required />
               <span class="text-danger err-msg"></span><br>
             </div>
-            <span class="text-danger err-msg"></span><br>
+            <div>
+              <label for="add_work_time">Durée de travail hebdomadaire (en heures) :</label>
+              <input type="number" id="add_work_time" name="add_work_time" required />
+              <span class="text-danger err-msg"></span><br>
+            </div>
             <div class="d-flex justify-content-center">
               <button class="btn-add" type="submit">Ajouter</button>
             </div>
@@ -201,11 +201,10 @@ if (!isAdmin()) {
                 <span class="text-danger err-msg"></span><br>
               </div>
               <div>
-                <label for="mod_work_time">Durée de travail hebdomadaire (en heures, 30min = 0,5) :</label>
-                <input type="number" id="mod_work_time" name="mod_work_time" step="0.01" required />
+                <label for="mod_work_time">Durée de travail hebdomadaire (en heures) :</label>
+                <input type="number" id="mod_work_time" name="mod_work_time" required />
                 <span class="text-danger err-msg"></span><br>
               </div>
-              <span class="text-danger err-msg"></span><br>
               <div class="d-flex justify-content-center">
                 <button class="btn-add" type="submit">Enregistrer</button>
               </div>
