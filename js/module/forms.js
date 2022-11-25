@@ -156,13 +156,13 @@ export const isWorkTimeValid = (elt) => {
 export const isMessageValid = (elt) => {
   eraseErrors();
 
-  var letters = /^(?=.{50,1000}$).*/;
+  var letters = /^(?=.{10,1000}$).*/;
 
   if (elt.value.match(letters)) {
     return true;
   } else {
     elt.nextElementSibling.innerHTML =
-      "Votre message doit faire entre 50 et 1000 caractères.<br>";
+      "Votre message doit faire entre 10 et 1000 caractères.<br>";
     elt.focus();
     return false;
   }

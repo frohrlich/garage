@@ -46,7 +46,7 @@ function isPhoneValid($phone)
 */
 function isMessageValid($mess)
 {
-  if (preg_match("#^(?=.{50,1000}$).*#", $mess)) {
+  if (preg_match("#^(?=.{10,1000}$).*#", $mess)) {
     return true;
   }
   return false;
