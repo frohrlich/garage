@@ -216,7 +216,7 @@ export const isPrestaValid = (elt) => {
 export const isReaTimeValid = (elt) => {
   eraseErrors();
 
-  var letters = /(\d+\.\d{1,2})/;
+  var letters = /^(?!0*[.,]0*$|[.,]0*$|0*$)\d+[,.]?\d{0,2}$/;
 
   if (elt.value.match(letters)) {
     return true;
@@ -231,7 +231,7 @@ export const isReaTimeValid = (elt) => {
 export const isCostValid = (elt) => {
   eraseErrors();
 
-  var letters = /(\d+\.\d{1,2})/;
+  var letters = /^(?!0*[.,]0*$|[.,]0*$|0*$)\d+[,.]?\d{0,2}$/;
 
   if (elt.value.match(letters)) {
     return true;
