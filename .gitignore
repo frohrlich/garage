@@ -4,3 +4,4 @@ css/style.min.css.map
 vendor
 .vscode
 config/env.php
+.htaccess
