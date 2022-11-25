@@ -1,4 +1,4 @@
-import { isEmpty } from './module/forms.js';
+import { isEmpty, isDateTimeValid } from './module/forms.js';
 
 // --- Validations formulaires ---
 
@@ -17,7 +17,8 @@ addForm.addEventListener('submit', (event) => {
     !isEmpty(addListUser) &&
     !isEmpty(addListClient) &&
     !isEmpty(addListPresta) &&
-    !isEmpty(addDatetime)
+    !isEmpty(addDatetime) &&
+    isDateTimeValid(addDatetime)
   ) {
     addForm.submit();
   }

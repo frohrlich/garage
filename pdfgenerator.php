@@ -50,14 +50,15 @@ if (!getAuthenticatedUserId()) {
                     <div class="heading_container heading_center">
                         <h1 class="text-center">Générer un PDF</h1>
                     </div>
-                    <form action="<?php echo TL_BASE; ?>/src/php/forms/loginform.php" id="connectForm" method="post">
+                    <form action="#" id="connectForm" method="post">
                         <div class="padding_select">
                             <label for="add_list_user">Sélectionner un collaborateur :</label>
                             <br>
                             <select name="add_list_user" id="add_list_user" required>
                                 <option value="">--Please choose an option--</option>
-                                <option value="">Exemple 1</option>
-                                <option value="">Exemple 2</option>
+                                <option value="">test</option>
+                                <option value="1">Exemple 1</option>
+                                <option value="2">Exemple 2</option>
                             </select>
                             <span class="text-danger err-msg"></span><br>
                         </div>
@@ -66,8 +67,8 @@ if (!getAuthenticatedUserId()) {
                             <br>
                             <select name="add_list_client" id="add_list_client" required>
                                 <option value="">--Please choose an option--</option>
-                                <option value="">Exemple 1</option>
-                                <option value="">Exemple 2</option>
+                                <option value="1">Exemple 1</option>
+                                <option value="2">Exemple 2</option>
                             </select>
                             <span class="text-danger err-msg"></span><br>
                         </div>
@@ -76,8 +77,8 @@ if (!getAuthenticatedUserId()) {
                             <br>
                             <select name="add_list_presta" id="add_list_presta" required>
                                 <option value="">--Please choose an option--</option>
-                                <option value="">Exemple 1</option>
-                                <option value="">Exemple 2</option>
+                                <option value="1">Exemple 1</option>
+                                <option value="2">Exemple 2</option>
                             </select>
                             <span class="text-danger err-msg"></span><br>
                         </div>
