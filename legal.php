@@ -8,18 +8,12 @@
   <!-- Mobile Metas -->
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
   <!-- Site Metas -->
-  <meta name="keywords" content="" />
-  <meta name="description" content="" />
-  <meta name="author" content="" />
+  <meta name="keywords" content="mentions légales, garage, pistons&boulons" />
+  <meta name="description" content="Page des mentions légales du site garage Pistons et Boulons" />
+  <meta name="author" content="Web Agence" />
   <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon" />
   <title>Mentions légales - Garage Pistons & Boulons</title>
 
-  <!-- bootstrap core css -->
-  <!-- <link rel="stylesheet" type="text/css" href="css/bootstrap.css" /> -->
-
-  <!--owl slider stylesheet -->
-  <link rel="stylesheet" type="text/css"
-    href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
   <!-- font awesome style -->
   <link href="css/font-awesome.min.css" rel="stylesheet" />
 
@@ -99,10 +93,6 @@
     <script src="node_modules\popper.js\dist\umd\popper.min.js"></script>
     <!-- bootstrap js -->
     <script src="node_modules\bootstrap\dist\js\bootstrap.min.js"></script>
-    <!-- owl slider -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-    <!-- custom js -->
-    <script src="js/custom.js"></script>
 
 </body>
 

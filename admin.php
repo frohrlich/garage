@@ -17,18 +17,12 @@ if (!isAdmin()) {
   <!-- Mobile Metas -->
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
   <!-- Site Metas -->
-  <meta name="keywords" content="" />
-  <meta name="description" content="" />
-  <meta name="author" content="" />
+  <meta name="keywords" content="administrateur, collaborateur, garage, pistons&boulons" />
+  <meta name="description" content="page à accèes restreint pour l'administrateur du site, comprenant un formulaire de gestion de collaborateurs " />
+  <meta name="author" content="Web Agence" />
   <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon" />
   <title>Espace administrateur - Garage Pistons & Boulons</title>
 
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.2/dist/leaflet.css"
-    integrity="sha256-sA+zWATbFveLLNqWO2gtiw3HL/lh1giY/Inf1BJ0z14=" crossorigin="" />
-
-  <!--owl slider stylesheet -->
-  <link rel="stylesheet" type="text/css"
-    href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
   <!-- font awesome style -->
   <link href="css/font-awesome.min.css" rel="stylesheet" />
 
@@ -54,12 +48,10 @@ if (!isAdmin()) {
       <div class="heading_container heading_center d-flex m-3">
         <h1 class="text-center">Espace administrateur</h1>
       </div>
-      <?php if (isset($_GET['errors'])): ?>
-      <p class="text-danger text-center mb-4"><?php echo $_GET['errors']; ?></p>
-      <?php elseif (isset($_GET['result'])): ?>
-      <p class="text-success text-center mb-4"><?php echo $_GET[
-        'result'
-      ]; ?></p>
+      <?php if (isset($_GET['errors'])) : ?>
+        <p class="text-danger text-center mb-4"><?php echo $_GET['errors']; ?></p>
+      <?php elseif (isset($_GET['result'])) : ?>
+        <p class="text-success text-center mb-4"><?php echo $_GET['result']; ?></p>
       <?php endif; ?>
       <!-- Adding section -->
       <div class="container d-flex justify-content-center mb-4">
@@ -67,8 +59,7 @@ if (!isAdmin()) {
           <div class="heading_container heading_center">
             <h2 class="text-center">Ajouter un collaborateur</h2>
             <!-- Collapse button -->
-            <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#addForm"
-              aria-expanded="false" aria-controls="collapseExample">
+            <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#addForm" aria-expanded="false" aria-controls="collapseExample">
               Afficher/Cacher
             </button>
           </div>
