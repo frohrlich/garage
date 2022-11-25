@@ -23,12 +23,10 @@ if (!getAuthenticatedUserId()) {
   <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon" />
   <title>Clients - Garage Pistons & Boulons</title>
 
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.2/dist/leaflet.css"
-    integrity="sha256-sA+zWATbFveLLNqWO2gtiw3HL/lh1giY/Inf1BJ0z14=" crossorigin="" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.2/dist/leaflet.css" integrity="sha256-sA+zWATbFveLLNqWO2gtiw3HL/lh1giY/Inf1BJ0z14=" crossorigin="" />
 
   <!--owl slider stylesheet -->
-  <link rel="stylesheet" type="text/css"
-    href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
   <!-- font awesome style -->
   <link href="css/font-awesome.min.css" rel="stylesheet" />
 
@@ -59,8 +57,7 @@ if (!getAuthenticatedUserId()) {
           <div class="heading_container heading_center">
             <h2 class="text-center">Ajouter un nouveau client</h2>
             <!-- Collapse button -->
-            <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#addForm"
-              aria-expanded="false" aria-controls="collapseExample">
+            <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#addForm" aria-expanded="false" aria-controls="collapseExample">
               Afficher/Cacher
             </button>
           </div>
@@ -90,15 +87,10 @@ if (!getAuthenticatedUserId()) {
               <input type="text" id="add_vehicle" name="add_vehicle" required />
               <span class="text-danger err-msg"></span><br>
             </div>
-            <div>
-              <label for="add_entry_date">Date d'entrée de saisie :</label>
-              <input type="date" id="add_entry_date" name="add_entry_date" required />
-              <span class="text-danger err-msg"></span><br>
-            </div>
-            <?php if (isset($_GET['errors'])): ?>
-            <span class="text-danger"><?php echo $_GET['errors']; ?></span>
-            <?php elseif (isset($_GET['result'])): ?>
-            <span class="text-success"><?php echo $_GET['result']; ?></span>
+            <?php if (isset($_GET['errors'])) : ?>
+              <span class="text-danger"><?php echo $_GET['errors']; ?></span>
+            <?php elseif (isset($_GET['result'])) : ?>
+              <span class="text-success"><?php echo $_GET['result']; ?></span>
             <?php endif; ?>
             <span class="text-danger err-msg"></span><br>
             <div class="d-flex justify-content-center">
@@ -187,11 +179,6 @@ if (!getAuthenticatedUserId()) {
               <div>
                 <label for="mod_vehicle">Type de véhicule :</label>
                 <input type="text" id="mod_vehicle" name="mod_vehicle" required />
-                <span class="text-danger err-msg"></span><br>
-              </div>
-              <div>
-                <label for="mod_entry_date">Date d'entrée de saisie :</label>
-                <input type="date" id="mod_entry_date" name="mod_entry_date" required />
                 <span class="text-danger err-msg"></span><br>
               </div>
               <div class="d-flex justify-content-center">

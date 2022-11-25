@@ -3,7 +3,6 @@ import {
   isLastNameValid,
   isPostalCodeValid,
   isVehicleValid,
-  isDateValid,
   isEmpty,
 } from './module/forms.js';
 
@@ -62,7 +61,6 @@ document.addEventListener('DOMContentLoaded', function () {
     const addAdress = document.getElementById('add_address');
     const addPostalCode = document.getElementById('add_postalcode');
     const addVehicle = document.getElementById('add_vehicle');
-    const addEntryDate = document.getElementById('add_entry_date');
 
     if (
       !isEmpty(addFirstName) &&
@@ -73,9 +71,7 @@ document.addEventListener('DOMContentLoaded', function () {
       !isEmpty(addPostalCode) &&
       isPostalCodeValid(addPostalCode) &&
       !isEmpty(addVehicle) &&
-      isVehicleValid(addVehicle) &&
-      !isEmpty(addEntryDate) &&
-      isDateValid(addEntryDate)
+      isVehicleValid(addVehicle)
     ) {
       addForm.submit();
     }
@@ -92,7 +88,6 @@ document.addEventListener('DOMContentLoaded', function () {
     const modAdress = document.getElementById('mod_address');
     const modPostalCode = document.getElementById('mod_postalcode');
     const modVehicle = document.getElementById('mod_vehicle');
-    const modEntryDate = document.getElementById('mod_entry_date');
 
     if (
       !isEmpty(modFirstName) &&
@@ -103,9 +98,7 @@ document.addEventListener('DOMContentLoaded', function () {
       !isEmpty(modPostalCode) &&
       isPostalCodeValid(modPostalCode) &&
       !isEmpty(modVehicle) &&
-      isVehicleValid(modVehicle) &&
-      !isEmpty(modEntryDate) &&
-      isDateValid(modEntryDate)
+      isVehicleValid(modVehicle)
     ) {
       modForm.submit();
     }
