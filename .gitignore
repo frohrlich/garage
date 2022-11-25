@@ -5,3 +5,4 @@ vendor
 .vscode
 config/env.php
 .htaccess
+.DS_Store
