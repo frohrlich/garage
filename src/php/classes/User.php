@@ -167,8 +167,8 @@ class User extends Bdd
     }
   }
 
-  // Modify a user in database
-  public function modify()
+  // Update a user in database
+  public function update()
   {
     $sql =
       "UPDATE user SET prenom= ?, nom= ?, email= ?, password= ?, birthdate= ?, 
@@ -189,6 +189,24 @@ class User extends Bdd
         $this->workTimeWeek,
       ];
       $statement->execute($args);
+    } catch (PDOException $exception) {
+      var_dump($exception);
+      exit();
+    }
+
+    return true;
+  }
+
+  // Updates last login time
+  public function updateLastLogin()
+  {
+    $this->lastLogin = date("Y-m-d H-i-s");
+
+    $sql = "UPDATE user SET last_login= ? WHERE id= " . $this->id;
+
+    try {
+      $statement = $this->getConnection()->prepare($sql);
+      $statement->execute([$this->lastLogin]);
     } catch (PDOException $exception) {
       var_dump($exception);
       exit();

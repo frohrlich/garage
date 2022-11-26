@@ -42,8 +42,8 @@ if ($_POST && count($_POST)) {
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
   <!-- Site Metas -->
   <meta name="keywords" content="contact, mail, saint-junien, adresse, horaire, téléphone, map, garage, pistons&boulons" />
-  <meta name="description" content="Page de contact permettant l'envoi d'un mail à l'entrprise et présentation des diférentes informations pour trouver et contacter l'entreprise" />
-  <meta name="author" content="" />
+  <meta name="description" content="Page de contact permettant l'envoi d'un mail à l'entreprise et présentation des différentes informations pour trouver et contacter l'entreprise" />
+  <meta name="author" content="Web Agence" />
   <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon" />
   <title>Contact - Garage Pistons & Boulons</title>
 

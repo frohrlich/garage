@@ -8,8 +8,8 @@
     <!-- Mobile Metas -->
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <!-- Site Metas -->
-    <meta name="keywords" content="plan du site, garage, pistons&boulons" />
-    <meta name="description" content="Page présentant le plan du site garage Pistons et Boulons" />
+    <meta name="keywords" content="plan du site, garage, pistons&boulons, sitemap" />
+    <meta name="description" content="Page présentant le plan du site du garage Pistons et Boulons" />
     <meta name="author" content="Web Agence" />
     <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon" />
     <title>Services - Garage Pistons & Boulons</title>

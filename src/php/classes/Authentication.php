@@ -19,6 +19,10 @@ class Authentication extends Bdd
       exit();
     }
     if ($user && password_verify($userData['password'], $user['password'])) {
+      // Set last login time
+      $loggedUser = new User($user['id']);
+      $loggedUser->updateLastLogin();
+
       $_SESSION['user'] = [
         'id' => $user['id'],
         'email' => $user['email'],

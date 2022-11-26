@@ -19,7 +19,7 @@ if (!isAdmin()) {
   <!-- Site Metas -->
   <meta name="keywords" content="administrateur, collaborateur, garage, pistons&boulons" />
   <meta name="description"
-    content="page à accèes restreint pour l'administrateur du site, comprenant un formulaire de gestion de collaborateurs " />
+    content="Page à accès restreint pour l'administrateur du site, comprenant un formulaire de gestion de collaborateurs " />
   <meta name="author" content="Web Agence" />
   <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon" />
   <title>Espace administrateur - Garage Pistons & Boulons</title>
@@ -50,11 +50,11 @@ if (!isAdmin()) {
         <h1 class="text-center">Espace administrateur</h1>
       </div>
       <?php if (isset($_GET['errors'])): ?>
-      <p class="text-danger text-center mb-4"><?php echo htmlspecialchars(
+      <p class="text-danger text-center font-weight-bold mb-4"><?php echo htmlspecialchars(
         $_GET['errors']
       ); ?></p>
       <?php elseif (isset($_GET['result'])): ?>
-      <p class="text-success text-center mb-4"><?php echo htmlspecialchars(
+      <p class="text-success text-center font-weight-bold mb-4"><?php echo htmlspecialchars(
         $_GET['result']
       ); ?></p>
       <?php endif; ?>

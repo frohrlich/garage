@@ -18,8 +18,8 @@ if (!getAuthenticatedUserId()) {
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
   <!-- Site Metas -->
   <meta name="keywords" content="prestation, garage, pistons&boulons" />
-  <meta name="description" content="page à accèes restreint, comprenant un formulaire de gestion des prestations" />
-  <meta name=" author" content="Web Agence" />
+  <meta name="description" content="page à accès restreint, comprenant un formulaire de gestion des prestations" />
+  <meta name="author" content="Web Agence" />
   <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon" />
   <title>Prestations - Garage Pistons & Boulons</title>
 

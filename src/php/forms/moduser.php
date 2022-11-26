@@ -150,7 +150,7 @@ if (!empty($errors)) {
   $user->setSecuNumber($formData['mod_secu']);
   $user->setContractType($formData['mod_contract_type']);
   $user->setWorkTimeWeek($formData['mod_work_time']);
-  $return = $user->modify();
+  $return = $user->update();
   if ($return) {
     Header('Location: ../../../admin.php?result=' . "Utilisateur modifié !");
   } else {

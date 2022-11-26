@@ -18,7 +18,7 @@ if (getAuthenticatedUserId()) {
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
   <!-- Site Metas -->
   <meta name="keywords" content="connexion, garage, pistons&boulons" />
-  <meta name="description" content="Page de connexion pour accéder aux contenus restreint" />
+  <meta name="description" content="Page de connexion pour accéder aux contenus restreints" />
   <meta name="author" content="Web agence" />
   <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon" />
   <title>Espace connexion - Garage Pistons & Boulons</title>
