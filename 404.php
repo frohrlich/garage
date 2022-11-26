@@ -8,9 +8,9 @@
     <!-- Mobile Metas -->
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <!-- Site Metas -->
-    <meta name="keywords" content="" />
-    <meta name="description" content="" />
-    <meta name="author" content="" />
+    <meta name="keywords" content="Erreur, 404, pistons&boulons" />
+    <meta name="description" content="Page personnalisée en cas d'erreur 404" />
+    <meta name="author" content="Web Agence" />
     <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon" />
     <title>Garage Pistons & Boulons</title>
 

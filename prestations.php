@@ -17,18 +17,12 @@ if (!getAuthenticatedUserId()) {
   <!-- Mobile Metas -->
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
   <!-- Site Metas -->
-  <meta name="keywords" content="" />
-  <meta name="description" content="" />
-  <meta name="author" content="" />
+  <meta name="keywords" content="prestation, garage, pistons&boulons" />
+  <meta name="description" content="page à accèes restreint, comprenant un formulaire de gestion des prestations" />
+  <meta name=" author" content="Web Agence" />
   <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon" />
   <title>Prestations - Garage Pistons & Boulons</title>
 
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.2/dist/leaflet.css"
-    integrity="sha256-sA+zWATbFveLLNqWO2gtiw3HL/lh1giY/Inf1BJ0z14=" crossorigin="" />
-
-  <!--owl slider stylesheet -->
-  <link rel="stylesheet" type="text/css"
-    href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
   <!-- font awesome style -->
   <link href="css/font-awesome.min.css" rel="stylesheet" />
 
@@ -59,8 +53,7 @@ if (!getAuthenticatedUserId()) {
           <div class="heading_container heading_center">
             <h2 class="text-center">Ajouter une nouvelle prestation</h2>
             <!-- Collapse button -->
-            <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#addForm"
-              aria-expanded="false" aria-controls="collapseExample">
+            <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#addForm" aria-expanded="false" aria-controls="collapseExample">
               Afficher/Cacher
             </button>
           </div>
@@ -80,10 +73,10 @@ if (!getAuthenticatedUserId()) {
               <input type="number" id="add_cost" name="add_cost" step="0.01" required />
               <span class="text-danger err-msg"></span><br>
             </div>
-            <?php if (isset($_GET['errors'])): ?>
-            <span class="text-danger"><?php echo $_GET['errors']; ?></span>
-            <?php elseif (isset($_GET['result'])): ?>
-            <span class="text-success"><?php echo $_GET['result']; ?></span>
+            <?php if (isset($_GET['errors'])) : ?>
+              <span class="text-danger"><?php echo $_GET['errors']; ?></span>
+            <?php elseif (isset($_GET['result'])) : ?>
+              <span class="text-success"><?php echo $_GET['result']; ?></span>
             <?php endif; ?>
             <span class="text-danger err-msg"></span><br>
             <div class="d-flex justify-content-center">

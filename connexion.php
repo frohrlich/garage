@@ -17,18 +17,12 @@ if (getAuthenticatedUserId()) {
   <!-- Mobile Metas -->
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
   <!-- Site Metas -->
-  <meta name="keywords" content="" />
-  <meta name="description" content="" />
-  <meta name="author" content="" />
+  <meta name="keywords" content="connexion, garage, pistons&boulons" />
+  <meta name="description" content="Page de connexion pour accéder aux contenus restreint" />
+  <meta name="author" content="Web agence" />
   <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon" />
   <title>Espace connexion - Garage Pistons & Boulons</title>
 
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.2/dist/leaflet.css"
-    integrity="sha256-sA+zWATbFveLLNqWO2gtiw3HL/lh1giY/Inf1BJ0z14=" crossorigin="" />
-
-  <!--owl slider stylesheet -->
-  <link rel="stylesheet" type="text/css"
-    href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
   <!-- font awesome style -->
   <link href="<?php echo TL_BASE; ?>/css/font-awesome.min.css" rel="stylesheet" />
 
@@ -67,8 +61,8 @@ if (getAuthenticatedUserId()) {
               <input type="password" id="password" name="password" required />
               <span class="text-danger err-msg"></span><br>
             </div>
-            <?php if (isset($_GET['errors'])): ?>
-            <span class="text-danger"><?php echo $_GET['errors']; ?></span>
+            <?php if (isset($_GET['errors'])) : ?>
+              <span class="text-danger"><?php echo $_GET['errors']; ?></span>
             <?php endif; ?>
             <div class="d-flex justify-content-center">
               <button type="submit">Connexion</button>
