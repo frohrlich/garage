@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", function () {
           element.parentElement.previousElementSibling.previousElementSibling
             .id; // on récupère l'id de l'item
 
-        // AJAX : delete the element in BDD with php
+        // AJAX : delete the element in DB with php
         $.ajax({
           method: "POST",
           url: "src/php/forms/deleteuser.php",
@@ -40,6 +40,7 @@ document.addEventListener("DOMContentLoaded", function () {
   let prevSelectedName = 0;
   for (let element of modifButtons) {
     element.addEventListener("click", function () {
+      // Visual effets
       let textName = element.parentElement.previousElementSibling; // on récupère le nom de l'item
       let modForm = document.getElementById("modForm"); // formulaire de modification
 
@@ -63,6 +64,30 @@ document.addEventListener("DOMContentLoaded", function () {
         modForm.classList.toggle("d-none"); // et on l'affiche
       }
       prevSelectedName = textName;
+
+      // Get data from DB and put it in form
+      let itemID = element.parentElement.previousElementSibling.id; // get item ID
+
+      // AJAX : get data from DB via a php file
+      $.ajax({
+        method: "POST",
+        url: "src/php/forms/getuserinfo.php",
+        data: { id: itemID },
+      }).done(function (res) {
+        // then fill form with values from DB
+        let userData = JSON.parse(res);
+        const inputs = document.getElementById("modForm").elements;
+        inputs["mod_id"].value = itemID;
+        inputs["mod_firstname"].value = userData["firstname"];
+        inputs["mod_lastname"].value = userData["lastname"];
+        inputs["mod_email"].value = userData["email"];
+        inputs["mod_birthdate"].value = userData["birthdate"];
+        inputs["mod_entry_date"].value = userData["entrydate"];
+        inputs["mod_secu"].value = userData["secunumber"];
+        inputs["mod_contract_type"].value = userData["contracttype"];
+        inputs["mod_work_time"].value = userData["worktimeweek"];
+        inputs["mod_lastco"].value = userData["lastlogin"];
+      });
     });
   }
 
@@ -129,26 +154,29 @@ document.addEventListener("DOMContentLoaded", function () {
     const modWorkTime = document.getElementById("mod_work_time");
 
     if (
-      !isEmpty(modFirstName) &&
-      isFirstNameValid(modFirstName) &&
-      !isEmpty(modLastName) &&
-      isLastNameValid(modLastName) &&
-      !isEmpty(modEmail) &&
-      isEmailValid(modEmail) &&
-      !isEmpty(modPassword) &&
-      isPasswordValid(modPassword) &&
-      !isEmpty(modPasswordVerif) &&
-      isSamePassword(modPassword, modPasswordVerif) &&
-      !isEmpty(modBirthDate) &&
-      isDateValid(modBirthDate) &&
-      !isEmpty(modEntryDate) &&
-      isDateValid(modEntryDate) &&
-      !isEmpty(modSecu) &&
-      isSecuValid(modSecu) &&
-      !isEmpty(modContractType) &&
-      isContractTypeValid(modContractType) &&
-      !isEmpty(modWorkTime) &&
-      isWorkTimeValid(modWorkTime)
+        !isEmpty(modFirstName) &&
+        isFirstNameValid(modFirstName) &&
+        !isEmpty(modLastName) &&
+        isLastNameValid(modLastName) &&
+        !isEmpty(modEmail) &&
+        isEmailValid(modEmail) &&
+        !isEmpty(modBirthDate) &&
+        isDateValid(modBirthDate) &&
+        !isEmpty(modEntryDate) &&
+        isDateValid(modEntryDate) &&
+        !isEmpty(modSecu) &&
+        isSecuValid(modSecu) &&
+        !isEmpty(modContractType) &&
+        isContractTypeValid(modContractType) &&
+        !isEmpty(modWorkTime) &&
+        isWorkTimeValid(modWorkTime) &&
+        
+        ((isEmpty(modPassword, true) &&
+        isEmpty(modPasswordVerif, true)) ||
+        (!isEmpty(modPassword) &&
+        isPasswordValid(modPassword) &&
+        !isEmpty(modPasswordVerif) &&
+        isSamePassword(modPassword, modPasswordVerif)))
     ) {
       modForm.submit();
     }

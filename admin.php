@@ -18,7 +18,8 @@ if (!isAdmin()) {
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
   <!-- Site Metas -->
   <meta name="keywords" content="administrateur, collaborateur, garage, pistons&boulons" />
-  <meta name="description" content="page à accèes restreint pour l'administrateur du site, comprenant un formulaire de gestion de collaborateurs " />
+  <meta name="description"
+    content="page à accèes restreint pour l'administrateur du site, comprenant un formulaire de gestion de collaborateurs " />
   <meta name="author" content="Web Agence" />
   <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon" />
   <title>Espace administrateur - Garage Pistons & Boulons</title>
@@ -48,10 +49,14 @@ if (!isAdmin()) {
       <div class="heading_container heading_center d-flex m-3">
         <h1 class="text-center">Espace administrateur</h1>
       </div>
-      <?php if (isset($_GET['errors'])) : ?>
-        <p class="text-danger text-center mb-4"><?php echo $_GET['errors']; ?></p>
-      <?php elseif (isset($_GET['result'])) : ?>
-        <p class="text-success text-center mb-4"><?php echo $_GET['result']; ?></p>
+      <?php if (isset($_GET['errors'])): ?>
+      <p class="text-danger text-center mb-4"><?php echo htmlspecialchars(
+        $_GET['errors']
+      ); ?></p>
+      <?php elseif (isset($_GET['result'])): ?>
+      <p class="text-success text-center mb-4"><?php echo htmlspecialchars(
+        $_GET['result']
+      ); ?></p>
       <?php endif; ?>
       <!-- Adding section -->
       <div class="container d-flex justify-content-center mb-4">
@@ -59,7 +64,8 @@ if (!isAdmin()) {
           <div class="heading_container heading_center">
             <h2 class="text-center">Ajouter un collaborateur</h2>
             <!-- Collapse button -->
-            <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#addForm" aria-expanded="false" aria-controls="collapseExample">
+            <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#addForm"
+              aria-expanded="false" aria-controls="collapseExample">
               Afficher/Cacher
             </button>
           </div>
@@ -139,6 +145,7 @@ if (!isAdmin()) {
             <?php include 'src/php/forms/listuser.php'; ?>
 
             <form class="d-none mb-5" action="src/php/forms/moduser.php" id="modForm" method="POST">
+              <input type="hidden" id="mod_id" name="mod_id" />
               <div>
                 <label for="mod_firstname">Prénom :</label>
                 <input type="text" id="mod_firstname" name="mod_firstname" required />
@@ -155,13 +162,13 @@ if (!isAdmin()) {
                 <span class="text-danger err-msg"></span><br>
               </div>
               <div>
-                <label for="mod_password" class="label">Mot de passe :</label>
-                <input type="password" id="mod_password" name="mod_password" required />
+                <label for="mod_password" class="label">Mot de passe (facultatif) :</label>
+                <input type="password" id="mod_password" name="mod_password" />
                 <span class="text-danger err-msg"></span><br>
               </div>
               <div>
                 <label for="mod_password_verif" class="label">Vérifiez le mot de passe :</label>
-                <input type="password" id="mod_password_verif" name="mod_password_verif" required />
+                <input type="password" id="mod_password_verif" name="mod_password_verif" />
                 <span class="text-danger err-msg"></span><br>
               </div>
               <div>
@@ -195,6 +202,10 @@ if (!isAdmin()) {
                 <label for="mod_work_time">Durée de travail hebdomadaire (en heures) :</label>
                 <input type="number" id="mod_work_time" name="mod_work_time" required />
                 <span class="text-danger err-msg"></span><br>
+              </div>
+              <div>
+                <label for="mod_lastco">Date de dernière connexion (non modifiable) :</label>
+                <input type="datetime-local" id="mod_lastco" name="mod_lastco" disabled />
               </div>
               <div class="d-flex justify-content-center">
                 <button class="btn-add" type="submit">Enregistrer</button>

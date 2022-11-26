@@ -1,9 +1,11 @@
-export const isEmpty = (elt) => {
+export const isEmpty = (elt, mute = false) => {
   eraseErrors();
 
   if (elt.value.length === 0) {
-    elt.nextElementSibling.innerHTML = 'Veuillez remplir ce champ.<br>';
-    elt.focus();
+    if (!mute) {
+      elt.nextElementSibling.innerHTML = "Veuillez remplir ce champ.<br>";
+      elt.focus();
+    }
     return true;
   } else {
     return false;
@@ -18,7 +20,7 @@ export const isFirstNameValid = (elt) => {
   if (elt.value.match(letters)) {
     return true;
   } else {
-    elt.nextElementSibling.innerHTML = 'Veuillez entrer un prénom valide.<br>';
+    elt.nextElementSibling.innerHTML = "Veuillez entrer un prénom valide.<br>";
     elt.focus();
     return false;
   }
@@ -32,7 +34,7 @@ export const isLastNameValid = (elt) => {
   if (elt.value.match(letters)) {
     return true;
   } else {
-    elt.nextElementSibling.innerHTML = 'Veuillez entrer un nom valide.<br>';
+    elt.nextElementSibling.innerHTML = "Veuillez entrer un nom valide.<br>";
     elt.focus();
     return false;
   }
@@ -46,7 +48,7 @@ export const isEmailValid = (elt) => {
   if (elt.value.match(letters)) {
     return true;
   } else {
-    elt.nextElementSibling.innerHTML = 'Veuillez entrer un email valide.<br>';
+    elt.nextElementSibling.innerHTML = "Veuillez entrer un email valide.<br>";
     elt.focus();
     return false;
   }
@@ -61,7 +63,7 @@ export const isPhoneValid = (elt) => {
     return true;
   } else {
     elt.nextElementSibling.innerHTML =
-      'Veuillez entrer un numéro de téléphone valide.<br>';
+      "Veuillez entrer un numéro de téléphone valide.<br>";
     elt.focus();
     return false;
   }
@@ -88,7 +90,7 @@ export const isSamePassword = (password, verifPassword) => {
     return true;
   } else {
     verifPassword.nextElementSibling.innerHTML =
-      'Les mots de passe doivent être identiques.<br>';
+      "Les mots de passe doivent être identiques.<br>";
     verifPassword.focus();
     return false;
   }
@@ -102,7 +104,7 @@ export const isDateValid = (elt) => {
   if (elt.value.match(letters)) {
     return true;
   } else {
-    elt.nextElementSibling.innerHTML = 'Veuillez entrer une date valide.<br>';
+    elt.nextElementSibling.innerHTML = "Veuillez entrer une date valide.<br>";
     elt.focus();
     return false;
   }
@@ -117,7 +119,7 @@ export const isSecuValid = (elt) => {
     return true;
   } else {
     elt.nextElementSibling.innerHTML =
-      'Veuillez entrer un numéro de sécurité sociale valide.<br>';
+      "Veuillez entrer un numéro de sécurité sociale valide.<br>";
     elt.focus();
     return false;
   }
@@ -126,13 +128,13 @@ export const isSecuValid = (elt) => {
 export const isContractTypeValid = (elt) => {
   eraseErrors();
 
-  let contractTypes = ['CDI', 'CDD', 'Alternance', 'Autre'];
+  let contractTypes = ["CDI", "CDD", "Alternance", "Autre"];
 
   if (contractTypes.includes(elt.value)) {
     return true;
   } else {
     elt.nextElementSibling.innerHTML =
-      'Veuillez entrer un type de contrat valide.<br>';
+      "Veuillez entrer un type de contrat valide.<br>";
     elt.focus();
     return false;
   }
@@ -147,7 +149,7 @@ export const isWorkTimeValid = (elt) => {
     return true;
   } else {
     elt.nextElementSibling.innerHTML =
-      'Veuillez entrer un temps de travail valide.<br>';
+      "Veuillez entrer un temps de travail valide.<br>";
     elt.focus();
     return false;
   }
@@ -177,7 +179,7 @@ export const isPostalCodeValid = (elt) => {
     return true;
   } else {
     elt.nextElementSibling.innerHTML =
-      'Veuillez entrer un code postal valide.<br>';
+      "Veuillez entrer un code postal valide.<br>";
     elt.focus();
     return false;
   }
@@ -192,7 +194,7 @@ export const isVehicleValid = (elt) => {
     return true;
   } else {
     elt.nextElementSibling.innerHTML =
-      'Le type de véhicule doit faire entre 2 et 255 caractères.<br>';
+      "Le type de véhicule doit faire entre 2 et 255 caractères.<br>";
     elt.focus();
     return false;
   }
@@ -207,7 +209,7 @@ export const isPrestaValid = (elt) => {
     return true;
   } else {
     elt.nextElementSibling.innerHTML =
-      'Le nom de la prestation doit faire entre 5 et 255 caractères.<br>';
+      "Le nom de la prestation doit faire entre 5 et 255 caractères.<br>";
     elt.focus();
     return false;
   }
@@ -222,7 +224,7 @@ export const isReaTimeValid = (elt) => {
     return true;
   } else {
     elt.nextElementSibling.innerHTML =
-      'Veuillez entrer un temps de réalisation valide.<br>';
+      "Veuillez entrer un temps de réalisation valide.<br>";
     elt.focus();
     return false;
   }
@@ -236,7 +238,7 @@ export const isCostValid = (elt) => {
   if (elt.value.match(letters)) {
     return true;
   } else {
-    elt.nextElementSibling.innerHTML = 'Veuillez entrer un montant valide.<br>';
+    elt.nextElementSibling.innerHTML = "Veuillez entrer un montant valide.<br>";
     elt.focus();
     return false;
   }
@@ -251,7 +253,7 @@ export const isDateTimeValid = (elt) => {
     return true;
   } else {
     elt.nextElementSibling.innerHTML =
-      'Veuillez entrer une date et une heure valide.<br>';
+      "Veuillez entrer une date et une heure valide.<br>";
     elt.focus();
     return false;
   }
@@ -259,8 +261,8 @@ export const isDateTimeValid = (elt) => {
 
 // Erases all error messages
 const eraseErrors = () => {
-  let errors = document.getElementsByClassName('err-msg');
+  let errors = document.getElementsByClassName("err-msg");
   for (let error of errors) {
-    error.innerHTML = '';
+    error.innerHTML = "";
   }
 };

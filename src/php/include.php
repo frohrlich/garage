@@ -2,6 +2,9 @@
 
 session_start();
 
+// set the default timezone to use.
+date_default_timezone_set('Europe/Paris');
+
 //~ Define the root path
 define('TL_ROOT', dirname(__DIR__));
 

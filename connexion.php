@@ -61,8 +61,10 @@ if (getAuthenticatedUserId()) {
               <input type="password" id="password" name="password" required />
               <span class="text-danger err-msg"></span><br>
             </div>
-            <?php if (isset($_GET['errors'])) : ?>
-              <span class="text-danger"><?php echo $_GET['errors']; ?></span>
+            <?php if (isset($_GET['errors'])): ?>
+            <span class="text-danger"><?php echo htmlspecialchars(
+              $_GET['errors']
+            ); ?></span>
             <?php endif; ?>
             <div class="d-flex justify-content-center">
               <button type="submit">Connexion</button>

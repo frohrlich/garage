@@ -28,7 +28,5 @@ class Bdd
       var_dump($exception);
       exit();
     }
-
-    //echo "Connexion BDD OK";
   }
 }

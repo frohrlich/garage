@@ -134,6 +134,7 @@ class User extends Bdd
     }
   }
 
+  // Creates a user in database
   public function create()
   {
     if (!$this->checkEmailExists()) {
@@ -166,6 +167,37 @@ class User extends Bdd
     }
   }
 
+  // Modify a user in database
+  public function modify()
+  {
+    $sql =
+      "UPDATE user SET prenom= ?, nom= ?, email= ?, password= ?, birthdate= ?, 
+      date_entry= ?, social_sec= ?, contract_type= ?, worktime_week= ? WHERE id= " .
+      $this->id;
+
+    try {
+      $statement = $this->getConnection()->prepare($sql);
+      $args = [
+        $this->firstname,
+        $this->lastname,
+        $this->email,
+        $this->password,
+        $this->birthDate,
+        $this->entryDate,
+        $this->secuNumber,
+        $this->contractType,
+        $this->workTimeWeek,
+      ];
+      $statement->execute($args);
+    } catch (PDOException $exception) {
+      var_dump($exception);
+      exit();
+    }
+
+    return true;
+  }
+
+  // Checks is email is already attributed to a user
   public function checkEmailExists()
   {
     $sql = 'SELECT id FROM user WHERE email = ?';
@@ -182,6 +214,7 @@ class User extends Bdd
     }
   }
 
+  // Finds a user with an ID and fetches its data
   public function find($id)
   {
     $sql = 'SELECT id, prenom, nom, email, password, birthdate, 
@@ -211,5 +244,21 @@ class User extends Bdd
       $this->setRole($user['role']);
       $this->setLastLogin($user['last_login']);
     }
+  }
+
+  // Returns data of a user in json format
+  public function dataUser()
+  {
+    return json_encode([
+      'firstname' => $this->firstname,
+      'lastname' => $this->lastname,
+      'email' => $this->email,
+      'birthdate' => $this->birthDate,
+      'entrydate' => $this->entryDate,
+      'secunumber' => $this->secuNumber,
+      'contracttype' => $this->contractType,
+      'worktimeweek' => $this->workTimeWeek,
+      'lastlogin' => $this->lastLogin,
+    ]);
   }
 }

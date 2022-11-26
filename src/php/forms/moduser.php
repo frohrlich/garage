@@ -10,6 +10,13 @@ $errors = [];
 // Validation et nettoyage des champs
 foreach ($formData as $field => $value) {
   switch ($field) {
+    case 'mod_id':
+      if (!empty($value)) {
+        $formData[$field] = htmlspecialchars($value);
+      } else {
+        $errors[$field] = 'Erreur : veuillez réessayer.';
+      }
+      break;
     case 'mod_firstname':
       if (!empty($value)) {
         if (!isNameValid($value)) {
@@ -51,8 +58,6 @@ foreach ($formData as $field => $value) {
         } else {
           $formData[$field] = strip_tags($value);
         }
-      } else {
-        $errors[$field] = 'Veuillez entrer un mot de passe.';
       }
       break;
     case 'mod_password_verif':
@@ -60,7 +65,7 @@ foreach ($formData as $field => $value) {
         if (!isSamePassword($formData['mod_password'], $value)) {
           $errors[$field] = 'Les mots de passe doivent être identiques.';
         }
-      } else {
+      } elseif (!empty($formData['mod_password'])) {
         $errors[$field] = 'Veuillez confirmer le mot de passe.';
       }
       break;
@@ -68,6 +73,8 @@ foreach ($formData as $field => $value) {
       if (!empty($value)) {
         if (!isDateValid($value)) {
           $errors[$field] = 'Veuillez entrer une date valide (AAAA-MM-DD)';
+        } else {
+          $formData[$field] = htmlspecialchars($value);
         }
       } else {
         $errors[$field] = 'Veuillez entrer une date de naissance.';
@@ -77,6 +84,8 @@ foreach ($formData as $field => $value) {
       if (!empty($value)) {
         if (!isDateValid($value)) {
           $errors[$field] = 'Veuillez entrer une date valide (YYYY-MM-DD)';
+        } else {
+          $formData[$field] = htmlspecialchars($value);
         }
       } else {
         $errors[$field] =
@@ -88,6 +97,8 @@ foreach ($formData as $field => $value) {
         if (!isSecuValid($value)) {
           $errors[$field] =
             'Veuillez entrer un numéro de sécurité sociale valide.';
+        } else {
+          $formData[$field] = htmlspecialchars($value);
         }
       } else {
         $errors[$field] = 'Veuillez entrer un numéro de sécurité sociale.';
@@ -97,6 +108,8 @@ foreach ($formData as $field => $value) {
       if (!empty($value)) {
         if (!isContractTypeValid($value)) {
           $errors[$field] = 'Veuillez entrer un type de contrat valide.';
+        } else {
+          $formData[$field] = htmlspecialchars($value);
         }
       } else {
         $errors[$field] = 'Veuillez entrer un type de contrat.';
@@ -106,6 +119,8 @@ foreach ($formData as $field => $value) {
       if (!empty($value)) {
         if (!isWorkTimeValid($value)) {
           $errors[$field] = 'Veuillez entrer un temps de travail valide.';
+        } else {
+          $formData[$field] = htmlspecialchars($value);
         }
       } else {
         $errors[$field] = 'Veuillez entrer un temps de travail.';
@@ -120,23 +135,28 @@ if (!empty($errors)) {
   // Redirection vers le formulaire
   Header('Location: ../../../admin.php?errors=' . array_values($errors)[0]);
 } else {
-  // Ajout d'un utilisateur en base de données
-  $user = new User();
+  // Modification de l'utilisateur en base de données
+  $user = new User($formData['mod_id']);
   $user->setFirstname($formData['mod_firstname']);
   $user->setLastname($formData['mod_lastname']);
   $user->setEmail($formData['mod_email']);
-  $user->setPassword($formData['mod_password']);
+  if (!empty($formData['mod_password'])) {
+    $user->setPassword(
+      password_hash($formData['mod_password'], PASSWORD_DEFAULT)
+    );
+  }
   $user->setBirthDate($formData['mod_birthdate']);
   $user->setEntryDate($formData['mod_entry_date']);
   $user->setSecuNumber($formData['mod_secu']);
   $user->setContractType($formData['mod_contract_type']);
   $user->setWorkTimeWeek($formData['mod_work_time']);
-  $user->setRole('ROLE_USER');
-  $user->setLastLogin(date("Y-m-d H-i-s"));
-  $return = $user->create();
-  if (!is_array($return)) {
+  $return = $user->modify();
+  if ($return) {
     Header('Location: ../../../admin.php?result=' . "Utilisateur modifié !");
   } else {
-    Header('Location: ../../../admin.php?errors=' . $return['email']);
+    Header(
+      'Location: ../../../admin.php?errors=' .
+        "Erreur dans la modification de l'utilisateur."
+    );
   }
 }

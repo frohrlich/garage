@@ -68,6 +68,8 @@ foreach ($formData as $field => $value) {
       if (!empty($value)) {
         if (!isDateValid($value)) {
           $errors[$field] = 'Veuillez entrer une date valide (AAAA-MM-DD)';
+        } else {
+          $formData[$field] = htmlspecialchars($value);
         }
       } else {
         $errors[$field] = 'Veuillez entrer une date de naissance.';
@@ -77,6 +79,8 @@ foreach ($formData as $field => $value) {
       if (!empty($value)) {
         if (!isDateValid($value)) {
           $errors[$field] = 'Veuillez entrer une date valide (YYYY-MM-DD)';
+        } else {
+          $formData[$field] = htmlspecialchars($value);
         }
       } else {
         $errors[$field] =
@@ -88,6 +92,8 @@ foreach ($formData as $field => $value) {
         if (!isSecuValid($value)) {
           $errors[$field] =
             'Veuillez entrer un numéro de sécurité sociale valide.';
+        } else {
+          $formData[$field] = htmlspecialchars($value);
         }
       } else {
         $errors[$field] = 'Veuillez entrer un numéro de sécurité sociale.';
@@ -97,6 +103,8 @@ foreach ($formData as $field => $value) {
       if (!empty($value)) {
         if (!isContractTypeValid($value)) {
           $errors[$field] = 'Veuillez entrer un type de contrat valide.';
+        } else {
+          $formData[$field] = htmlspecialchars($value);
         }
       } else {
         $errors[$field] = 'Veuillez entrer un type de contrat.';
@@ -106,6 +114,8 @@ foreach ($formData as $field => $value) {
       if (!empty($value)) {
         if (!isWorkTimeValid($value)) {
           $errors[$field] = 'Veuillez entrer un temps de travail valide.';
+        } else {
+          $formData[$field] = htmlspecialchars($value);
         }
       } else {
         $errors[$field] = 'Veuillez entrer un temps de travail.';
