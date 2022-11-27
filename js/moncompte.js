@@ -12,35 +12,39 @@ import {
 // --- Validations formulaires ---
 
 // Formulaire de modification
-const modForm = document.getElementById('modForm');
+const form = document.getElementById('form');
 
-modForm.addEventListener('submit', (event) => {
+form.addEventListener('submit', (event) => {
   event.preventDefault();
 
-  const modFirstName = document.getElementById('mod_firstname');
-  const modLastName = document.getElementById('mod_lastname');
-  const modEmail = document.getElementById('mod_email');
-  const modPassword = document.getElementById('mod_password');
-  const modPasswordVerif = document.getElementById('mod_password_verif');
-  const modBirthDate = document.getElementById('mod_birthdate');
-  const modSecu = document.getElementById('mod_secu');
+  const firstName = document.getElementById('firstname');
+  const lastName = document.getElementById('lastname');
+  const email = document.getElementById('email');
+  const password = document.getElementById('password');
+  const passwordVerif = document.getElementById('password_verif');
+  const birthDate = document.getElementById('birthdate');
+  const secu = document.getElementById('secu');
 
   if (
-    !isEmpty(modFirstName) &&
-    isFirstNameValid(modFirstName) &&
-    !isEmpty(modLastName) &&
-    isLastNameValid(modLastName) &&
-    !isEmpty(modEmail) &&
-    isEmailValid(modEmail) &&
-    !isEmpty(modPassword) &&
-    isPasswordValid(modPassword) &&
-    !isEmpty(modPasswordVerif) &&
-    isSamePassword(modPassword, modPasswordVerif) &&
-    !isEmpty(modBirthDate) &&
-    isDateValid(modBirthDate) &&
-    !isEmpty(modSecu) &&
-    isSecuValid(modSecu)
+    !isEmpty(firstName) &&
+    isFirstNameValid(firstName) &&
+    !isEmpty(lastName) &&
+    isLastNameValid(lastName) &&
+    !isEmpty(email) &&
+    isEmailValid(email) &&
+
+    ((isEmpty(password, true) &&
+    isEmpty(passwordVerif, true)) ||
+    (!isEmpty(password) &&
+    isPasswordValid(password) &&
+    !isEmpty(passwordVerif) &&
+    isSamePassword(password, passwordVerif))) &&
+
+    !isEmpty(birthDate) &&
+    isDateValid(birthDate) &&
+    !isEmpty(secu) &&
+    isSecuValid(secu)
   ) {
-    modForm.submit();
+    form.submit();
   }
 });

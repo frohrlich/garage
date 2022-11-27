@@ -160,6 +160,14 @@ document.addEventListener("DOMContentLoaded", function () {
         isLastNameValid(modLastName) &&
         !isEmpty(modEmail) &&
         isEmailValid(modEmail) &&
+
+        ((isEmpty(modPassword, true) &&
+        isEmpty(modPasswordVerif, true)) ||
+        (!isEmpty(modPassword) &&
+        isPasswordValid(modPassword) &&
+        !isEmpty(modPasswordVerif) &&
+        isSamePassword(modPassword, modPasswordVerif))) &&
+
         !isEmpty(modBirthDate) &&
         isDateValid(modBirthDate) &&
         !isEmpty(modEntryDate) &&
@@ -169,14 +177,7 @@ document.addEventListener("DOMContentLoaded", function () {
         !isEmpty(modContractType) &&
         isContractTypeValid(modContractType) &&
         !isEmpty(modWorkTime) &&
-        isWorkTimeValid(modWorkTime) &&
-        
-        ((isEmpty(modPassword, true) &&
-        isEmpty(modPasswordVerif, true)) ||
-        (!isEmpty(modPassword) &&
-        isPasswordValid(modPassword) &&
-        !isEmpty(modPasswordVerif) &&
-        isSamePassword(modPassword, modPasswordVerif)))
+        isWorkTimeValid(modWorkTime)
     ) {
       modForm.submit();
     }

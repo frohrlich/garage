@@ -5,6 +5,9 @@ require_once './src/php/include.php';
 if (!getAuthenticatedUserId()) {
   Header('Location: ' . TL_BASE . '/connexion.php');
 }
+
+// Get data to fill the form
+require_once './src/php/forms/fillaccount.php';
 ?>
 
 <!DOCTYPE html>
@@ -18,7 +21,7 @@ if (!getAuthenticatedUserId()) {
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
   <!-- Site Metas -->
   <meta name="keywords" content="collaborateur, garage, pistons&boulons" />
-  <meta name="description" content="Page à accèes restreint, comprenant un formulaire de gestion des informations collaborateurs" />
+  <meta name="description" content="Page à accès restreint, comprenant un formulaire de gestion des informations collaborateurs" />
   <meta name="author" content="Web Agence" />
   <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon" />
   <title>Mon compte - Garage Pistons & Boulons</title>
@@ -47,6 +50,15 @@ if (!getAuthenticatedUserId()) {
       <div class="heading_container heading_center d-flex m-3">
         <h1 class="text-center">Mon compte</h1>
       </div>
+      <?php if (isset($_GET['errors'])): ?>
+      <p class="text-danger text-center font-weight-bold mb-4"><?php echo htmlspecialchars(
+        $_GET['errors']
+      ); ?></p>
+      <?php elseif (isset($_GET['result'])): ?>
+      <p class="text-success text-center font-weight-bold mb-4"><?php echo htmlspecialchars(
+        $_GET['result']
+      ); ?></p>
+      <?php endif; ?>
       <!-- List/modify section -->
       <div class="container d-flex justify-content-center">
         <div class="form_container">
@@ -54,40 +66,40 @@ if (!getAuthenticatedUserId()) {
             <h2 class="text-center">Modifier mes informations</h2>
           </div>
           <div class="container list">
-            <form action="#" class="mb-5" id="modForm" method="">
+            <form action="src/php/forms/modinfos.php" class="mb-5" id="form" method="POST">
               <div>
-                <label for="mod_firstname">Prénom :</label>
-                <input type="text" id="mod_firstname" name="mod_firstname" required />
+                <label for="firstname">Prénom :</label>
+                <input type="text" id="firstname" name="firstname" value="<?php echo $firstname; ?>" required />
                 <span class="text-danger err-msg"></span><br>
               </div>
               <div>
-                <label for="mod_lastname">Nom :</label>
-                <input type="text" id="mod_lastname" name="mod_lastname" required />
+                <label for="lastname">Nom :</label>
+                <input type="text" id="lastname" name="lastname" value="<?php echo $lastname; ?>" required />
                 <span class="text-danger err-msg"></span><br>
               </div>
               <div>
-                <label for="mod_email">Adresse email :</label>
-                <input type="email" id="mod_email" name="mod_email" required />
+                <label for="email">Adresse email :</label>
+                <input type="email" id="email" name="email" value="<?php echo $email; ?>" required />
                 <span class="text-danger err-msg"></span><br>
               </div>
               <div>
-                <label for="mod_password" class="label">Mot de passe :</label>
-                <input type="password" id="mod_password" name="mod_password" required />
+                <label for="password" class="label">Mot de passe (facultatif) :</label>
+                <input type="password" id="password" name="password" />
                 <span class="text-danger err-msg"></span><br>
               </div>
               <div>
-                <label for="mod_password_verif" class="label">Vérifiez le mot de passe :</label>
-                <input type="password" id="mod_password_verif" name="mod_password_verif" required />
+                <label for="password_verif" class="label">Vérifiez le mot de passe :</label>
+                <input type="password" id="password_verif" name="password_verif" />
                 <span class="text-danger err-msg"></span><br>
               </div>
               <div>
-                <label for="mod_birthdate">Date de naissance :</label>
-                <input type="date" id="mod_birthdate" name="mod_birthdate" required />
+                <label for="birthdate">Date de naissance :</label>
+                <input type="date" id="birthdate" name="birthdate" value="<?php echo $birthdate; ?>" required />
                 <span class="text-danger err-msg"></span><br>
               </div>
               <div>
-                <label for="mod_secu">Numéro de sécurité sociale :</label>
-                <input type="text" id="mod_secu" name="mod_secu" required />
+                <label for="secu">Numéro de sécurité sociale :</label>
+                <input type="text" id="secu" name="secu" value="<?php echo $secu; ?>" required />
                 <span class="text-danger err-msg"></span><br>
               </div>
               <div class="d-flex justify-content-center">

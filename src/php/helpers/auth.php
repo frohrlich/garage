@@ -3,7 +3,7 @@
 function getAuthenticatedUserId()
 {
   if (isset($_SESSION['user'])) {
-    return $_SESSION['user'];
+    return $_SESSION['user']['id'];
   } else {
     return false;
   }

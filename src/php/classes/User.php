@@ -57,7 +57,7 @@ class User extends Bdd
 
   public function getBirthDate()
   {
-    return $this->$birthDate;
+    return $this->birthDate;
   }
 
   public function setBirthDate($birthDate)
@@ -67,7 +67,7 @@ class User extends Bdd
 
   public function getEntryDate()
   {
-    return $this->$entryDate;
+    return $this->entryDate;
   }
 
   public function setEntryDate($entryDate)
@@ -77,7 +77,7 @@ class User extends Bdd
 
   public function getSecuNumber()
   {
-    return $this->$secuNumber;
+    return $this->secuNumber;
   }
 
   public function setSecuNumber($secuNumber)
@@ -87,7 +87,7 @@ class User extends Bdd
 
   public function getContractType()
   {
-    return $this->$contractType;
+    return $this->contractType;
   }
 
   public function setContractType($contractType)
@@ -97,7 +97,7 @@ class User extends Bdd
 
   public function getWorkTimeWeek()
   {
-    return $this->$workTimeWeek;
+    return $this->workTimeWeek;
   }
 
   public function setWorkTimeWeek($workTimeWeek)
@@ -117,7 +117,7 @@ class User extends Bdd
 
   public function getLastLogin()
   {
-    return $this->$lastLogin;
+    return $this->lastLogin;
   }
 
   public function setLastLogin($lastLogin)
