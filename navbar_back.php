@@ -24,7 +24,7 @@ require_once './src/php/include.php'; ?>
               <a class="nav-link active" href="prestations.php">Prestations</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" href="pdfgenerator.php">Générateur PDF</a>
+              <a class="nav-link active" href="pdfgenerator.php">Devis</a>
             </li>
             <?php if (isAdmin()) : ?>
               <li class="nav-item">

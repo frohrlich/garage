@@ -93,7 +93,7 @@ if (!getAuthenticatedUserId()) {
       <div class="container d-flex justify-content-center">
         <div class="form_container">
           <div class="heading_container heading_center mb-4">
-            <h2 class="text-center">Collaborateurs enregistrés</h2>
+            <h2 class="text-center">Prestations enregistrées</h2>
           </div>
           <div class="container list">
 

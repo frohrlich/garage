@@ -3,8 +3,11 @@
 require_once './src/php/include.php';
 
 if (!getAuthenticatedUserId()) {
-    Header('Location: ' . TL_BASE . '/connexion.php');
+  Header('Location: ' . TL_BASE . '/connexion.php');
 }
+
+// Get data to fill the form
+require_once './src/php/forms/fillDevis.php';
 ?>
 
 <!DOCTYPE html>
@@ -21,7 +24,7 @@ if (!getAuthenticatedUserId()) {
     <meta name="description" content="Page permettant de générer un pdf à l'aide d'un formulaire" />
     <meta name="author" content="Web agence" />
     <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon" />
-    <title>Générateur de PDF - Garage Pistons & Boulons</title>
+    <title>Devis - Garage Pistons & Boulons</title>
 
     <!-- font awesome style -->
     <link href="<?php echo TL_BASE; ?>/css/font-awesome.min.css" rel="stylesheet" />
@@ -48,50 +51,57 @@ if (!getAuthenticatedUserId()) {
             <div class="container d-flex justify-content-center">
                 <div class="form_container">
                     <div class="heading_container heading_center">
-                        <h1 class="text-center">Générer un PDF</h1>
+                        <h1 class="text-center">Générer un devis</h1>
                     </div>
-                    <form action="#" id="connectForm" method="post">
+                    <form action="src/php/forms/addacte.php" id="form" method="POST">
                         <div class="padding_select">
-                            <label for="add_list_user">Sélectionner un collaborateur :</label>
-                            <br>
-                            <select name="add_list_user" id="add_list_user" required>
-                                <option value="">--Please choose an option--</option>
-                                <option value="">test</option>
-                                <option value="1">Exemple 1</option>
-                                <option value="2">Exemple 2</option>
-                            </select>
-                            <span class="text-danger err-msg"></span><br>
-                        </div>
-                        <div class="padding_select">
-                            <label for="add_list_client">Sélectionner un client :</label>
+                            <label for="add_list_client">Client :</label>
                             <br>
                             <select name="add_list_client" id="add_list_client" required>
-                                <option value="">--Please choose an option--</option>
-                                <option value="1">Exemple 1</option>
-                                <option value="2">Exemple 2</option>
+                                <option value="">--Choisissez une option--</option>
+                                <?php foreach ($clientsArray as $client): ?>
+                                    <?php echo "<option value='" .
+                                      $client->getID() .
+                                      "'>" .
+                                      $client->getFirstName() .
+                                      " " .
+                                      $client->getLastName() .
+                                      "</option>"; ?>
+                                <?php endforeach; ?>
                             </select>
                             <span class="text-danger err-msg"></span><br>
                         </div>
                         <div class="padding_select">
-                            <label for="add_list_presta">Sélectionner une prestation :</label>
+                            <label for="add_list_presta">Prestation :</label>
                             <br>
                             <select name="add_list_presta" id="add_list_presta" required>
-                                <option value="">--Please choose an option--</option>
-                                <option value="1">Exemple 1</option>
-                                <option value="2">Exemple 2</option>
+                            <option value="">--Choisissez une option--</option>
+                            <?php foreach ($prestationsArray as $prestation): ?>
+                                    <?php echo "<option value='" .
+                                      $prestation->getID() .
+                                      "'>" .
+                                      $prestation->getName() .
+                                      "</option>"; ?>
+                                <?php endforeach; ?>
                             </select>
                             <span class="text-danger err-msg"></span><br>
                         </div>
                         <div>
-                            <label for="add_datetime">Choisir un jour et une date :</label>
+                            <label for="add_datetime">Date et heure :</label>
                             <input type="datetime-local" id="add_datetime" name="add_datetime" required />
                             <span class="text-danger err-msg"></span><br>
                         </div>
-                        <?php if (isset($_GET['errors'])) : ?>
-                            <span class="text-danger"><?php echo $_GET['errors']; ?></span>
+                        <?php if (isset($_GET['errors'])): ?>
+                        <p class="text-danger text-center font-weight-bold mb-4"><?php echo htmlspecialchars(
+                          $_GET['errors']
+                        ); ?></p>
+                        <?php elseif (isset($_GET['result'])): ?>
+                        <p class="text-success text-center font-weight-bold mb-4"><?php echo htmlspecialchars(
+                          $_GET['result']
+                        ); ?></p>
                         <?php endif; ?>
                         <div class="d-flex justify-content-center">
-                            <button type="submit">Connexion</button>
+                            <button type="submit">Générer</button>
                         </div>
                     </form>
                 </div>

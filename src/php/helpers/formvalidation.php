@@ -88,6 +88,15 @@ function isDateValid($value)
   );
 }
 
+// Validation du format de la date et heure
+function isDateTimeValid($value)
+{
+  return preg_match(
+    "/^(000[1-9]|00[1-9]\d|0[1-9]\d\d|100\d|10[1-9]\d|1[1-9]\d{2}|[2-9]\d{3}|[1-9]\d{4}|1\d{5}|2[0-6]\d{4}|27[0-4]\d{3}|275[0-6]\d{2}|2757[0-5]\d|275760)-(0[1-9]|1[012])-(0[1-9]|[12]\d|3[01])T(0\d|1\d|2[0-4]):(0\d|[1-5]\d)(?::(0\d|[1-5]\d))?(?:.(00\d|0[1-9]\d|[1-9]\d{2}))?$/",
+    $value
+  );
+}
+
 // Validation du format du numéro de sécu
 function isSecuValid($value)
 {
