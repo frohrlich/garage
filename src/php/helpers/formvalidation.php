@@ -107,6 +107,18 @@ function isWorkTimeValid($value)
   return preg_match("/^\+?(0|[1-9]\d*)$/", $value);
 }
 
+// Validation du format du code postal
+function isZipcodeValid($value)
+{
+  return preg_match("/^(?:0[1-9]|[1-8]\d|9[0-8])\d{3}$/", $value);
+}
+
+// Validation du format du type de véhicule
+function isVehicleValid($value)
+{
+  return preg_match("/^(?=.{2,255}$).*/", $value);
+}
+
 /*
 		Fonction addMessageAlert
 		Ajoute un message en session qui sera affiché 
