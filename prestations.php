@@ -47,6 +47,15 @@ if (!getAuthenticatedUserId()) {
       <div class="heading_container heading_center d-flex m-3">
         <h1 class="text-center">Espace prestations</h1>
       </div>
+      <?php if (isset($_GET['errors'])): ?>
+      <p class="text-danger text-center font-weight-bold mb-4"><?php echo htmlspecialchars(
+        $_GET['errors']
+      ); ?></p>
+      <?php elseif (isset($_GET['result'])): ?>
+      <p class="text-success text-center font-weight-bold mb-4"><?php echo htmlspecialchars(
+        $_GET['result']
+      ); ?></p>
+      <?php endif; ?>
       <!-- Adding section -->
       <div class="container d-flex justify-content-center mb-4">
         <div class="form_container">
@@ -57,7 +66,7 @@ if (!getAuthenticatedUserId()) {
               Afficher/Cacher
             </button>
           </div>
-          <form class="collapse show" action="#" id="addForm" method="POST">
+          <form class="collapse show" action="src/php/forms/addprestation.php" id="addForm" method="POST">
             <div>
               <label for="add_presta">Prestation :</label>
               <input type="text" id="add_presta" name="add_presta" required />
@@ -73,12 +82,6 @@ if (!getAuthenticatedUserId()) {
               <input type="number" id="add_cost" name="add_cost" step="0.01" required />
               <span class="text-danger err-msg"></span><br>
             </div>
-            <?php if (isset($_GET['errors'])) : ?>
-              <span class="text-danger"><?php echo $_GET['errors']; ?></span>
-            <?php elseif (isset($_GET['result'])) : ?>
-              <span class="text-success"><?php echo $_GET['result']; ?></span>
-            <?php endif; ?>
-            <span class="text-danger err-msg"></span><br>
             <div class="d-flex justify-content-center">
               <button class="btn-add" type="submit">Ajouter</button>
             </div>
@@ -93,55 +96,11 @@ if (!getAuthenticatedUserId()) {
             <h2 class="text-center">Collaborateurs enregistrés</h2>
           </div>
           <div class="container list">
-            <div class="row h-100">
-              <div class="col my-auto list_text">
-                Mathilde Example
-              </div>
-              <div class="col d-flex">
-                <button class="btn-mod my-auto" type="button">Modifier</button>
-              </div>
-              <div class="col d-flex">
-                <button class="btn-del my-auto" type="button">Supprimer</button>
-              </div>
-            </div>
 
-            <div class="row h-100">
-              <div class="col my-auto list_text">
-                Hubert Luc-Mongrain
-              </div>
-              <div class="col d-flex">
-                <button class="btn-mod my-auto" type="button">Modifier</button>
-              </div>
-              <div class="col d-flex">
-                <button class="btn-del my-auto" type="button">Supprimer</button>
-              </div>
-            </div>
+          <?php include 'src/php/forms/listprestation.php'; ?>
 
-            <div class="row h-100">
-              <div class="col my-auto list_text">
-                Clarisse Boustifaille
-              </div>
-              <div class="col d-flex">
-                <button class="btn-mod my-auto" type="button">Modifier</button>
-              </div>
-              <div class="col d-flex">
-                <button class="btn-del my-auto" type="button">Supprimer</button>
-              </div>
-            </div>
-
-            <div class="row h-100">
-              <div class="col my-auto list_text" id="item-4">
-                Hugues le Hugues
-              </div>
-              <div class="col d-flex">
-                <button class="btn-mod my-auto" type="button">Modifier</button>
-              </div>
-              <div class="col d-flex">
-                <button class="btn-del my-auto" type="button">Supprimer</button>
-              </div>
-            </div>
-
-            <form action="#" class="d-none mb-5" id="modForm" method="">
+            <form action="src/php/forms/modprestation.php" class="d-none mb-5" id="modForm" method="POST">
+            <input type="hidden" id="mod_id" name="mod_id" />
               <div>
                 <label for="mod_presta">Prestation :</label>
                 <input type="text" id="mod_presta" name="mod_presta" required />

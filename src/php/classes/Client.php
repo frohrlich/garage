@@ -112,8 +112,6 @@ class Client extends Bdd
   {
     $sql = "UPDATE client SET prenom= ?, nom= ?, address= ?, zipcode= ?, vehicle= ? WHERE id= " . $this->getId();
 
-    echo $sql;
-
     try {
       $statement = $this->getConnection()->prepare($sql);
       $args = [

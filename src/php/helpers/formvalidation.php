@@ -119,6 +119,24 @@ function isVehicleValid($value)
   return preg_match("/^(?=.{2,255}$).*/", $value);
 }
 
+// Validation du format du nom de prestation
+function isPrestaValid($value)
+{
+  return preg_match("/^(?=.{5,255}$).*/", $value);
+}
+
+// Validation du format du temps de réalisation d'une prestation
+function isReaTimeValid($value)
+{
+  return preg_match("/^(?!0*[.,]0*$|[.,]0*$|0*$)\d+[,.]?\d{0,2}$/", $value);
+}
+
+// Validation du format du cout d'une prestation
+function isCostValid($value)
+{
+  return preg_match("/^(?!0*[.,]0*$|[.,]0*$|0*$)\d+[,.]?\d{0,2}$/", $value);
+}
+
 /*
 		Fonction addMessageAlert
 		Ajoute un message en session qui sera affiché 
