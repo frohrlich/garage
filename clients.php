@@ -106,55 +106,11 @@ if (!getAuthenticatedUserId()) {
             <h2 class="text-center">Clients enregistrés</h2>
           </div>
           <div class="container list">
-            <div class="row h-100">
-              <div class="col my-auto list_text">
-                Mathilde Example
-              </div>
-              <div class="col d-flex">
-                <button class="btn-mod my-auto" type="button">Modifier</button>
-              </div>
-              <div class="col d-flex">
-                <button class="btn-del my-auto" type="button">Supprimer</button>
-              </div>
-            </div>
 
-            <div class="row h-100">
-              <div class="col my-auto list_text">
-                Hubert Luc-Mongrain
-              </div>
-              <div class="col d-flex">
-                <button class="btn-mod my-auto" type="button">Modifier</button>
-              </div>
-              <div class="col d-flex">
-                <button class="btn-del my-auto" type="button">Supprimer</button>
-              </div>
-            </div>
+          <?php include 'src/php/forms/listclient.php'; ?>
 
-            <div class="row h-100">
-              <div class="col my-auto list_text">
-                Clarisse Boustifaille
-              </div>
-              <div class="col d-flex">
-                <button class="btn-mod my-auto" type="button">Modifier</button>
-              </div>
-              <div class="col d-flex">
-                <button class="btn-del my-auto" type="button">Supprimer</button>
-              </div>
-            </div>
-
-            <div class="row h-100">
-              <div class="col my-auto list_text" id="item-4">
-                Hugues le Hugues
-              </div>
-              <div class="col d-flex">
-                <button class="btn-mod my-auto" type="button">Modifier</button>
-              </div>
-              <div class="col d-flex">
-                <button class="btn-del my-auto" type="button">Supprimer</button>
-              </div>
-            </div>
-
-            <form action="#" class="d-none mb-5" id="modForm" method="">
+            <form action="src/php/forms/modclient.php" class="d-none mb-5" id="modForm" method="POST">
+            <input type="hidden" id="mod_id" name="mod_id" />
               <div>
                 <label for="mod_firstname">Prénom :</label>
                 <input type="text" id="mod_firstname" name="mod_firstname" required />
@@ -179,6 +135,10 @@ if (!getAuthenticatedUserId()) {
                 <label for="mod_vehicle">Type de véhicule :</label>
                 <input type="text" id="mod_vehicle" name="mod_vehicle" required />
                 <span class="text-danger err-msg"></span><br>
+              </div>
+              <div>
+                <label for="mod_createdat">Date de création (non modifiable) :</label>
+                <input type="datetime-local" id="mod_createdat" name="mod_createdat" disabled />
               </div>
               <div class="d-flex justify-content-center">
                 <button class="btn-add" type="submit">Enregistrer</button>

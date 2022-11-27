@@ -10,7 +10,7 @@ $errors = [];
 // Validation et nettoyage des champs
 foreach ($formData as $field => $value) {
   switch ($field) {
-    case 'add_firstname':
+    case 'mod_firstname':
       if (!empty($value)) {
         if (!isNameValid($value)) {
           $errors[$field] = 'Veuillez entrer un prénom valide.';
@@ -21,7 +21,7 @@ foreach ($formData as $field => $value) {
         $errors[$field] = 'Veuillez entrer un prénom.';
       }
       break;
-    case 'add_lastname':
+    case 'mod_lastname':
       if (!empty($value)) {
         if (!isNameValid($value)) {
           $errors[$field] = 'Veuillez entrer un nom valide.';
@@ -32,14 +32,14 @@ foreach ($formData as $field => $value) {
         $errors[$field] = 'Veuillez entrer un nom.';
       }
       break;
-    case 'add_address':
+    case 'mod_address':
       if (!empty($value)) {
         $formData[$field] = htmlspecialchars($value);
       } else {
         $errors[$field] = 'Veuillez entrer une addresse.';
       }
       break;
-    case 'add_postalcode':
+    case 'mod_postalcode':
       if (!empty($value)) {
         if (!isZipcodeValid($value)) {
           $errors[$field] = 'Veuillez entrer un code postal valide.';
@@ -50,7 +50,7 @@ foreach ($formData as $field => $value) {
         $errors[$field] = 'Veuillez entrer un code postal.';
       }
       break;
-    case 'add_vehicle':
+    case 'mod_vehicle':
       if (!empty($value)) {
         if (!isVehicleValid($value)) {
           $errors[$field] = 'Veuillez entrer un nom de véhicule valide.';
@@ -71,17 +71,16 @@ if (!empty($errors)) {
   Header('Location: ../../../clients.php?errors=' . array_values($errors)[0]);
 } else {
   // Ajout d'un client en base de données
-  $client = new Client();
-  $client->setFirstname($formData['add_firstname']);
-  $client->setLastname($formData['add_lastname']);
-  $client->setAddress($formData['add_address']);
-  $client->setZipcode($formData['add_postalcode']);
-  $client->setCreatedAt(date("Y-m-d H-i-s"));
-  $client->setVehicle($formData['add_vehicle']);
-  $return = $client->create();
+  $client = new Client($formData['mod_id']);
+  $client->setFirstname($formData['mod_firstname']);
+  $client->setLastname($formData['mod_lastname']);
+  $client->setAddress($formData['mod_address']);
+  $client->setZipcode($formData['mod_postalcode']);
+  $client->setVehicle($formData['mod_vehicle']);
+  $return = $client->update();
   if ($return) {
-    Header('Location: ../../../clients.php?result=' . "Client ajouté !");
+    Header('Location: ../../../clients.php?result=' . "Client modifié !");
   } else {
-    Header('Location: ../../../clients.php?errors=' . "Erreur dans l'ajout du client.");
+    Header('Location: ../../../clients.php?errors=' . "Erreur dans la modification du client.");
   }
 }

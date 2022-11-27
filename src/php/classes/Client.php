@@ -110,9 +110,9 @@ class Client extends Bdd
   // Update a client in database
   public function update()
   {
-    $sql =
-      "UPDATE client SET prenom= ?, nom= ?, address= ?, zipcode= ?, created_at= ?, 
-      vehicle= ? WHERE id= " . $this->id;
+    $sql = "UPDATE client SET prenom= ?, nom= ?, address= ?, zipcode= ?, vehicle= ? WHERE id= " . $this->getId();
+
+    echo $sql;
 
     try {
       $statement = $this->getConnection()->prepare($sql);
@@ -121,7 +121,6 @@ class Client extends Bdd
         $this->lastname,
         $this->address,
         $this->zipcode,
-        $this->created_at,
         $this->vehicle,
       ];
       $statement->execute($args);

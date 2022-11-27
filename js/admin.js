@@ -29,6 +29,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }).done(function () {
           // Then hide element in page
           element.parentElement.parentElement.classList.add("d-none");
+          document.getElementById("modForm").classList.add("d-none");
           alert("Utilisateur supprimé !");
         });
       }
