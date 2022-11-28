@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Nov 24, 2022 at 11:15 AM
+-- Generation Time: Nov 28, 2022 at 11:16 PM
 -- Server version: 5.7.24
 -- PHP Version: 8.0.1
 
@@ -35,6 +35,13 @@ CREATE TABLE `acte` (
   `date` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Dumping data for table `acte`
+--
+
+INSERT INTO `acte` (`id`, `user_id`, `client_id`, `prestation_id`, `date`) VALUES
+(21, 19, 9, 14, '2022-11-18 15:00:00');
+
 -- --------------------------------------------------------
 
 --
@@ -46,9 +53,20 @@ CREATE TABLE `client` (
   `prenom` varchar(255) NOT NULL,
   `nom` varchar(255) NOT NULL,
   `address` varchar(255) NOT NULL,
+  `zipcode` int(11) NOT NULL,
   `created_at` datetime NOT NULL,
   `vehicle` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `client`
+--
+
+INSERT INTO `client` (`id`, `prenom`, `nom`, `address`, `zipcode`, `created_at`, `vehicle`) VALUES
+(9, 'Hugues', 'LeClient', '25 rue des Clients', 87100, '2022-11-28 23:51:50', 'Citroën C3'),
+(10, 'Samantha', 'Clientesse', '45 rue des Super-clientesses', 87200, '2022-11-28 23:52:44', 'Renault Dacia'),
+(11, 'Hans', 'Kunde', '23 Lüdwig Strasse', 68000, '2022-11-28 23:54:13', 'Volkswagen'),
+(12, 'Jean-Pierre', 'Exemple', '25 rue des Clients Heureux', 87000, '2022-11-29 00:00:29', 'Peugeot 206');
 
 -- --------------------------------------------------------
 
@@ -63,6 +81,15 @@ CREATE TABLE `prestation` (
   `hours` decimal(10,2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Dumping data for table `prestation`
+--
+
+INSERT INTO `prestation` (`id`, `name`, `price_ht`, `hours`) VALUES
+(12, 'Changer les pneus', '90.00', '0.50'),
+(13, 'Vidange', '50.00', '1.00'),
+(14, 'Changement essuie-glaces', '30.00', '0.25');
+
 -- --------------------------------------------------------
 
 --
@@ -75,7 +102,7 @@ CREATE TABLE `user` (
   `nom` varchar(255) DEFAULT NULL,
   `email` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
-  `birthdate` varchar(255) DEFAULT NULL,
+  `birthdate` date DEFAULT NULL,
   `social_sec` bigint(15) DEFAULT NULL,
   `date_entry` date DEFAULT NULL,
   `contract_type` varchar(255) DEFAULT NULL,
@@ -89,8 +116,9 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id`, `prenom`, `nom`, `email`, `password`, `birthdate`, `social_sec`, `date_entry`, `contract_type`, `role`, `worktime_week`, `last_login`) VALUES
-(6, NULL, NULL, 'admin@pistonsetboulons.com', '$2y$10$DVBY/yGk3QOaqhg73ngXnuamKxErr5JvcYVOPF12GDP0rfKYMGL66', NULL, NULL, NULL, NULL, 'ROLE_ADMIN', NULL, NULL),
-(7, 'Félix', 'Rohrlich', 'frohrlich@wanadoo.fr', '$2y$10$nsaUH4fCAaRxECSf.174nuNskF7pfOGiJLpkEUwqsFfctcK4RxAY.', '2022-11-10', 1234567890123, '2022-11-08', 'Autre', 'ROLE_USER', '5', '2022-11-23 20:17:17');
+(6, NULL, NULL, 'admin@pistonsetboulons.com', '$2y$10$DVBY/yGk3QOaqhg73ngXnuamKxErr5JvcYVOPF12GDP0rfKYMGL66', NULL, NULL, NULL, NULL, 'ROLE_ADMIN', NULL, '2022-11-28 23:31:27'),
+(19, 'Pierre', 'Exemple', 'pierre@exemple.fr', '$2y$10$OBanmy9TCKRag1pCc2/vxOhroUm27EFFwroFSjpxrfcWMVFnDEBFG', '2022-11-08', 111111111111111, '2022-11-08', 'Alternance', 'ROLE_USER', '12', '2022-11-28 23:47:23'),
+(20, 'Martine', 'De L\'Exemplarité', 'martine@exemple.com', '$2y$10$ll/SUOJWA40MHE4MajDZROkSsC3bUeWkt9vSiVijDtDNpNFqgROSK', '2022-11-11', 123456789012456, '2022-11-07', 'Autre', 'ROLE_USER', '66', '2022-11-28 23:39:07');
 
 --
 -- Indexes for dumped tables
@@ -131,25 +159,25 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `acte`
 --
 ALTER TABLE `acte`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT for table `client`
 --
 ALTER TABLE `client`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `prestation`
 --
 ALTER TABLE `prestation`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- Constraints for dumped tables

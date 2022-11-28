@@ -189,7 +189,7 @@ if (!isAdmin()) {
               <div>
                 <label for="mod_contract_type">Type de contrat :</label>
                 <br>
-                <select name="mod_contract_type" id="mod_contract_type">
+                <select name="mod_contract_type" id="mod_contract_type" class="mb-4">
                   <option value="">--Choisissez une option--</option>
                   <option value="CDI">CDI</option>
                   <option value="CDD">CDD</option>
