@@ -54,9 +54,34 @@ if (!empty($errors)) {
   $acte->setDate($formData['add_datetime']);
   $return = $acte->create();
   if ($return) {
-    Header(
-      'Location: ../../../pdfgenerator.php?result=' . "Devis généré !"
-    );
+    $date = $acte->getDate();
+    $date = date('d/m/Y H:i', strtotime($date));
+    $currentDate = date('d/m/Y H:i:s');
+    $user = new User($acte->getUserId());
+    $userName = $user->getFirstName() . ' ' . $user->getLastName();
+    $client = new Client($acte->getClientId());
+    $clientName = $client->getFirstName() . ' ' . $client->getLastName();
+    $vehicle = $client->getVehicle();
+    $prestation = new Prestation($acte->getPrestaId());
+    $prestationName = $prestation->getName();
+    $cost = $prestation->getCost();
+
+    $content = 
+    "<h1 style='text-align: center'>Devis</h1>
+     <h2 style='text-align: center'>Garage Pistons & Boulons</h2>
+     <p style='text-align: center; font-style: italic'>$currentDate</p>
+     <p><strong>Prestataire :</strong> $userName</p>
+     <p><strong>Client :</strong> $clientName</p>
+     <p><strong>Prestation :</strong> $prestationName</p>
+     <p><strong>Véhicule :</strong> $vehicle</p>
+     <p><strong>Date de l'intervention :</strong> $date</p>
+     <p><strong>Coût :</strong> $cost €</p>
+    ";
+
+    $html2pdf = new Html2Pdf();
+    $html2pdf->writeHTML($content);
+    $html2pdf->output();
+
   } else {
     Header(
       'Location: ../../../pdfgenerator.php?errors=' .
