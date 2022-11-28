@@ -1,14 +1,13 @@
 ﻿# Garage
 ***
 
+Prérequis : avoir npm et composer installés.
+
 ## Commandes utile
-Installer bootstrap :
+Installer les dépendances :
 ```
 npm install
-```
-Si ça ne marche pas essayer :
-```
-npm i bootstrap@4.6.0
+composer install
 ```
 
 Pour commit sa progression :
