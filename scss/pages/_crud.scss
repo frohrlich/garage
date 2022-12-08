@@ -1,0 +1,103 @@
+.crud_section {
+  position: relative;
+  margin-bottom: 20px;
+
+  .form_container {
+    height: 100%;
+    padding: 25px;
+    background: $primary1;
+    color: $white;
+    border-radius: 5px;
+  }
+
+  form {
+    margin-top: 20px;
+  }
+
+  input {
+    width: 100%;
+    border: none;
+    height: 50px;
+    margin-bottom: 25px;
+    padding-left: 15px;
+    background-color: $white;
+    outline: none;
+    color: $black;
+    border: 1px solid #a5a5a5;
+
+    &.message-box {
+      height: 120px;
+    }
+  }
+
+  textarea {
+    width: 100%;
+    margin-bottom: 25px;
+  }
+
+  .padding_select {
+    padding-bottom: 25px;
+
+    select {
+      padding-left: 15px;
+      width: 100%;
+      height: 50px;
+    }
+  }
+
+  .list {
+    .row {
+      margin-bottom: 25px;
+    }
+
+    .col {
+      @include media-breakpoint-down(sm) {
+        padding: 0;
+        margin: 0;
+      }
+    }
+
+    .list_text {
+      font-weight: bold;
+      margin-right: 4px;
+    }
+  }
+
+  button,
+  .btn-primary {
+    @include main-font();
+    @include hero_btn($primary2, $white, 10px, 20px, 3px);
+    color: #fff;
+    margin-top: 10px;
+  }
+
+  .btn-add {
+    @include hero_btn($success, $white, 10px, 65px, 3px);
+  }
+
+  .btn-mod {
+    @include hero_btn($light, $dark, 10px, 65px, 3px);
+    @include media-breakpoint-down(md) {
+      padding-left: 40px;
+      padding-right: 40px;
+      margin: 0;
+    }
+    @include media-breakpoint-down(sm) {
+      padding: 5px;
+      margin: 0;
+    }
+  }
+
+  .btn-del {
+    @include hero_btn($danger, $white, 10px, 65px, 3px);
+    @include media-breakpoint-down(md) {
+      padding-left: 40px;
+      padding-right: 40px;
+      margin: 0;
+    }
+    @include media-breakpoint-down(sm) {
+      padding: 5px;
+      margin: 0;
+    }
+  }
+}

@@ -1,1 +1,8 @@
-/node_modules/
+node_modules
+css/style.min.css
+css/style.min.css.map
+vendor
+.vscode
+config/env.php
+.htaccess
+.DS_Store
